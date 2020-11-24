@@ -26,7 +26,7 @@ public class Usuario implements Serializable {
 	private String password;
 	private Boolean enabled;
 	private String name;
-	private String lastName;
+	private String lastname;
 	@Column(unique = true, length = 100)
 	private String email;
 
@@ -73,12 +73,12 @@ public class Usuario implements Serializable {
 		this.name = name;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getEmail() {
