@@ -1,5 +1,18 @@
 package com.practi.app.commons.models.entity;
 
+/**
+ * <b>Item</b> <br>
+ * Clase que define un {@link com.practi.app.commons.models.entity.Producto}
+ * pero con más atributos.
+ * 
+ * <ul>
+ * <li>{@link com.practi.app.commons.models.entity.Producto}</li>
+ * <li>cantidad: Cantidad de ese producto</li>
+ * </ul>
+ * 
+ * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
+ * 
+ */
 public class Item {
 
 	private Producto producto;
@@ -28,10 +41,9 @@ public class Item {
 	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
 	}
-	
+
 	public Double getTotal() {
 		return producto.getPrecio() * cantidad.doubleValue();
 	}
-
 
 }

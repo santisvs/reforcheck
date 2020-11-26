@@ -10,6 +10,24 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * <b>Usuario</b> <br>
+ * Entidad de base de datos con lo siguientes atributos:
+ * 
+ * <ul>
+ * <li>id: Identificador del rol en BBDD</li>
+ * <li>username: Nickname del usuario</li>
+ * <li>password: Password del usuario</li>
+ * <li>enabled: Flag que indica si usuario esta activo o no</li>
+ * <li>name: Nombre del usuario</li>
+ * <li>lastname: Apellido del usuario</li>
+ * <li>email: email del usuario</li>
+ * <li>{@link com.practi.app.commons.models.entity.Rol}: Rol del usuario</li>
+ * </ul>
+ * 
+ * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
+ * 
+ */
 @Entity
 @Table(name = "usuario")
 public class Usuario implements Serializable {

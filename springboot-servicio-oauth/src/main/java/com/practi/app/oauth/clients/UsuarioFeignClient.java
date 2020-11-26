@@ -8,10 +8,11 @@ import com.practi.app.commons.constants.ConstantsApp;
 import com.practi.app.commons.models.entity.Usuario;
 
 /**
- * CLiente Feign para conectar con el microservicio usuarios. Al utilizar Feign,
+ * <b>UsuarioFeignClient</b> <br>
+ * Cliente Feign para conectar con el microservicio usuarios. Al utilizar Feign,
  * usamos el balanceo de carga adecuado.
  * 
- * @author Usuario
+ * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
  *
  */
 @FeignClient(name = ConstantsApp.USER_SERVICE_NAME)

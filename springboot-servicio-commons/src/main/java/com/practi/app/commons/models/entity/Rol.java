@@ -12,6 +12,19 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/**
+ * <b>Rol</b> <br>
+ * Entidad de base de datos con lo siguientes atributos:
+ * 
+ * <ul>
+ * <li>id: Identificador del rol en BBDD</li>
+ * <li>name: Nombre del rol</li>
+ * <li>usuarios: Lista de usuarios que tienen asignado ese rol</li>
+ * </ul>
+ * 
+ * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
+ * 
+ */
 @Entity
 @Table(name = "rol")
 public class Rol implements Serializable {
