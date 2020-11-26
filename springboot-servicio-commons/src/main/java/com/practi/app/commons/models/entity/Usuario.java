@@ -1,4 +1,4 @@
-package com.practi.app.usuarios.models.entity;
+package com.practi.app.commons.models.entity;
 
 import java.io.Serializable;
 
