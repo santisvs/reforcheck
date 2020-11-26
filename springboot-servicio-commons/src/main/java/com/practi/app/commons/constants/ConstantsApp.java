@@ -1,6 +1,35 @@
 package com.practi.app.commons.constants;
 
 public class ConstantsApp {
+
+	/*
+	 * CLIENTES DEL BACKEND (Ids de apps frontend clientes del backend)
+	 */
+	public static final String FRONT_CLIENT_DEFAULT_NAME = "frontendapp";
+	public static final String FRONT_CLIENT_DEFAULT_PASSW = "1234";
+	//public static final String FRONT_CLIENT_ANGULAR_APP = "angularapp";
+
+	/*
+	 * SCOPES CLIENTS DEL BACKEND
+	 */
+	public static final String FRONT_CLIENT_SCOPE_READ = "read";
+	public static final String FRONT_CLIENT_SCOPE_WRITE = "write";
+	
+	/*
+	 * TIPOS DE AUTENTICACION DE CLIENTES AL BACKEND (authorizedGrantTypes)
+	 */
+	public static final String AUTHORIZED_TYPE_PASSW = "password";
+	public static final String AUTHORIZED_TYPE_CODE = "authorization_code";
+	public static final String AUTHORIZED_TYPE_IMPLICIT = "implicit";
+	public static final String AUTHORIZED_TYPE_REFRESH = "refresh_token";
+	public static final int AUTHORIZED_TIME_TOKEN = 3600;
+	
+	/*
+	 * SEGURIDAD PARA ACCEDER A NUESTRO SERVIDOR OAUTH2
+	 */
+	public static final String SPRING_SECURITY_METHOD_ALLOW_ALL_GET_TOKEN = "permitAll()";
+	public static final String SPRING_SECURITY_METHOD_IS_AUTHENTICATED_CLIENT = "isAuthenticated()";
+	
 	
 	/*
 	 * URI SERVICES
@@ -13,14 +42,13 @@ public class ConstantsApp {
 	public static final String URI_VER_DETALLE = "/ver/{id}/cantidad/{cantidad}";
 	public static final String URI_CONFIG = "/obtener-config";
 	public static final String URI_USER_SEARCH = "/usuarios/search/buscar";
-	
+
 	/*
 	 * NAME SERVICES
 	 */
 	public static final String PRODUCT_SERVICE_NAME = "servicio-productos";
 	public static final String USER_SERVICE_NAME = "servicio-usuarios";
 
-	
 	/*
 	 * LOGS STRINGS
 	 */
@@ -32,19 +60,18 @@ public class ConstantsApp {
 	public static final String LOG_PRODUCTO_LISTAR = LOG_MARK + "Petición listar productos";
 	public static final String LOG_PRODUCTO_VER = LOG_MARK + "Petición ver producto con id: ";
 	public static final String LOG_USER_AUTHORIZED = LOG_MARK + "El usuario autorizado %s tiene el rol %s ";
-	
+
 	/*
 	 * EXCEPTIONS STRINGS
 	 */
 	public static final String EXCEPTION_MARK = "--- EXCEPTION_APP: ";
 	public static final String EXCEPTION_USER_NO_EXIST = EXCEPTION_MARK + "El usuario %s no existe.";
-	
-	
+
 	/*
 	 * APP VARIABLES
 	 */
 	public static final String INIT_TIME = "initTime";
-	
+
 	/*
 	 * APP PROPERTIES
 	 */

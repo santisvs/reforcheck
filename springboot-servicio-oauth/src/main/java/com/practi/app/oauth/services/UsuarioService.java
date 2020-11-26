@@ -19,13 +19,14 @@ import com.practi.app.commons.models.entity.Usuario;
 import com.practi.app.oauth.clients.UsuarioFeignClient;
 
 /**
- * Método para autenticar al usuario. Implementa la clase propia de Spring
+ * <b>UsuarioService</b> <br>
+ * Servicio para autenticar al usuario. Implementa la clase propia de Spring
  * Security UserDetailsService.
  * 
  * Utilizamos el cliente Feign UsuarioFeignClient para conectar con el
  * microservicio Usuarios.
  * 
- * @author Usuario
+ * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
  *
  */
 @Service

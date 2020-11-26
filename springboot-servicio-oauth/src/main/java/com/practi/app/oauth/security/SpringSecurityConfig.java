@@ -9,6 +9,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+/**
+ * <b>SpringSecurityConfig</b> <br>
+ * Clase principal de configuración de Spring Security para el proyecto.
+ * 
+ * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
+ *
+ */
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -17,8 +24,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	private UserDetailsService usuarioService;
 
 	/*
-	 * Registrar en el contexto de Spring el objeto BCryptPasswordEncoder. Lo
-	 * utilizaremos para encritar el password
+	 * Registrar con @Bean en el contexto de Spring el objeto BCryptPasswordEncoder.
+	 * Lo utilizaremos para encritar el password
 	 */
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
@@ -26,8 +33,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	/*
-	 * Registrar en el contexto de Spring el objeto AuthenticationManager. Lo
-	 * inyectaremos en el servidor de autorizacion de OAuth2
+	 * Registrar con @Bean en el contexto de Spring el objeto AuthenticationManager.
+	 * Lo inyectaremos en el servidor de autorizacion de OAuth2
 	 */
 	@Override
 	@Bean
@@ -39,7 +46,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	 * Sobreescribir el método de WebSecurityConfigurerAdapter para registrar el
 	 * objeto usuarioService en el AuthenticationManager
 	 * 
-	 * @Autowired para pasar el bean AuthenticationManagerBuilder
+	 * @Autowired para utilizar el bean AuthenticationManagerBuilder del contexto de
+	 * Spring
 	 */
 	@Override
 	@Autowired
