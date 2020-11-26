@@ -12,11 +12,13 @@ public class ConstantsApp {
 	public static final String URI_ELIMINAR = "/eliminar/{id}";
 	public static final String URI_VER_DETALLE = "/ver/{id}/cantidad/{cantidad}";
 	public static final String URI_CONFIG = "/obtener-config";
+	public static final String URI_USER_SEARCH = "/usuarios/search/buscar";
 	
 	/*
 	 * NAME SERVICES
 	 */
 	public static final String PRODUCT_SERVICE_NAME = "servicio-productos";
+	public static final String USER_SERVICE_NAME = "servicio-usuarios";
 
 	
 	/*
@@ -27,8 +29,16 @@ public class ConstantsApp {
 	public static final String LOG_FILTER_END_TIME = LOG_MARK + "Entrando a post filter";
 	public static final String LOG_FILTER_TOTAL_TIME_SECONDS = LOG_MARK + "Tiempo transcurrido en segundos %s seg.";
 	public static final String LOG_FILTER_TOTAL_TIME_MILLISECONDS = LOG_MARK + "Tiempo transcurrido en mileseg %s ms.";
-	public static final String LOG_PRODUCTO_LISTAR = LOG_MARK + "Petici�n listar productos";
-	public static final String LOG_PRODUCTO_VER = LOG_MARK + "Petici�n ver producto con id: ";
+	public static final String LOG_PRODUCTO_LISTAR = LOG_MARK + "Petición listar productos";
+	public static final String LOG_PRODUCTO_VER = LOG_MARK + "Petición ver producto con id: ";
+	public static final String LOG_USER_AUTHORIZED = LOG_MARK + "El usuario autorizado %s tiene el rol %s ";
+	
+	/*
+	 * EXCEPTIONS STRINGS
+	 */
+	public static final String EXCEPTION_MARK = "--- EXCEPTION_APP: ";
+	public static final String EXCEPTION_USER_NO_EXIST = EXCEPTION_MARK + "El usuario %s no existe.";
+	
 	
 	/*
 	 * APP VARIABLES

@@ -1,4 +1,4 @@
-package com.practi.app.item.clientes;
+package com.practi.app.item.clients;
 
 import java.util.List;
 
