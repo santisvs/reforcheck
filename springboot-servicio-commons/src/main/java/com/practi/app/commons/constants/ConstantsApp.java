@@ -42,7 +42,37 @@ public class ConstantsApp {
 	public static final String URI_VER_DETALLE = "/ver/{id}/cantidad/{cantidad}";
 	public static final String URI_CONFIG = "/obtener-config";
 	public static final String URI_USER_SEARCH = "/usuarios/search/buscar";
+	
+	/*
+	 * URI ZUUL SERVICES
+	 */
+	public static final String URI_ZUUL_OAUTH = "/api/security/oauth/**";
+	
+	public static final String URI_ZUUL_GET_ALL_PRODUCTOS = "/api/productos" + URI_LISTAR;
+	public static final String URI_ZUUL_GET_PRODUCTO = "/api/productos" + URI_VER;
+	public static final String URI_ZUUL_CREAR_PRODUCTO = "/api/productos" + URI_CREAR;
+	public static final String URI_ZUUL_EDITAR_PRODUCTO = "/api/productos" + URI_EDITAR;
+	public static final String URI_ZUUL_ELIMINAR_PRODUCTO = "/api/productos" + URI_ELIMINAR;
+	public static final String URI_ZUUL_GENERIC_PRODUCTOS = "/api/productos/**";
+	
+	public static final String URI_ZUUL_GET_ALL_ITEMS = "/api/items" + URI_LISTAR;
+	public static final String URI_ZUUL_GET_ITEM = "/api/items" + URI_VER_DETALLE;
+	public static final String URI_ZUUL_CREAR_ITEM = "/api/items" + URI_CREAR;
+	public static final String URI_ZUUL_EDITAR_ITEM = "/api/items" + URI_EDITAR;
+	public static final String URI_ZUUL_ELIMINAR_ITEM = "/api/items" + URI_ELIMINAR;
+	public static final String URI_ZUUL_GENERIC_ITEMS = "/api/items/**";
+	
+	public static final String URI_ZUUL_USUARIOS = "/api/usuarios/usuarios";
+	public static final String URI_ZUUL_USUARIO = "/api/usuarios/usuarios/{id}";
+	public static final String URI_ZUUL_GENERIC_USUARIOS = "/api/usuarios/**";
 
+	/*
+	 * ROLES
+	 */
+	public static final String ROL_PREFIX = "ROL_";
+	public static final String ROL_ADMIN = "ADMIN";
+	public static final String ROL_USER = "USER";
+	
 	/*
 	 * NAME SERVICES
 	 */
