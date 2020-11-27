@@ -21,7 +21,8 @@ import com.practi.app.oauth.clients.UsuarioFeignClient;
 /**
  * <b>UsuarioService</b> <br>
  * Servicio para autenticar al usuario. Implementa la clase propia de Spring
- * Security UserDetailsService.
+ * Security UserDetailsService. Tambien implementa la interfaz IUsuarioService
+ * para poder disponer de la implementacion de los métodos de IUsuarioService.
  * 
  * Utilizamos el cliente Feign UsuarioFeignClient para conectar con el
  * microservicio Usuarios.
@@ -30,7 +31,7 @@ import com.practi.app.oauth.clients.UsuarioFeignClient;
  *
  */
 @Service
-public class UsuarioService implements UserDetailsService {
+public class UsuarioService implements IUsuarioService, UserDetailsService {
 
 	private static Logger log = LoggerFactory.getLogger(UsuarioService.class);
 
@@ -38,6 +39,8 @@ public class UsuarioService implements UserDetailsService {
 	private UsuarioFeignClient client;
 
 	/*
+	 * Implementación de la interfaz UserDetailsService
+	 * 
 	 * Método para crear el usuario Spring Security.
 	 * 
 	 * Incluye los granted authorities. Son los roles de un usuario.
@@ -59,6 +62,16 @@ public class UsuarioService implements UserDetailsService {
 
 		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true,
 				authorities);
+	}
+
+	/*
+	 * Implementación de la interfaz IUsuarioService
+	 * 
+	 * Método para obtener el usuario de BBDD
+	 */
+	@Override
+	public Usuario findByUsername(String username) {
+		return client.findByUsername(username);
 	}
 
 }

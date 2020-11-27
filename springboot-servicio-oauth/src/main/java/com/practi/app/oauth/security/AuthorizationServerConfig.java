@@ -1,5 +1,7 @@
 package com.practi.app.oauth.security;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +12,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
@@ -46,6 +49,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
+
+	@Autowired
+	private InfoClaimsToken infoClaimsToken;
 
 	/*
 	 * Registrar con @Bean en el contexto de Spring el objeto JwtTokenStore. Método
@@ -139,9 +145,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 
-		// Registrar el authenticationManager
+		// Capturar la info de los claims y del usuario en el objeto tokenEnhancerChain
+		TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
+		tokenEnhancerChain.setTokenEnhancers(Arrays.asList(accessTokenConverter(), infoClaimsToken));
+		/* Registrar el authenticationManager con la info del token, del usuario y de
+		 * los claims
+		 */
 		endpoints.authenticationManager(authenticationManager).tokenStore(tokenStore())
-				.accessTokenConverter(accessTokenConverter());
+				.accessTokenConverter(accessTokenConverter()).tokenEnhancer(tokenEnhancerChain);
 
 	}
 
