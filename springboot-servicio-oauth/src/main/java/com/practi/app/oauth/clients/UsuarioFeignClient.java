@@ -18,7 +18,7 @@ import com.practi.app.commons.models.entity.Usuario;
 @FeignClient(name = ConstantsApp.USER_SERVICE_NAME)
 public interface UsuarioFeignClient {
 
-	@GetMapping(ConstantsApp.URI_VER)
+	@GetMapping(ConstantsApp.URI_USER_SEARCH)
 	public Usuario findByUsername(@RequestParam String username);
 
 }
