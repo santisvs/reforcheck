@@ -51,8 +51,9 @@ public class InfoClaimsToken implements TokenEnhancer {
 		 * DefaultOAuth2AccessToken de OAuth2AccessToken para disponer del método
 		 * setAditionalInformation
 		 */
+		System.out.println(accessToken);
 		((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);
-
+		System.out.println(accessToken);
 		return accessToken;
 	}
 

@@ -147,7 +147,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 		// Capturar la info de los claims y del usuario en el objeto tokenEnhancerChain
 		TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-		tokenEnhancerChain.setTokenEnhancers(Arrays.asList(accessTokenConverter(), infoClaimsToken));
+		tokenEnhancerChain.setTokenEnhancers(Arrays.asList(infoClaimsToken, accessTokenConverter()));
 		/* Registrar el authenticationManager con la info del token, del usuario y de
 		 * los claims
 		 */
