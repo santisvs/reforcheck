@@ -120,7 +120,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		 * permisos
 		 */
 		clients.inMemory().withClient(env.getProperty(ConstantsApp.PROPERTY_FRONT_CLIENT_DEFAULT_NAME))
-				.secret(passwordEncoder.encode(ConstantsApp.PROPERTY_FRONT_CLIENT_DEFAULT_PASSW))
+				.secret(passwordEncoder.encode(env.getProperty(ConstantsApp.PROPERTY_FRONT_CLIENT_DEFAULT_PASSW)))
 				.scopes(ConstantsApp.FRONT_CLIENT_SCOPE_READ, ConstantsApp.FRONT_CLIENT_SCOPE_WRITE)
 				.authorizedGrantTypes(ConstantsApp.AUTHORIZED_TYPE_PASSW, ConstantsApp.AUTHORIZED_TYPE_REFRESH)
 				.accessTokenValiditySeconds(ConstantsApp.AUTHORIZED_TIME_TOKEN)
