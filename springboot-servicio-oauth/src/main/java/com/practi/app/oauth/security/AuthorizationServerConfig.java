@@ -3,8 +3,10 @@ package com.practi.app.oauth.security;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -39,11 +41,15 @@ import com.practi.app.commons.constants.ConstantsApp;
 /*
  * Habilitamos la clase como servidor de autorización.
  */
+@RefreshScope
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
 	// Inyectar los beans de spring
+	@Autowired
+	private Environment env;
+	
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 
@@ -73,7 +79,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
 		// Añadimos código secreto reforcheck
-		tokenConverter.setSigningKey("codigo_secreto_reforcheck_1111");
+		tokenConverter.setSigningKey(env.getProperty(ConstantsApp.PROPERTY_SECRET_CODE_KEY));
 		return tokenConverter;
 	}
 
@@ -113,8 +119,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		 * Registrar el cliente default en memoria con su password (secret) y los
 		 * permisos
 		 */
-		clients.inMemory().withClient(ConstantsApp.FRONT_CLIENT_DEFAULT_NAME)
-				.secret(passwordEncoder.encode(ConstantsApp.FRONT_CLIENT_DEFAULT_PASSW))
+		clients.inMemory().withClient(env.getProperty(ConstantsApp.PROPERTY_FRONT_CLIENT_DEFAULT_NAME))
+				.secret(passwordEncoder.encode(ConstantsApp.PROPERTY_FRONT_CLIENT_DEFAULT_PASSW))
 				.scopes(ConstantsApp.FRONT_CLIENT_SCOPE_READ, ConstantsApp.FRONT_CLIENT_SCOPE_WRITE)
 				.authorizedGrantTypes(ConstantsApp.AUTHORIZED_TYPE_PASSW, ConstantsApp.AUTHORIZED_TYPE_REFRESH)
 				.accessTokenValiditySeconds(ConstantsApp.AUTHORIZED_TIME_TOKEN)

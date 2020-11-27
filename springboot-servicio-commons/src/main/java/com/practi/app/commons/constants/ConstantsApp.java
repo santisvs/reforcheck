@@ -3,13 +3,6 @@ package com.practi.app.commons.constants;
 public class ConstantsApp {
 
 	/*
-	 * CLIENTES DEL BACKEND (Ids de apps frontend clientes del backend)
-	 */
-	public static final String FRONT_CLIENT_DEFAULT_NAME = "frontendapp";
-	public static final String FRONT_CLIENT_DEFAULT_PASSW = "1234";
-	//public static final String FRONT_CLIENT_ANGULAR_APP = "angularapp";
-
-	/*
 	 * SCOPES CLIENTS DEL BACKEND
 	 */
 	public static final String FRONT_CLIENT_SCOPE_READ = "read";
@@ -109,4 +102,13 @@ public class ConstantsApp {
 	public static final String PROPERTY_TEXTO = "${configuracion.texto}";
 	public static final String PROPERTY_AUTOR_NAME = "configuracion.autor.nombre";
 	public static final String PROPERTY_AUTOR_EMAIL = "configuracion.autor.email";
+	
+	/*
+	 * CLIENTES DEL BACKEND (Ids de apps frontend clientes del backend)
+	 */
+	public static final String PROPERTY_FRONT_CLIENT_DEFAULT_NAME = "config.security.oauth.client.id";
+	public static final String PROPERTY_FRONT_CLIENT_DEFAULT_PASSW = "config.security.oauth.client.secret";
+	public static final String PROPERTY_SECRET_CODE_KEY = "config.security.oauth.jwt.key";
+	public static final String PROPERTY_VALUE_SECRET_CODE_KEY = "${config.security.oauth.jwt.key}";
+	//public static final String FRONT_CLIENT_ANGULAR_APP = "angularapp";
 }

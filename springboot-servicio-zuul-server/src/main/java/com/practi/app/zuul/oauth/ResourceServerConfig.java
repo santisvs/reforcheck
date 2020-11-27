@@ -1,5 +1,7 @@
 package com.practi.app.zuul.oauth;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -24,10 +26,14 @@ import com.practi.app.commons.constants.ConstantsApp;
  * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
  * 
  */
+@RefreshScope
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
+	@Value(ConstantsApp.PROPERTY_VALUE_SECRET_CODE_KEY)
+	private String jwtKey;
+	
 	/*
 	 * Registrar con @Bean en el contexto de Spring el objeto JwtTokenStore. Método
 	 * para crear el token JWT. Para crear el token utiliza la info del objeto
@@ -48,7 +54,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public JwtAccessTokenConverter accessTokenConverter() {
 		JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
 		// Añadimos código secreto reforcheck
-		tokenConverter.setSigningKey("codigo_secreto_reforcheck_1111");
+		tokenConverter.setSigningKey(jwtKey);
 		return tokenConverter;
 	}
 
