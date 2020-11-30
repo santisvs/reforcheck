@@ -3,6 +3,7 @@ package com.practi.app.oauth.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationEventPublisher;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -22,6 +23,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	// Inyectar el bean UsuarioService
 	@Autowired
 	private UserDetailsService usuarioService;
+
+	/*
+	 * Inyectar el bean AuthenticationSucessErrorHandler
+	 */
+	@Autowired
+	private AuthenticationEventPublisher eventPublisher;
 
 	/*
 	 * Registrar con @Bean en el contexto de Spring el objeto BCryptPasswordEncoder.
@@ -48,11 +55,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	 * 
 	 * @Autowired para utilizar el bean AuthenticationManagerBuilder del contexto de
 	 * Spring
+	 * 
+	 * Registramos también el bean eventPublisher
 	 */
 	@Override
 	@Autowired
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(this.usuarioService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(this.usuarioService).passwordEncoder(passwordEncoder()).and()
+				.authenticationEventPublisher(eventPublisher);
 	}
 
 }
