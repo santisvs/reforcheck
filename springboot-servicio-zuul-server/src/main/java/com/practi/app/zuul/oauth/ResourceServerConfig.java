@@ -1,9 +1,13 @@
 package com.practi.app.zuul.oauth;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -11,6 +15,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 import com.practi.app.commons.constants.ConstantsApp;
 
@@ -33,7 +41,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 	@Value(ConstantsApp.PROPERTY_VALUE_SECRET_CODE_KEY)
 	private String jwtKey;
-	
+
 	/*
 	 * Registrar con @Bean en el contexto de Spring el objeto JwtTokenStore. Método
 	 * para crear el token JWT. Para crear el token utiliza la info del objeto
@@ -59,6 +67,44 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	}
 
 	/*
+	 * Método de configuración de CORS a nivel Spring Security
+	 * 
+	 * Para poder configurar los orígenes de aplicaciones cliente que aceptamos en
+	 * el backend. Configuramos su ubicación (dominio y puerto)
+	 */
+	@Bean
+	public CorsConfigurationSource corsConfigurationSource() {
+		CorsConfiguration corsConfiguration = new CorsConfiguration();
+		// Incluir origenes de dominio
+		corsConfiguration.setAllowedOrigins(Arrays.asList(ConstantsApp.CORS_ALLOW_ORIGIN_ALL));
+		// Incluir métodos permitidos
+		corsConfiguration.setAllowedMethods(Arrays.asList(HttpMethod.GET.toString(), HttpMethod.POST.toString(),
+				HttpMethod.PUT.toString(), HttpMethod.DELETE.toString(), HttpMethod.OPTIONS.toString()));
+		// Permitir credenciales
+		corsConfiguration.setAllowCredentials(true);
+		// Incluir cabeceras para acceder a los recursos y para autenticación
+		corsConfiguration
+				.setAllowedHeaders(Arrays.asList(ConstantsApp.WORD_AUTHORIZATION, ConstantsApp.WORD_CONTENT_TYPE));
+
+		// Pasar la corsConfiguration a nuestros endpoints
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration(ConstantsApp.URI_ZUUL_ALL_URIS, corsConfiguration);
+
+		return source;
+	}
+	
+	/*
+	 * Método para registrar en Spring un filtro de CORS a nivel aplicación
+	 */
+	@Bean
+	public FilterRegistrationBean<CorsFilter> corsFilter(){
+		FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<CorsFilter>(new CorsFilter(corsConfigurationSource()));
+		// Le damos alta prioridad al filtro
+		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+		return bean;
+	}
+
+	/*
 	 * Método de configuración para configurar el token con la misma estructura que
 	 * el servidor de autorización OAuth2. Configurar el TokenStorage del tipo JWT y
 	 * el AccessTokenConverter (igual que en el microservicio OAuth)
@@ -80,6 +126,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	 * 
 	 * Cualquier otra ruta que no este configurada: Requiere autenticación
 	 * 
+	 * Aplicamos la configuración del CORS a nivel de Spring Security
+	 * 
 	 */
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
@@ -92,7 +140,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 				.hasAnyRole(ConstantsApp.ROL_ADMIN, ConstantsApp.ROL_USER)
 				.antMatchers(ConstantsApp.URI_ZUUL_GENERIC_PRODUCTOS, ConstantsApp.URI_ZUUL_GENERIC_ITEMS,
 						ConstantsApp.URI_ZUUL_GENERIC_USUARIOS)
-				.hasRole(ConstantsApp.ROL_ADMIN).anyRequest().authenticated();
+				.hasRole(ConstantsApp.ROL_ADMIN).anyRequest().authenticated().and().cors()
+				.configurationSource(corsConfigurationSource());
 	}
 
 }

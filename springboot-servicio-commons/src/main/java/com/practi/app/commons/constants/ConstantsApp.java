@@ -39,6 +39,7 @@ public class ConstantsApp {
 	/*
 	 * URI ZUUL SERVICES
 	 */
+	public static final String URI_ZUUL_ALL_URIS = "/**";
 	public static final String URI_ZUUL_OAUTH = "/api/security/oauth/**";
 	
 	public static final String URI_ZUUL_GET_ALL_PRODUCTOS = "/api/productos" + URI_LISTAR;
@@ -111,4 +112,16 @@ public class ConstantsApp {
 	public static final String PROPERTY_SECRET_CODE_KEY = "config.security.oauth.jwt.key";
 	public static final String PROPERTY_VALUE_SECRET_CODE_KEY = "${config.security.oauth.jwt.key}";
 	//public static final String FRONT_CLIENT_ANGULAR_APP = "angularapp";
+	
+	/*
+	 * CORS
+	 */
+	public static final String CORS_ALLOW_ORIGIN_ALL = "*";
+	
+	/*
+	 * PALABRAS ESPECIALES
+	 */
+	public static final String WORD_AUTHORIZATION = "Authorization";
+	public static final String WORD_CONTENT_TYPE = "Content-Type";
+	
 }
