@@ -35,6 +35,7 @@ public class ConstantsApp {
 	public static final String URI_VER_DETALLE = "/ver/{id}/cantidad/{cantidad}";
 	public static final String URI_CONFIG = "/obtener-config";
 	public static final String URI_USER_SEARCH = "/usuarios/search/buscar";
+	public static final String URI_USER_UPDATE = "/usuarios/{id}";
 	
 	/*
 	 * URI ZUUL SERVICES
@@ -85,6 +86,8 @@ public class ConstantsApp {
 	public static final String LOG_PRODUCTO_VER = LOG_MARK + "Petición ver producto con id: ";
 	public static final String LOG_USER_AUTHORIZED = LOG_MARK + "El usuario autorizado %s tiene el rol %s ";
 	public static final String LOG_SUCESS_LOGIN = LOG_MARK + "Sucess Login %s";
+	public static final String LOG_USER_UNABLED = LOG_MARK + "El usuario %s esta deshabilitado (Intento de login fallidos >= 3)";
+	public static final String LOG_USER_ATTEMPS_LOGIN = LOG_MARK + "Intentos del usuario %s = %i";
 
 	/*
 	 * EXCEPTIONS STRINGS

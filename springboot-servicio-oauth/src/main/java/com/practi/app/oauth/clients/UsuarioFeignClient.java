@@ -2,6 +2,9 @@ package com.practi.app.oauth.clients;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.practi.app.commons.constants.ConstantsApp;
@@ -20,5 +23,8 @@ public interface UsuarioFeignClient {
 
 	@GetMapping(ConstantsApp.URI_USER_SEARCH)
 	public Usuario findByUsername(@RequestParam String username);
+	
+	@PutMapping(ConstantsApp.URI_USER_UPDATE)
+	public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id);
 
 }

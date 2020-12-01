@@ -51,6 +51,8 @@ public class Usuario implements Serializable {
 	@ManyToOne
 	private Rol rol;
 
+	private Integer loginAttempts;
+
 	public Long getId() {
 		return id;
 	}
@@ -113,6 +115,14 @@ public class Usuario implements Serializable {
 
 	public void setRol(Rol rol) {
 		this.rol = rol;
+	}
+
+	public Integer getLoginAttempts() {
+		return loginAttempts;
+	}
+
+	public void setLoginAttempts(Integer loginAttempts) {
+		this.loginAttempts = loginAttempts;
 	}
 
 }
