@@ -63,6 +63,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(this.usuarioService).passwordEncoder(passwordEncoder()).and()
 				.authenticationEventPublisher(eventPublisher);
+
 	}
 
 }

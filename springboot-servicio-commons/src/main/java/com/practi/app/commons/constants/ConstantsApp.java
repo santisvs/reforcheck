@@ -91,7 +91,7 @@ public class ConstantsApp {
 	 */
 	public static final String EXCEPTION_MARK = "--- EXCEPTION_APP: ";
 	public static final String EXCEPTION_USER_NO_EXIST = EXCEPTION_MARK + "El usuario %s no existe.";
-	public static final String EXCEPTION_ERROR_LOGIN = EXCEPTION_MARK + "Failure Login s%. Exception: %s";
+	public static final String EXCEPTION_ERROR_LOGIN = EXCEPTION_MARK + "Failure Login. Exception: %s";
 
 	/*
 	 * APP VARIABLES

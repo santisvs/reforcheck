@@ -30,8 +30,7 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 
 	@Override
 	public void publishAuthenticationFailure(AuthenticationException exception, Authentication authentication) {
-		UserDetails user = (UserDetails) authentication.getPrincipal();
-		log.error(String.format(ConstantsApp.EXCEPTION_ERROR_LOGIN, user.getUsername(), exception.getMessage()));
+		log.error(String.format(ConstantsApp.EXCEPTION_ERROR_LOGIN, exception.getMessage()));
 	}
 
 }
