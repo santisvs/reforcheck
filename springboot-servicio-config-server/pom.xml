@@ -22,11 +22,12 @@
 	</properties>
 
 	<dependencies>
+		<!-- Spring Cloud dependencies connection other servers -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
-
+		<!-- Spring Boot Development dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
