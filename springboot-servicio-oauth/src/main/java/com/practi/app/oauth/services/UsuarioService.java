@@ -18,6 +18,8 @@ import com.practi.app.commons.constants.ConstantsApp;
 import com.practi.app.commons.models.entity.Usuario;
 import com.practi.app.oauth.clients.UsuarioFeignClient;
 
+import feign.FeignException;
+
 /**
  * <b>UsuarioService</b> <br>
  * Servicio para autenticar al usuario. Implementa la clase propia de Spring
@@ -48,20 +50,22 @@ public class UsuarioService implements IUsuarioService, UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-		Usuario usuario = client.findByUsername(username);
-		if (usuario == null) {
-			log.info(String.format(ConstantsApp.EXCEPTION_USER_NO_EXIST, username));
+		try {
+
+			Usuario usuario = client.findByUsername(username);
+
+			List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+			GrantedAuthority authority = new SimpleGrantedAuthority(usuario.getRol().getName());
+			authorities.add(authority);
+
+			log.info(String.format(ConstantsApp.LOG_USER_AUTHORIZED, usuario.getUsername(), authority.getAuthority()));
+
+			return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true,
+					authorities);
+		} catch (FeignException e) {
+			//log.info(String.format(ConstantsApp.EXCEPTION_USER_NO_EXIST, username));
 			throw new UsernameNotFoundException(String.format(ConstantsApp.EXCEPTION_USER_NO_EXIST, username));
 		}
-
-		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		GrantedAuthority authority = new SimpleGrantedAuthority(usuario.getRol().getName());
-		authorities.add(authority);
-
-		log.info(String.format(ConstantsApp.LOG_USER_AUTHORIZED, usuario.getUsername(), authority.getAuthority()));
-
-		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true,
-				authorities);
 	}
 
 	/*
