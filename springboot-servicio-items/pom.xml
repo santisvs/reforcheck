@@ -7,24 +7,30 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.6.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.practi.app.item</groupId>
+	<groupId>com.reforcheck.backend.item</groupId>
 	<artifactId>springboot-servicio-item</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-servicio-item</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Microservice Items of Reforcheck project for Spring Boot</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
 	</properties>
 
 	<dependencies>
-		<!-- Project Common -->
+		<!-- Project Reforcheck dependencies -->
 		<dependency>
-			<groupId>com.formacion.app.commons</groupId>
+			<groupId>com.reforcheck.backend.commons</groupId>
 			<artifactId>springboot-servicio-commons</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.reforcheck.backend.commons.entities.mysql</groupId>
+			<artifactId>springboot-servicio-commons-entities-mysql</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
