@@ -15,9 +15,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.reforcheck.backend.commons.constants.ConstantsApp;
+import com.reforcheck.backend.commons.constants.ConstantsTypes;
 import com.reforcheck.backend.commons.entities.postgresql.models.Usuario;
 import com.reforcheck.backend.oauth.clients.UsuarioFeignClient;
 
+import brave.Tracer;
 import feign.FeignException;
 
 /**
@@ -39,6 +41,9 @@ public class UsuarioService implements IUsuarioService, UserDetailsService {
 
 	@Autowired
 	private UsuarioFeignClient client;
+
+	@Autowired
+	private Tracer tracer;
 
 	/*
 	 * Implementación de la interfaz UserDetailsService
@@ -63,7 +68,8 @@ public class UsuarioService implements IUsuarioService, UserDetailsService {
 			return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true,
 					authorities);
 		} catch (FeignException e) {
-			//log.info(String.format(ConstantsApp.EXCEPTION_USER_NO_EXIST, username));
+			tracer.currentSpan().tag(ConstantsApp.ZIPKIN_ERROR_MSG,
+					String.format(ConstantsApp.EXCEPTION_USER_NO_EXIST, username) + ConstantsTypes.CHAR_DOS_PUNTOS + e.getMessage());
 			throw new UsernameNotFoundException(String.format(ConstantsApp.EXCEPTION_USER_NO_EXIST, username));
 		}
 	}

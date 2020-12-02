@@ -135,4 +135,9 @@ public class ConstantsApp {
 	 */
 	public static final String PACKAGE_ENTITIES_MYSQL = "com.reforcheck.backend.commons.entities.mysql.models";
 	public static final String PACKAGE_ENTITIES_POSTGRESQL = "com.reforcheck.backend.commons.entities.postgresql.models";
+
+	/*
+	 * ZIPKIN MENSAJES
+	 */
+	public static final String ZIPKIN_ERROR_MSG = "error.mensaje";
 }

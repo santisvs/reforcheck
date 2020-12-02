@@ -30,5 +30,8 @@ public class ConstantsTypes {
 	public static final Integer ENT_8 = 8;
 	public static final Integer ENT_9 = 9;
 	
-	
+	/*
+	 * CARACTERES ESPECIALES
+	 */
+	public static final String CHAR_DOS_PUNTOS = ":";
 }
