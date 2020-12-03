@@ -15,6 +15,7 @@ import com.reforcheck.backend.commons.constants.ConstantsTypes;
 import com.reforcheck.backend.commons.entities.postgresql.models.Usuario;
 import com.reforcheck.backend.oauth.services.IUsuarioService;
 
+import brave.Tracer;
 import feign.FeignException;
 
 /**
@@ -35,6 +36,9 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 
 	@Autowired
 	private IUsuarioService usuarioService;
+	
+	@Autowired
+	private Tracer tracer;
 
 	@Override
 	public void publishAuthenticationSuccess(Authentication authentication) {
@@ -63,6 +67,8 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 
 		String frontendClient = env.getProperty(ConstantsApp.PROPERTY_FRONT_CLIENT_DEFAULT_NAME);
 		
+		StringBuilder errors = new StringBuilder();
+		errors.append(ConstantsApp.LOG_FAILURE_LOGIN);
 		try {
 			Usuario usuario = usuarioService.findByUsername(authentication.getName());
 			if (usuario.getLoginAttempts() == null) {
@@ -72,13 +78,19 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 			usuario.setLoginAttempts(usuario.getLoginAttempts() + ConstantsTypes.ENT_1);
 			log.info(String.format(ConstantsApp.LOG_USER_ATTEMPS_LOGIN, usuario.getUsername(),
 					usuario.getLoginAttempts()));
+			
+			errors.append(ConstantsTypes.TRACE_CONCAT + String.format(ConstantsApp.LOG_USER_ATTEMPS_LOGIN, usuario.getUsername(),
+					usuario.getLoginAttempts()));
 
 			if (usuario.getLoginAttempts() >= ConstantsTypes.ENT_3) {
 				log.info(String.format(ConstantsApp.LOG_USER_UNABLED, usuario.getUsername()));
+				errors.append(ConstantsTypes.TRACE_CONCAT + String.format(ConstantsApp.LOG_USER_UNABLED, usuario.getUsername()));
 				usuario.setEnabled(false);
 			}
 
 			usuarioService.update(usuario, usuario.getId());
+			
+			tracer.currentSpan().tag(ConstantsApp.ZIPKIN_ERROR_MSG, errors.toString());
 
 		} catch (FeignException e) {
 			if (frontendClient.equals(authentication.getName())) {

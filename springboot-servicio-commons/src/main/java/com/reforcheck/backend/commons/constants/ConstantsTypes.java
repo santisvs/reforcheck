@@ -34,4 +34,5 @@ public class ConstantsTypes {
 	 * CARACTERES ESPECIALES
 	 */
 	public static final String CHAR_DOS_PUNTOS = ":";
+	public static final String TRACE_CONCAT = " => ";
 }
