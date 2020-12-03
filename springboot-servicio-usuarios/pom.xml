@@ -71,6 +71,16 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
+		<!-- Spring Boot Messages RabbitMQ -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.amqp</groupId>
+			<artifactId>spring-rabbit-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<!-- Database drivers dependencies -->
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -100,7 +110,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
 	</dependencies>
 
 	<dependencyManagement>
