@@ -9,10 +9,10 @@
 		<version>2.3.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.reforcheck.backend.item</groupId>
-	<artifactId>springboot-servicio-item</artifactId>
+	<groupId>com.reforcheck.backend.items</groupId>
+	<artifactId>springboot-servicio-items</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-servicio-item</name>
+	<name>springboot-servicio-items</name>
 	<description>Microservice Items of Reforcheck project for Spring Boot</description>
 
 	<properties>
