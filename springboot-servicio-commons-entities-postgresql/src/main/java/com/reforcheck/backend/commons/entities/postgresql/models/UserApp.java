@@ -1,14 +1,20 @@
 package com.reforcheck.backend.commons.entities.postgresql.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  * <b>UserApp</b> <br>
@@ -22,7 +28,7 @@ import javax.persistence.Table;
  * <li>name: Nombre del usuario</li>
  * <li>lastname: Apellido del usuario</li>
  * <li>email: email del usuario</li>
- * <li>{@link com.practi.app.commons.models.entity.Rol}: Rol del usuario</li>
+ * <li>{@link com.Role.app.commons.models.entity.Rol}: Rol del usuario</li>
  * </ul>
  * 
  * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
@@ -48,8 +54,11 @@ public class UserApp implements Serializable {
 	@Column(unique = true, length = 100)
 	private String email;
 
-	@ManyToOne
-	private Rol rol;
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "userapp_role", joinColumns = @JoinColumn(name="userapp_id"), 
+	inverseJoinColumns = @JoinColumn(name="role_id"),
+	uniqueConstraints = {@UniqueConstraint(columnNames = {"userapp_id", "role_id"})})
+	private List<Role> listRole;
 
 	private Integer loginAttempts;
 
@@ -109,12 +118,12 @@ public class UserApp implements Serializable {
 		this.email = email;
 	}
 
-	public Rol getRol() {
-		return rol;
+	public List<Role> getListRole() {
+		return listRole;
 	}
 
-	public void setRol(Rol rol) {
-		this.rol = rol;
+	public void setListRole(List<Role> listRole) {
+		this.listRole = listRole;
 	}
 
 	public Integer getLoginAttempts() {

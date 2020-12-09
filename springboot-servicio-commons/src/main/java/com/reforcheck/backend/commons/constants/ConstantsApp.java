@@ -84,7 +84,7 @@ public class ConstantsApp {
 	public static final String LOG_FILTER_TOTAL_TIME_MILLISECONDS = LOG_MARK + "Tiempo transcurrido en mileseg %s ms.";
 	public static final String LOG_PRODUCTO_LISTAR = LOG_MARK + "Petición listar productos";
 	public static final String LOG_PRODUCTO_VER = LOG_MARK + "Petición ver producto con id: ";
-	public static final String LOG_USER_AUTHORIZED = LOG_MARK + "El usuario autorizado %s tiene el rol %s ";
+	public static final String LOG_USER_AUTHORIZED = LOG_MARK + "El usuario autorizado %s tiene los roles %s ";
 	public static final String LOG_TRY_LOGIN = LOG_MARK + "Intento de login desde cliente %s";
 	public static final String LOG_SUCESS_LOGIN = LOG_MARK + "Sucess Login %s";
 	public static final String LOG_FAILURE_LOGIN = LOG_MARK + "Error en el login";

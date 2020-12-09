@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -26,8 +27,8 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@Table(name = "rol")
-public class Rol implements Serializable {
+@Table(name = "role")
+public class Role implements Serializable {
 
 	private static final long serialVersionUID = 882508772978529793L;
 
@@ -38,8 +39,8 @@ public class Rol implements Serializable {
 	@Column(unique = true, length = 30)
 	private String name;
 
-	@OneToMany(mappedBy = "rol", fetch = FetchType.LAZY)
-	private List<UserApp> usuarios;
+	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "listRole")
+	private List<UserApp> listUsersApp;
 
 	public Long getId() {
 		return id;
@@ -57,11 +58,13 @@ public class Rol implements Serializable {
 		this.name = name;
 	}
 
-	public List<UserApp> getUsuarios() {
-		return usuarios;
+	public List<UserApp> getListUsersApp() {
+		return listUsersApp;
 	}
 
-	public void setUsuarios(List<UserApp> usuarios) {
-		this.usuarios = usuarios;
+	public void setListUsersApp(List<UserApp> listUsersApp) {
+		this.listUsersApp = listUsersApp;
 	}
+
+	
 }
