@@ -1,0 +1,59 @@
+version: '3.7'
+services:
+  config-server:
+    image: config-server:0.0.1-SNAPSHOT
+    container_name: config-server
+    ports:
+      - "8888:8888"
+    restart: always
+    networks:
+      - reforchecknetwork
+  servicio-eureka-server:
+    image: servicio-eureka-server:0.0.1-SNAPSHOT
+    container_name: servicio-eureka-server
+    ports:
+      - "8761:8761"
+    restart: always
+    networks:
+      - reforchecknetwork
+  servicio-mysql8-database:
+    image: mysql:8
+    container_name: servicio-mysql8-database
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    networks:
+      - reforchecknetwork
+    environment:
+      MYSQL_DATABASE: db_reforcheck_mysql
+      MYSQL_ROOT_PASSWORD: root
+  servicio-postgres13-database:
+    image: postgres:13-alpine
+    container_name: servicio-postgres13-database
+    volumes:
+      - postgresql-data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - reforchecknetwork
+    environment:
+      POSTGRES_DB: db_reforcheck_postgres
+      POSTGRES_PASSWORD: postgres
+  rabbitmq:
+    image: rabbitmq:3.8-management-alpine
+    container_name: servicio-rabbitmq38
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    restart: always
+    networks:
+      - reforchecknetwork
+volumes:
+  mysql-data:
+  postgresql-data:  
+networks:
+  reforchecknetwork:
+    name: reforchecknetwork

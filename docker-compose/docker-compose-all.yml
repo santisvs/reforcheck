@@ -1,0 +1,121 @@
+version: '3.7'
+services:
+  config-server:
+    image: config-server:0.0.1-SNAPSHOT
+    ports:
+      - "8888:8888"
+    restart: always
+    networks:
+      - reforchecknetwork
+  servicio-eureka-server:
+    image: servicio-eureka-server:0.0.1-SNAPSHOT
+    ports:
+      - "8761:8761"
+    restart: always
+    networks:
+      - reforchecknetwork
+  servicio-mysql8-database:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    restart: always
+    networks:
+      - reforchecknetwork
+    environment:
+      MYSQL_DATABASE: db_reforcheck_mysql
+      MYSQL_ROOT_PASSWORD: root
+  servicio-postgres13-database:
+    image: postgres:13-alpine
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - reforchecknetwork
+    environment:
+      POSTGRES_DB: db_reforcheck_postgres
+      POSTGRES_PASSWORD: postgres
+  servicio-productos:
+    image: servicio-productos:0.0.1-SNAPSHOT
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - config-server
+      - servicio-eureka-server
+      - servicio-mysql8-database
+  servicio-items:
+    image: servicio-items:0.0.1-SNAPSHOT
+    ports:
+      - "8002:8002"
+      - "8005:8005"
+      - "8007:8007"
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - config-server
+      - servicio-eureka-server
+      - servicio-productos
+  servicio-usuarios:
+    image: servicio-usuarios:0.0.1-SNAPSHOT
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - config-server
+      - servicio-eureka-server
+      - servicio-postgres13-database
+  servicio-oauth:
+    image: servicio-oauth:0.0.1-SNAPSHOT
+    ports:
+      - "9100:9100"
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - config-server
+      - servicio-eureka-server
+      - servicio-usuarios
+  servicio-zuul-server:
+    image: servicio-zuul-server:0.0.1-SNAPSHOT
+    ports:
+      - "8090:8090"
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - config-server
+      - servicio-eureka-server
+      - servicio-productos
+      - servicio-items
+      - servicio-usuarios
+      - servicio-oauth
+  rabbitmq:
+    image: rabbitmq:3.8-management-alpine
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    restart: always
+    networks:
+      - reforchecknetwork
+  zipkin-server:
+    image: zipkin-server:0.0.1-SNAPSHOT
+    ports:
+      - "9411:9411"
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - rabbitmq
+      - servicio-mysql8-database
+    environment:
+      RABBIT_ADDRESSES: servicio-rabbitmq38:5672
+      STORAGE_TYPE: mysql
+      MYSQL_DB: db_reforcheck_zipkin
+      MYSQL_USER: zipkin
+      MYSQL_PASS: zipkin
+      MYSQL_HOST: servicio-mysql8-database
+networks:
+  default:
+    external:
+      name: reforchecknetwork

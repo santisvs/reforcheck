@@ -1,0 +1,62 @@
+version: '3.7'
+services:
+  servicio-productos:
+    image: servicio-productos:0.0.1-SNAPSHOT
+    restart: always
+    networks:
+      - reforchecknetwork
+  servicio-items:
+    image: servicio-items:0.0.1-SNAPSHOT
+    ports:
+      - "8002:8002"
+      - "8005:8005"
+      - "8007:8007"
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - servicio-productos
+  servicio-usuarios:
+    image: servicio-usuarios:0.0.1-SNAPSHOT
+    restart: always
+    networks:
+      - reforchecknetwork
+  servicio-oauth:
+    image: servicio-oauth:0.0.1-SNAPSHOT
+    ports:
+      - "9100:9100"
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - servicio-usuarios
+  servicio-zuul-server:
+    image: servicio-zuul-server:0.0.1-SNAPSHOT
+    ports:
+      - "8090:8090"
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - servicio-productos
+      - servicio-items
+      - servicio-usuarios
+      - servicio-oauth
+  zipkin-server:
+    image: zipkin-server:0.0.1-SNAPSHOT
+    ports:
+      - "9411:9411"
+    restart: always
+    networks:
+      - reforchecknetwork
+    environment:
+      RABBIT_ADDRESSES: servicio-rabbitmq38:5672
+      STORAGE_TYPE: mysql
+      MYSQL_DB: db_reforcheck_zipkin
+      MYSQL_USER: zipkin
+      MYSQL_PASS: zipkin
+      MYSQL_HOST: servicio-mysql8-database
+networks:
+  reforchecknetwork:
+    external:
+      name: reforchecknetwork
