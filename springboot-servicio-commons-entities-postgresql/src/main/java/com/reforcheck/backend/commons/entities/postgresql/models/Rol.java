@@ -39,7 +39,7 @@ public class Rol implements Serializable {
 	private String name;
 
 	@OneToMany(mappedBy = "rol", fetch = FetchType.LAZY)
-	private List<Usuario> usuarios;
+	private List<UserApp> usuarios;
 
 	public Long getId() {
 		return id;
@@ -57,11 +57,11 @@ public class Rol implements Serializable {
 		this.name = name;
 	}
 
-	public List<Usuario> getUsuarios() {
+	public List<UserApp> getUsuarios() {
 		return usuarios;
 	}
 
-	public void setUsuarios(List<Usuario> usuarios) {
+	public void setUsuarios(List<UserApp> usuarios) {
 		this.usuarios = usuarios;
 	}
 }

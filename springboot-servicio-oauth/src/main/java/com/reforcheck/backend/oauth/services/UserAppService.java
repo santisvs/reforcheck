@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 
 import com.reforcheck.backend.commons.constants.ConstantsApp;
 import com.reforcheck.backend.commons.constants.ConstantsTypes;
-import com.reforcheck.backend.commons.entities.postgresql.models.Usuario;
-import com.reforcheck.backend.oauth.clients.UsuarioFeignClient;
+import com.reforcheck.backend.commons.entities.postgresql.models.UserApp;
+import com.reforcheck.backend.oauth.clients.UserAppFeignClient;
 
 import brave.Tracer;
 import feign.FeignException;
@@ -35,12 +35,12 @@ import feign.FeignException;
  *
  */
 @Service
-public class UsuarioService implements IUsuarioService, UserDetailsService {
+public class UserAppService implements IUserAppService, UserDetailsService {
 
-	private static Logger log = LoggerFactory.getLogger(UsuarioService.class);
+	private static Logger log = LoggerFactory.getLogger(UserAppService.class);
 
 	@Autowired
-	private UsuarioFeignClient client;
+	private UserAppFeignClient client;
 
 	@Autowired
 	private Tracer tracer;
@@ -57,7 +57,7 @@ public class UsuarioService implements IUsuarioService, UserDetailsService {
 
 		try {
 
-			Usuario usuario = client.findByUsername(username);
+			UserApp usuario = client.findByUsername(username);
 
 			List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 			GrantedAuthority authority = new SimpleGrantedAuthority(usuario.getRol().getName());
@@ -80,12 +80,12 @@ public class UsuarioService implements IUsuarioService, UserDetailsService {
 	 * Método para obtener el usuario de BBDD
 	 */
 	@Override
-	public Usuario findByUsername(String username) {
+	public UserApp findByUsername(String username) {
 		return client.findByUsername(username);
 	}
 
 	@Override
-	public Usuario update(Usuario usuario, Long id) {
+	public UserApp update(UserApp usuario, Long id) {
 		return client.update(usuario, id);
 	}
 

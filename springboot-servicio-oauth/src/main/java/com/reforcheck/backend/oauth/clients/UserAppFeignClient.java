@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.reforcheck.backend.commons.constants.ConstantsApp;
-import com.reforcheck.backend.commons.entities.postgresql.models.Usuario;
+import com.reforcheck.backend.commons.entities.postgresql.models.UserApp;
 
 
 /**
@@ -20,12 +20,12 @@ import com.reforcheck.backend.commons.entities.postgresql.models.Usuario;
  *
  */
 @FeignClient(name = ConstantsApp.USER_SERVICE_NAME)
-public interface UsuarioFeignClient {
+public interface UserAppFeignClient {
 
 	@GetMapping(ConstantsApp.URI_USER_SEARCH)
-	public Usuario findByUsername(@RequestParam String username);
+	public UserApp findByUsername(@RequestParam String username);
 	
 	@PutMapping(ConstantsApp.URI_USER_UPDATE)
-	public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id);
+	public UserApp update(@RequestBody UserApp usuario, @PathVariable Long id);
 
 }

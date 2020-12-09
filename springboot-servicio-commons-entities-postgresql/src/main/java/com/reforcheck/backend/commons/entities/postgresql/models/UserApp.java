@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * <b>Usuario</b> <br>
+ * <b>UserApp</b> <br>
  * Entidad de base de datos con lo siguientes atributos:
  * 
  * <ul>
@@ -29,8 +29,8 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@Table(name = "usuario")
-public class Usuario implements Serializable {
+@Table(name = "userapp")
+public class UserApp implements Serializable {
 
 	private static final long serialVersionUID = 8068986757802265725L;
 

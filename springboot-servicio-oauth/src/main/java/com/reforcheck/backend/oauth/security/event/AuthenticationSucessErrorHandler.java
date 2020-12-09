@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 import com.reforcheck.backend.commons.constants.ConstantsApp;
 import com.reforcheck.backend.commons.constants.ConstantsTypes;
-import com.reforcheck.backend.commons.entities.postgresql.models.Usuario;
-import com.reforcheck.backend.oauth.services.IUsuarioService;
+import com.reforcheck.backend.commons.entities.postgresql.models.UserApp;
+import com.reforcheck.backend.oauth.services.IUserAppService;
 
 import brave.Tracer;
 import feign.FeignException;
@@ -35,7 +35,7 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 	private Environment env;
 
 	@Autowired
-	private IUsuarioService usuarioService;
+	private IUserAppService usuarioService;
 	
 	@Autowired
 	private Tracer tracer;
@@ -51,7 +51,7 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 
 			log.info(String.format(ConstantsApp.LOG_SUCESS_LOGIN, user.getUsername()));
 
-			Usuario usuario = usuarioService.findByUsername(authentication.getName());
+			UserApp usuario = usuarioService.findByUsername(authentication.getName());
 
 			if (usuario.getLoginAttempts() != null && usuario.getLoginAttempts() >= ConstantsTypes.ENT_0) {
 				usuario.setLoginAttempts(ConstantsTypes.ENT_0);
@@ -70,7 +70,7 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 		StringBuilder errors = new StringBuilder();
 		errors.append(ConstantsApp.LOG_FAILURE_LOGIN);
 		try {
-			Usuario usuario = usuarioService.findByUsername(authentication.getName());
+			UserApp usuario = usuarioService.findByUsername(authentication.getName());
 			if (usuario.getLoginAttempts() == null) {
 				usuario.setLoginAttempts(ConstantsTypes.ENT_0);
 			}

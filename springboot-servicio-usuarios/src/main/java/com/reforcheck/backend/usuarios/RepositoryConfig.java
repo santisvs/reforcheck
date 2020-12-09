@@ -5,14 +5,14 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 
 import com.reforcheck.backend.commons.entities.postgresql.models.Rol;
-import com.reforcheck.backend.commons.entities.postgresql.models.Usuario;
+import com.reforcheck.backend.commons.entities.postgresql.models.UserApp;
 
 @Configuration
 public class RepositoryConfig implements RepositoryRestConfigurer {
 
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-		config.exposeIdsFor(Usuario.class, Rol.class);
+		config.exposeIdsFor(UserApp.class, Rol.class);
 	}
 
 }

@@ -30,9 +30,13 @@ public class ConstantsTypes {
 	public static final Integer ENT_8 = 8;
 	public static final Integer ENT_9 = 9;
 	
+	public static final Double DOUBLE_0 = 0.0;
+	
 	/*
 	 * CARACTERES ESPECIALES
 	 */
 	public static final String CHAR_DOS_PUNTOS = ":";
 	public static final String TRACE_CONCAT = " => ";
+	public static final String STRING_EMPTY = "";
+	public static final String STRING_BLANK = " "; 
 }

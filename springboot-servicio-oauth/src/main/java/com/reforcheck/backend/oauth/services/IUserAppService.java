@@ -1,6 +1,6 @@
 package com.reforcheck.backend.oauth.services;
 
-import com.reforcheck.backend.commons.entities.postgresql.models.Usuario;
+import com.reforcheck.backend.commons.entities.postgresql.models.UserApp;
 
 /**
  * <b>IUsuarioService</b> <br>
@@ -10,9 +10,9 @@ import com.reforcheck.backend.commons.entities.postgresql.models.Usuario;
  * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
  *
  */
-public interface IUsuarioService {
+public interface IUserAppService {
 
-	public Usuario findByUsername(String username);
+	public UserApp findByUsername(String username);
 
-	public Usuario update(Usuario usuario, Long id);
+	public UserApp update(UserApp usuario, Long id);
 }
