@@ -138,10 +138,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 				.permitAll()
 				.antMatchers(HttpMethod.GET, ConstantsApp.URI_ZUUL_GET_PRODUCTO, ConstantsApp.URI_ZUUL_GET_ITEM,
 						ConstantsApp.URI_ZUUL_USUARIO)
-				.hasAnyRole(ConstantsApp.ROL_ADMIN, ConstantsApp.ROL_USER)
+				.hasAnyRole(ConstantsApp.ROL_SUPER_ADMIN, ConstantsApp.ROL_ADMIN, ConstantsApp.ROL_OWNER)
 				.antMatchers(ConstantsApp.URI_ZUUL_GENERIC_PRODUCTOS, ConstantsApp.URI_ZUUL_GENERIC_ITEMS,
 						ConstantsApp.URI_ZUUL_GENERIC_USUARIOS)
-				.hasRole(ConstantsApp.ROL_ADMIN).anyRequest().authenticated().and().cors()
+				.hasRole(ConstantsApp.ROL_SUPER_ADMIN).anyRequest().authenticated().and().cors()
 				.configurationSource(corsConfigurationSource());
 	}
 

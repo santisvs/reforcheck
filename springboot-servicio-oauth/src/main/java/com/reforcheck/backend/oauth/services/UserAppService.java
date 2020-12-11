@@ -2,6 +2,7 @@ package com.reforcheck.backend.oauth.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,11 +60,12 @@ public class UserAppService implements IUserAppService, UserDetailsService {
 
 			UserApp usuario = client.findByUsername(username);
 
-			List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-			GrantedAuthority authority = new SimpleGrantedAuthority(usuario.getRol().getName());
-			authorities.add(authority);
+			List<GrantedAuthority> authorities = usuario.getListRole()
+					.stream()
+					.map(role -> new SimpleGrantedAuthority(role.getName()))
+					.collect(Collectors.toList());
 
-			log.info(String.format(ConstantsApp.LOG_USER_AUTHORIZED, usuario.getUsername(), authority.getAuthority()));
+			log.info(String.format(ConstantsApp.LOG_USER_AUTHORIZED, usuario.getUsername(), authorities.toString()));
 
 			return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true,
 					authorities);
