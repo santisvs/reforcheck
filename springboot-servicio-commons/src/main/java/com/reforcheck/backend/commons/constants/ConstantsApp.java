@@ -38,6 +38,16 @@ public class ConstantsApp {
 	public static final String URI_USER_UPDATE = "/usuarios/{id}";
 	
 	/*
+	 * URI REST
+	 */
+	public static final String URI_REST_LIST = "/";
+	public static final String URI_REST_DETAIL = "/{id}";
+	public static final String URI_REST_CREATE = "/";
+	public static final String URI_REST_EDIT = "/{id}";
+	public static final String URI_REST_DELETE = "/{id}";
+	public static final String URI_REST_FIND = "/{name}";
+	
+	/*
 	 * URI ZUUL SERVICES
 	 */
 	public static final String URI_ZUUL_ALL_URIS = "/**";
