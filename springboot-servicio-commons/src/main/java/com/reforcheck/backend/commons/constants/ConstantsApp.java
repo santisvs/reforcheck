@@ -65,8 +65,11 @@ public class ConstantsApp {
 	 * ROLES
 	 */
 	public static final String ROL_PREFIX = "ROL_";
+	public static final String ROL_OWNER = "OWNER";
+	public static final String ROL_REFOR_WORKER = "REFOR_WORKER";
+	public static final String ROL_EXT_WORKER = "EXT_WORKER";
 	public static final String ROL_ADMIN = "ADMIN";
-	public static final String ROL_USER = "USER";
+	public static final String ROL_SUPER_ADMIN = "SUPER_ADMIN";
 	
 	/*
 	 * NAME SERVICES
