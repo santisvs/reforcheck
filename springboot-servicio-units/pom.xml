@@ -9,11 +9,11 @@
 		<version>2.3.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.reforcheck.backend.tasks</groupId>
-	<artifactId>springboot-servicio-tasks</artifactId>
+	<groupId>com.reforcheck.backend.units</groupId>
+	<artifactId>springboot-servicio-units</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-servicio-tasks</name>
-	<description>Microservice Tasks of Reforcheck project for Spring Boot</description>
+	<name>springboot-servicio-units</name>
+	<description>Microservice Units of Reforcheck project for Spring Boot</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

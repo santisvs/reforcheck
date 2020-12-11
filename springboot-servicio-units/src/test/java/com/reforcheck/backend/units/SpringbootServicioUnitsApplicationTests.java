@@ -1,10 +1,10 @@
-package com.reforcheck.backend.tasks;
+package com.reforcheck.backend.units;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringbootServicioTasksApplicationTests {
+class SpringbootServicioUnitsApplicationTests {
 
 	@Test
 	void contextLoads() {
