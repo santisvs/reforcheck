@@ -32,25 +32,25 @@ import javax.persistence.Table;
 public class Unit implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String description;
-	@Column(name = "price_hour")
-	private Double priceHour;
-	@Column(name = "expected_hour")
-	private Double expectedHour;
+	@Column(name = "price")
+	private Double price;
+	@Column(name = "hours")
+	private Double hours;
 	private Double performance;
 	@Column(name = "measurement_unit")
 	private UnidadMedida measurementUnit;
-	
+
 	public void setUnit(Unit unit) {
 		setName(unit.getName());
 		setDescription(unit.getDescription());
-		setPriceHour(unit.getPriceHour());
-		setExpectedHour(unit.getExpectedHour());
+		setPrice(unit.getPrice());
+		setHours(unit.getHours());
 		setPerformance(unit.getPerformance());
 		setMeasurementUnit(unit.getMeasurementUnit());
 	}
@@ -79,20 +79,20 @@ public class Unit implements Serializable {
 		this.description = description;
 	}
 
-	public Double getPriceHour() {
-		return priceHour;
+	public Double getPrice() {
+		return price;
 	}
 
-	public void setPriceHour(Double priceHour) {
-		this.priceHour = priceHour;
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 
-	public Double getExpectedHour() {
-		return expectedHour;
+	public Double getHours() {
+		return hours;
 	}
 
-	public void setExpectedHour(Double expectedHour) {
-		this.expectedHour = expectedHour;
+	public void setHours(Double hours) {
+		this.hours = hours;
 	}
 
 	public Double getPerformance() {

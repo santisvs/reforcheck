@@ -34,6 +34,11 @@ public class UnitServiceImpl implements IUnitService {
 	}
 
 	@Override
+	public List<Unit> findByNameContaining(String name) {
+		return unitDao.findByNameContaining(name);
+	}
+
+	@Override
 	@Transactional
 	public Unit save(Unit unit) {
 		return unitDao.save(unit);

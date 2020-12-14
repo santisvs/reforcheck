@@ -40,9 +40,9 @@ public class UnitController {
 	}
 
 	@GetMapping(ConstantsApp.URI_REST_FIND)
-	public Unit find(@PathVariable String name) {
+	public List<Unit> find(@PathVariable String name) {
 		log.info(ConstantsApp.LOG_PRODUCTO_VER + name);
-		return unitService.findByName(name);
+		return unitService.findByNameContaining(name);
 	}
 
 	@PostMapping(ConstantsApp.URI_REST_CREATE)

@@ -11,6 +11,8 @@ public interface IUnitService {
 	public Unit findById(Long id);
 
 	public Unit findByName(String name);
+	
+	public List<Unit> findByNameContaining(String name);
 
 	public Unit save(Unit unit);
 
