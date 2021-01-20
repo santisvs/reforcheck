@@ -24,11 +24,6 @@
 	<dependencies>
 		<!-- Project Reforcheck dependencies -->
 		<dependency>
-			<groupId>com.reforcheck.backend.commons</groupId>
-			<artifactId>springboot-servicio-commons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
 			<groupId>com.reforcheck.backend.commons.entities.mysql</groupId>
 			<artifactId>springboot-servicio-commons-entities-mysql</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
