@@ -1,8 +1,9 @@
 package com.reforcheck.backend.commons.entities.mysql.models.estancia;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -39,8 +40,8 @@ public class Puerta extends Elemento {
 	@Embedded
 	private TresD medida;
 	private Boolean estandar;
-	@Column(name = "espesor_tabique")
-	@Embedded
+	@OneToOne(cascade = CascadeType.ALL, targetEntity = UnoD.class)
+	@PrimaryKeyJoinColumn
 	private UnoD espesorTabique;
 	private Boolean mano;
 

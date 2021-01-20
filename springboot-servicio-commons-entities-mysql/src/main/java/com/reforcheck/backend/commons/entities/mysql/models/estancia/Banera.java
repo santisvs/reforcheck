@@ -58,7 +58,7 @@ public class Banera extends Elemento {
 	private Boolean griferiaEmpotrada;
 	private Boolean mampara;
 	private Boolean recta;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity=UnoD.class)
 	private List<UnoD> tramos;
 
 	public Banera() {

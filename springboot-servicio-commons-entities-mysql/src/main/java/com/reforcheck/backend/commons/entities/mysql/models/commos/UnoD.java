@@ -25,7 +25,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.tipos.Unidad;
  *
  */
 @Entity
-@Table(name = "uno_d")
+@Table(name = "medida_uno_d")
 public class UnoD {
 
 	@Id

@@ -27,7 +27,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.commos.Precio;
  *
  */
 @Entity
-@Table(name = "rodapies")
+@Table(name = "solados")
 @PrimaryKeyJoinColumn(name = "elementoId")
 public class Solado extends Elemento {
 

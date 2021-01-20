@@ -1,7 +1,9 @@
 package com.reforcheck.backend.commons.entities.mysql.models.estancia;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -36,11 +38,14 @@ public class Rodapie extends Elemento {
 	private static final long serialVersionUID = 1L;
 
 	private String tipo;
-	@Embedded
+	@OneToOne(cascade = CascadeType.ALL, targetEntity = UnoD.class)
+	@PrimaryKeyJoinColumn
 	private UnoD alto;
-	@Embedded
+	@OneToOne(cascade = CascadeType.ALL, targetEntity = UnoD.class)
+	@PrimaryKeyJoinColumn
 	private UnoD largo;
-	@Embedded
+	@OneToOne(cascade = CascadeType.ALL, targetEntity = UnoD.class)
+	@PrimaryKeyJoinColumn
 	private UnoD ancho;
 
 	public Rodapie() {

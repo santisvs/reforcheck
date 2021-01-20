@@ -45,7 +45,7 @@ public class Iluminacion extends Elemento {
 	private Integer focos;
 	@Column(name = "down_lights")
 	private Integer downLights;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity=UnoD.class)
 	private List<UnoD> tramos;
 
 	public Iluminacion() {

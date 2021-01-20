@@ -56,7 +56,7 @@ public class Ducha extends Elemento {
 	private Boolean mampara;
 	private Boolean demuele;
 	private Boolean recta;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity=UnoD.class)
 	private List<UnoD> tramos;
 
 	public Ducha() {
