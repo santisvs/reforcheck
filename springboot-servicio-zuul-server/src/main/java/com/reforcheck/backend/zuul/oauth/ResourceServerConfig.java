@@ -133,13 +133,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers(ConstantsApp.URI_ZUUL_OAUTH).permitAll()
-				.antMatchers(HttpMethod.GET, ConstantsApp.URI_ZUUL_GET_ALL_PRODUCTOS,
+				.antMatchers(HttpMethod.GET, ConstantsApp.URI_ZUUL_ARMARIOS, ConstantsApp.URI_ZUUL_GET_ALL_PRODUCTOS,
 						ConstantsApp.URI_ZUUL_GET_ALL_ITEMS, ConstantsApp.URI_ZUUL_USUARIOS, ConstantsApp.URI_ZUUL_UNITS)
 				.permitAll()
-				.antMatchers(HttpMethod.GET, ConstantsApp.URI_ZUUL_GET_PRODUCTO, ConstantsApp.URI_ZUUL_GET_ITEM,
+				.antMatchers(HttpMethod.GET, ConstantsApp.URI_ZUUL_ARMARIO, ConstantsApp.URI_ZUUL_GET_PRODUCTO, ConstantsApp.URI_ZUUL_GET_ITEM,
 						ConstantsApp.URI_ZUUL_USUARIO, ConstantsApp.URI_ZUUL_UNIT)
 				.hasAnyRole(ConstantsApp.ROL_SUPER_ADMIN, ConstantsApp.ROL_ADMIN, ConstantsApp.ROL_OWNER)
-				.antMatchers(ConstantsApp.URI_ZUUL_GENERIC_PRODUCTOS, ConstantsApp.URI_ZUUL_GENERIC_ITEMS,
+				.antMatchers(ConstantsApp.URI_ZUUL_GENERIC_ELEMENTOS, ConstantsApp.URI_ZUUL_GENERIC_PRODUCTOS, ConstantsApp.URI_ZUUL_GENERIC_ITEMS,
 						ConstantsApp.URI_ZUUL_GENERIC_USUARIOS, ConstantsApp.URI_ZUUL_GENERIC_UNITS)
 				.hasRole(ConstantsApp.ROL_SUPER_ADMIN).anyRequest().authenticated().and().cors()
 				.configurationSource(corsConfigurationSource());

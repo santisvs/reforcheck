@@ -67,6 +67,10 @@ public class ConstantsApp {
 	public static final String URI_ZUUL_ELIMINAR_ITEM = "/api/items" + URI_ELIMINAR;
 	public static final String URI_ZUUL_GENERIC_ITEMS = "/api/items/**";
 	
+	public static final String URI_ZUUL_ARMARIOS = "/api/elementos/armarios";
+	public static final String URI_ZUUL_ARMARIO = "/api/elementos/armarios/{id}";
+	public static final String URI_ZUUL_GENERIC_ELEMENTOS = "/api/elementos/**";
+	
 	public static final String URI_ZUUL_USUARIOS = "/api/usuarios/usuarios";
 	public static final String URI_ZUUL_USUARIO = "/api/usuarios/usuarios/{id}";
 	public static final String URI_ZUUL_GENERIC_USUARIOS = "/api/usuarios/**";
