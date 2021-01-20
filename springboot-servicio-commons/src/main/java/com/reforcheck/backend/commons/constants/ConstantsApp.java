@@ -38,6 +38,16 @@ public class ConstantsApp {
 	public static final String URI_USER_UPDATE = "/usuarios/{id}";
 	
 	/*
+	 * URI REST
+	 */
+	public static final String URI_REST_LIST = "/";
+	public static final String URI_REST_DETAIL = "/{id}";
+	public static final String URI_REST_CREATE = "/";
+	public static final String URI_REST_EDIT = "/{id}";
+	public static final String URI_REST_DELETE = "/{id}";
+	public static final String URI_REST_FIND = "/search/{name}";
+	
+	/*
 	 * URI ZUUL SERVICES
 	 */
 	public static final String URI_ZUUL_ALL_URIS = "/**";
@@ -57,9 +67,17 @@ public class ConstantsApp {
 	public static final String URI_ZUUL_ELIMINAR_ITEM = "/api/items" + URI_ELIMINAR;
 	public static final String URI_ZUUL_GENERIC_ITEMS = "/api/items/**";
 	
+	public static final String URI_ZUUL_ARMARIOS = "/api/elementos/armarios";
+	public static final String URI_ZUUL_ARMARIO = "/api/elementos/armarios/{id}";
+	public static final String URI_ZUUL_GENERIC_ELEMENTOS = "/api/elementos/**";
+	
 	public static final String URI_ZUUL_USUARIOS = "/api/usuarios/usuarios";
 	public static final String URI_ZUUL_USUARIO = "/api/usuarios/usuarios/{id}";
 	public static final String URI_ZUUL_GENERIC_USUARIOS = "/api/usuarios/**";
+	
+	public static final String URI_ZUUL_UNITS = "/api/units";
+	public static final String URI_ZUUL_UNIT = "/api/units/{id}";
+	public static final String URI_ZUUL_GENERIC_UNITS = "/api/units/**";
 
 	/*
 	 * ROLES
