@@ -14,8 +14,8 @@ import com.reforcheck.backend.commons.entities.mysql.models.tipos.Cantidad;
 
 /**
  * 
- * <b>Banera</b> <br>
- * Clase que define el elemento bañera.
+ * <b>Pintura</b> <br>
+ * Clase que define el elemento pintura.
  * 
  * <ul>
  * <li>fisuracion: {@link com.reforcheck.backend.commons.entities.mysql.models.tipos}</li>
