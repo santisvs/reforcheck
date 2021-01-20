@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.reforcheck.backend.commons.constants.ConstantsTypes;
+
 /**
  * 
  * <b>Fabricante</b> <br>
@@ -42,12 +44,12 @@ public class Fabricante {
 
 	public Fabricante() {
 		super();
-		this.referencia = "";
+		this.referencia = ConstantsTypes.STRING_EMPTY;
 		this.precio = new Precio();
-		this.nombre = "";
-		this.direccion = "";
-		this.url = "";
-		this.telefono = "";
+		this.nombre = ConstantsTypes.STRING_EMPTY;
+		this.direccion = ConstantsTypes.STRING_EMPTY;
+		this.url = ConstantsTypes.STRING_EMPTY;
+		this.telefono = ConstantsTypes.STRING_EMPTY;
 	}
 
 	public Fabricante(String referencia, Precio precio, String nombre, String direccion, String url, String telefono) {

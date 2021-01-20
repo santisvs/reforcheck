@@ -15,6 +15,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.reforcheck.backend.commons.constants.ConstantsTypes;
+
 /**
  * 
  * <b>Elemento</b> <br>
@@ -52,7 +54,7 @@ public abstract class Elemento implements Serializable {
 
 	public Elemento() {
 		super();
-		this.idElem = "";
+		this.idElem = ConstantsTypes.STRING_EMPTY;
 		this.info = new Info();
 		this.fabricante = new Fabricante();
 		this.precio = new Precio();

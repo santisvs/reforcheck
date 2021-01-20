@@ -4,6 +4,7 @@ import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+import com.reforcheck.backend.commons.constants.ConstantsTypes;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.Divisa;
 
 
@@ -31,9 +32,9 @@ public class Precio {
 
 	public Precio() {
 		super();
-		this.valor = 0.0;
+		this.valor = ConstantsTypes.DOUBLE_0;
 		this.divisa = Divisa.SIN_DEFINIR;
-		this.iva = 0.0;
+		this.iva = ConstantsTypes.DOUBLE_0;
 	}
 
 	public Precio(Double valor, Divisa divisa, Double iva) {

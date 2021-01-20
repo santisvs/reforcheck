@@ -60,6 +60,14 @@ public class Bidet extends Elemento {
 		this.material = material;
 		this.medida = medida;
 	}
+	
+	public Bidet(Boolean suspendido, Boolean demuele, Material material, TresD medida, Elemento elemento) {
+		setElemento(elemento);
+		this.suspendido = suspendido;
+		this.demuele = demuele;
+		this.material = material;
+		this.medida = medida;
+	}
 
 	public Boolean getSuspendido() {
 		return suspendido;

@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.reforcheck.backend.commons.constants.ConstantsTypes;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.Unidad;
 
 /**
@@ -36,7 +37,7 @@ public class UnoD {
 
 	public UnoD() {
 		super();
-		this.tamano = 0;
+		this.tamano = ConstantsTypes.ENT_0;
 		this.unidad = Unidad.SIN_DEFINIR;
 	}
 

@@ -2,6 +2,8 @@ package com.reforcheck.backend.commons.entities.mysql.models.commos;
 
 import javax.persistence.Embeddable;
 
+import com.reforcheck.backend.commons.constants.ConstantsTypes;
+
 /**
  * 
  * <b>Info</b> <br>
@@ -21,7 +23,7 @@ public class Info {
 
 	public Info() {
 		super();
-		this.notas = "";
+		this.notas = ConstantsTypes.STRING_EMPTY;
 	}
 
 	public Info(String notas) {

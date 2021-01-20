@@ -4,6 +4,7 @@ import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+import com.reforcheck.backend.commons.constants.ConstantsTypes;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.Unidad;
 
 /**
@@ -32,9 +33,9 @@ public class TresD {
 
 	public TresD() {
 		super();
-		this.alto = 0;
-		this.largo = 0;
-		this.ancho = 0;
+		this.alto = ConstantsTypes.ENT_0;
+		this.largo = ConstantsTypes.ENT_0;
+		this.ancho = ConstantsTypes.ENT_0;
 		this.unidad = Unidad.SIN_DEFINIR;
 	}
 
