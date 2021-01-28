@@ -18,8 +18,6 @@
 				"divisa": "EURO",
 				"iva": 1.3
 		},
-		"ventanas": [],
-		"puertas": [],
 		"iluminacion": {
 				"idElem": "ES-fgggfhgfh-wewew",
 				"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
@@ -387,6 +385,82 @@
 					"mampara": true,
 					"recta": true,
 					"tramos": []
+				}
+		],
+		"ventanas": [
+				{
+					"idElem": "ES-kkkkk-lllll",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Ventana 1 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["903"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "903",
+								"precio": {
+									"valor": 302.5,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Instalador de ventanas",
+								"direccion": "kjksfjhksjfhkjsh",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 2300.00,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"medida": {
+						"alto": 1.5,
+						"largo": 1.2,
+						"unidad": "METRO"
+					},
+					"persiana": true,
+					"capialzado": true
+				},
+				{
+					"idElem": "ES-kkkkk-ppppp",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Ventana 2 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["903"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "903",
+								"precio": {
+									"valor": 302.5,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Instalador de ventanas",
+								"direccion": "kjksfjhksjfhkjsh",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 2300.00,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"medida": {
+						"alto": 1.3,
+						"largo": 1,
+						"unidad": "METRO"
+					},
+					"persiana": true,
+					"capialzado": false
 				}
 		]
 		
