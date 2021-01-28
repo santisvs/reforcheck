@@ -1,0 +1,310 @@
+[
+	{
+		"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+		"nombre": "Estancia de prueba",
+		"tipo": "HUMEDA",
+		"subtipo": "BAÑO",
+		"medida": {
+			"alto": 2,
+			"largo": 2,
+			"ancho": 2,
+			"unidad": "METRO"
+		}
+		"info": {
+			"notas": "Esto es una estancia de prueba"
+		},
+		"precio": {
+				"valor": 3000.0,
+				"divisa": "EURO",
+				"iva": 1.3
+		},
+		"ventanas": [],
+		"puertas": [],
+		"iluminacion": {
+				"idElem": "ES-fgggfhgfh-wewew",
+				"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+				"info": {
+					"notas": "Climatizacion1 para estancia de prueba"
+				},
+				"referenciasFabricantes": 
+					["200"]
+				,
+				"fabricantes": [
+						{
+							"referencia": "200",
+							"precio": {
+								"valor": 100.0,
+								"divisa": "EURO",
+								"iva": 1.3
+							},
+							"nombre": "Fabricante de climatizaciones",
+							"direccion": "sadasdadasda",
+							"url": "",
+							"telefono": "678909876"
+						}
+				]
+				,
+				"precio": {
+					"valor": 2000.0,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"empotrada": true,
+				"focos": 20,
+				"downLights": 10,
+				"tramos":[
+					{
+						"tamano": 5,
+						"unidad": "METRO"
+					},
+					{
+						"tamano": 28,
+						"unidad": "CENTIMETRO"
+					},
+					{
+						"tamano": 189,
+						"unidad": "CENTIMETRO"
+					}
+				]
+		},
+		"climatizaciones": [
+				{
+					"idElem": "ES-fgggfhgfh-wewew",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Climatizacion1 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["200"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "200",
+								"precio": {
+									"valor": 100.0,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Fabricante de climatizaciones",
+								"direccion": "sadasdadasda",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 2000.0,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"bombaCalor": true,
+					"redConductos": true,
+					"ventilador": false
+				}
+		
+		],
+		"armarios": [
+				{
+					"idElem": "ES-sdbkjsvjkd-weewrerr",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Armario1 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["100"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "100",
+								"precio": {
+									"valor": 2.0,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Prueba",
+								"direccion": "sadasdadasda",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 20.0,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"medida": {
+						"alto": 0.5,
+						"largo": 1,
+						"ancho": 0.5,
+						"unidad": "METRO"
+					}
+				},
+				{
+					"idElem": "ES-sdbkjsvjkd-wewerryyyy",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Armario2 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["100"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "100",
+								"precio": {
+									"valor": 2.0,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Prueba",
+								"direccion": "sadasdadasda",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 22.0,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"medida": {
+						"alto": 0.5,
+						"largo": 2,
+						"ancho": 0.5,
+						"unidad": "METRO"
+					}
+				}
+		],
+		"baneras": [
+				{
+					"idElem": "ES-fgdgdfg-hhhhh",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Bañera 1 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["800"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "800",
+								"precio": {
+									"valor": 30.0,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Instalador de bañeras",
+								"direccion": "kjksfjhksjfhkjsh",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 200.0,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"medida": {
+						"alto": 0.5,
+						"largo": 2,
+						"ancho": 1,
+						"unidad": "METRO"
+					},
+					"demuele": false,
+					"material": "CERAMICO",
+					"griferiaEmpotrada": true,
+					"mampara": true,
+					"recta": true,
+					"tramos": []
+				}
+		],
+		"bidets": [
+				{
+					"idElem": "ES-fgdgdfg-qqqqq",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Bidet 1 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["800"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "800",
+								"precio": {
+									"valor": 30.0,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Instalador de bañeras",
+								"direccion": "kjksfjhksjfhkjsh",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 99.45,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"medida": {
+						"alto": 0.5,
+						"largo": 0.35,
+						"ancho": 0.5,
+						"unidad": "METRO"
+					},
+					"demuele": false,
+					"material": "CERAMICO",
+					"suspendido": false
+				}
+		],
+		"duchas": [
+				{
+					"idElem": "ES-fgdgdfg-kkkk",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Ducha 1 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["900"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "900",
+								"precio": {
+									"valor": 27.5,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Instalador de duchas",
+								"direccion": "kjksfjhksjfhkjsh",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 199.34,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"medida": {
+						"alto": 1,
+						"largo": 1,
+						"unidad": "METRO"
+					},
+					"demuele": false,
+					"material": "CERAMICO",
+					"griferiaEmpotrada": true,
+					"mampara": true,
+					"recta": true,
+					"tramos": []
+				}
+		]
+		
+	
+]

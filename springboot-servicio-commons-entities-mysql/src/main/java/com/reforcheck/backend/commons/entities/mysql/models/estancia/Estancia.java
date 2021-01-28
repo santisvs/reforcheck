@@ -24,7 +24,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.elemento.bidet.Bidet
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.climatizacion.Climatizacion;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.ducha.Ducha;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.iluminacion.Iluminacion;
-import com.reforcheck.backend.commons.entities.mysql.models.entidades.Inodoro;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.inodoro.Inodoro;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Instalacion;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Lavabo;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.MobiliarioObra;

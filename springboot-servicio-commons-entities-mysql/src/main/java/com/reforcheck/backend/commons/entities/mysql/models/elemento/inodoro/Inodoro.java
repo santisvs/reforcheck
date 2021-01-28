@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.inodoro;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.commons.Elemento;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.TresD;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.inodoro.Inodoro;
 import com.reforcheck.backend.commons.entities.mysql.models.fabricante.Fabricante;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.Material;
 
@@ -25,8 +26,8 @@ import com.reforcheck.backend.commons.entities.mysql.models.tipos.Material;
  * <li>suspendido: boolean que indica si esta suspendido</li>
  * <li>demuele: boolean que indica si se demuele</li>
  * <li>ducheta: boolean que indica si tiene ducheta</li>
- * <li>material: material del bidet</li>
- * <li>medida: medida 3D que tiene el bidet</li>
+ * <li>material: material del inodoro</li>
+ * <li>medida: medida 3D que tiene el inodoro</li>
  * <li>elemento: Información adicional de elemento</li>
  * </ul>
  * 
@@ -76,6 +77,34 @@ public class Inodoro extends Elemento {
 		this.ducheta = ducheta;
 		this.material = material;
 		this.medida = medida;
+	}
+	
+	public Inodoro(Inodoro inodoro) {
+		setSuspendido(inodoro.getSuspendido());
+		setDemuele(inodoro.getDemuele());
+		setDucheta(inodoro.getDucheta());
+		setMaterial(inodoro.getMaterial());
+		setMedida(inodoro.getMedida());
+		setIdElem(inodoro.getIdElem());
+		setIdEstancia(inodoro.getIdEstancia());
+		setInfo(inodoro.getInfo());
+		setReferenciasFabricantes(inodoro.getReferenciasFabricantes());
+		setFabricantes(inodoro.getFabricantes());
+		setPrecio(inodoro.getPrecio());
+	}
+	
+	public void setInodoro(Inodoro inodoro) {
+		setSuspendido(inodoro.getSuspendido());
+		setDemuele(inodoro.getDemuele());
+		setDucheta(inodoro.getDucheta());
+		setMaterial(inodoro.getMaterial());
+		setMedida(inodoro.getMedida());
+		setIdElem(inodoro.getIdElem());
+		setIdEstancia(inodoro.getIdEstancia());
+		setInfo(inodoro.getInfo());
+		setReferenciasFabricantes(inodoro.getReferenciasFabricantes());
+		setFabricantes(inodoro.getFabricantes());
+		setPrecio(inodoro.getPrecio());
 	}
 
 	public Boolean getSuspendido() {
