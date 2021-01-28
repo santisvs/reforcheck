@@ -17,6 +17,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.elemento.climatizaci
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.ducha.Ducha;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.inodoro.Inodoro;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.lavabo.Lavabo;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.ventana.Ventana;
 import com.reforcheck.backend.commons.entities.mysql.models.estancia.Estancia;
 import com.reforcheck.backend.estancias.clients.ArmarioClientRest;
 import com.reforcheck.backend.estancias.clients.BaneraClientRest;
@@ -27,6 +28,7 @@ import com.reforcheck.backend.estancias.clients.IluminacionClientRest;
 import com.reforcheck.backend.estancias.clients.InodoroClientRest;
 import com.reforcheck.backend.estancias.clients.InstalacionClientRest;
 import com.reforcheck.backend.estancias.clients.LavaboClientRest;
+import com.reforcheck.backend.estancias.clients.VentanaClientRest;
 import com.reforcheck.backend.estancias.repositories.EstanciaRepository;
 
 @Service("serviceFeign")
@@ -46,6 +48,8 @@ public class EstanciaServiceFeign implements EstanciaService {
 	private InodoroClientRest clienteInodoroFeign;
 	@Autowired
 	private LavaboClientRest clienteLavaboFeign;
+	@Autowired
+	private VentanaClientRest clienteVentanaFeign;
 	@Autowired
 	private ClimatizacionClientRest clienteClimatizacionFeign;
 	@Autowired
@@ -113,6 +117,7 @@ public class EstanciaServiceFeign implements EstanciaService {
 				clienteLavaboFeign.crear(estancia.getLavabos());
 				clienteDuchaFeign.crear(estancia.getDuchas());
 				clienteClimatizacionFeign.crear(estancia.getClimatizaciones());
+				clienteVentanaFeign.crear(estancia.getVentanas());
 				clienteIluminacionFeign.crear(estancia.getIluminacion());
 				clienteInstalacionFeign.crear(estancia.getInstalacion());
 				resultado.add(estanciaDao.save(estancia));
@@ -153,6 +158,8 @@ public class EstanciaServiceFeign implements EstanciaService {
 				.map(p -> new Ducha(p)).collect(Collectors.toList()));
 		estancia.setClimatizaciones(clienteClimatizacionFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
 				.map(p -> new Climatizacion(p)).collect(Collectors.toList()));
+		estancia.setVentanas(clienteVentanaFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
+				.map(p -> new Ventana(p)).collect(Collectors.toList()));
 		estancia.setIluminacion(clienteIluminacionFeign.listarByIdEstancia(estancia.getIdEstancia()));
 		estancia.setInstalacion(clienteInstalacionFeign.listarByIdEstancia(estancia.getIdEstancia()));
 	}

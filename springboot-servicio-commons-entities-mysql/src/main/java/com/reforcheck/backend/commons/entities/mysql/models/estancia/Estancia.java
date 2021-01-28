@@ -27,6 +27,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.elemento.iluminacion
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.inodoro.Inodoro;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.instalacion.Instalacion;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.lavabo.Lavabo;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.ventana.Ventana;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.MobiliarioObra;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Pintura;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Puerta;
@@ -35,7 +36,6 @@ import com.reforcheck.backend.commons.entities.mysql.models.entidades.Revestimie
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Rodapie;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Solado;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Techo;
-import com.reforcheck.backend.commons.entities.mysql.models.entidades.Ventana;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.SubtipoEstancia;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.TipoEstancia;
 

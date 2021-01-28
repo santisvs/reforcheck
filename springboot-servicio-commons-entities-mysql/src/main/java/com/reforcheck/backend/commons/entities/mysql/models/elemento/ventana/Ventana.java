@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.ventana;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.commons.DosD;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Elemento;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.ventana.Ventana;
 import com.reforcheck.backend.commons.entities.mysql.models.fabricante.Fabricante;
 
 /**
@@ -59,6 +60,30 @@ public class Ventana extends Elemento {
 		this.medida = medida;
 		this.persiana = persiana;
 		this.capialzado = capialzado;
+	}
+	
+	public Ventana(Ventana ventana) {
+		setMedida(ventana.getMedida());
+		setPersiana(ventana.getPersiana());
+		setCapialzado(ventana.getCapialzado());
+		setIdElem(ventana.getIdElem());
+		setIdEstancia(ventana.getIdEstancia());
+		setInfo(ventana.getInfo());
+		setReferenciasFabricantes(ventana.getReferenciasFabricantes());
+		setFabricantes(ventana.getFabricantes());
+		setPrecio(ventana.getPrecio());
+	}
+	
+	public void setVentana(Ventana ventana) {
+		setMedida(ventana.getMedida());
+		setPersiana(ventana.getPersiana());
+		setCapialzado(ventana.getCapialzado());
+		setIdElem(ventana.getIdElem());
+		setIdEstancia(ventana.getIdEstancia());
+		setInfo(ventana.getInfo());
+		setReferenciasFabricantes(ventana.getReferenciasFabricantes());
+		setFabricantes(ventana.getFabricantes());
+		setPrecio(ventana.getPrecio());
 	}
 
 	public DosD getMedida() {
