@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.lavabo;
 
 import java.util.List;
 
@@ -15,6 +15,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.commons.Elemento;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.TresD;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.lavabo.Lavabo;
 import com.reforcheck.backend.commons.entities.mysql.models.fabricante.Fabricante;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.Material;
 
@@ -84,6 +85,36 @@ public class Lavabo extends Elemento {
 		this.material = material;
 		this.medida = medida;
 		this.griferiaEmpotrada = griferiaEmpotrada;
+	}
+	
+	public Lavabo(Lavabo lavabo) {
+		setSenos(lavabo.getSenos());
+		setDemuele(lavabo.getDemuele());
+		setMueble(lavabo.getMueble());
+		setMaterial(lavabo.getMaterial());
+		setMedida(lavabo.getMedida());
+		setGriferiaEmpotrada(lavabo.getGriferiaEmpotrada());
+		setIdElem(lavabo.getIdElem());
+		setIdEstancia(lavabo.getIdEstancia());
+		setInfo(lavabo.getInfo());
+		setReferenciasFabricantes(lavabo.getReferenciasFabricantes());
+		setFabricantes(lavabo.getFabricantes());
+		setPrecio(lavabo.getPrecio());
+	}
+	
+	public void setLavabo(Lavabo lavabo) {
+		setSenos(lavabo.getSenos());
+		setDemuele(lavabo.getDemuele());
+		setMueble(lavabo.getMueble());
+		setMaterial(lavabo.getMaterial());
+		setMedida(lavabo.getMedida());
+		setGriferiaEmpotrada(lavabo.getGriferiaEmpotrada());
+		setIdElem(lavabo.getIdElem());
+		setIdEstancia(lavabo.getIdEstancia());
+		setInfo(lavabo.getInfo());
+		setReferenciasFabricantes(lavabo.getReferenciasFabricantes());
+		setFabricantes(lavabo.getFabricantes());
+		setPrecio(lavabo.getPrecio());
 	}
 
 	public Integer getSenos() {

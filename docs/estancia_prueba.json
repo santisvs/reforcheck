@@ -67,6 +67,48 @@
 					}
 				]
 		},
+		"instalacion": {
+				"idElem": "ES-nbxmcbmnxb-xxxx",
+				"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+				"info": {
+					"notas": "Instalacion para estancia de prueba"
+				},
+				"referenciasFabricantes": 
+					["250"]
+				,
+				"fabricantes": [
+						{
+							"referencia": "250",
+							"precio": {
+								"valor": 44.5,
+								"divisa": "EURO",
+								"iva": 1.3
+							},
+							"nombre": "Fabricante de climatizaciones",
+							"direccion": "sadasdadasda",
+							"url": "",
+							"telefono": "678909876"
+						}
+				]
+				,
+				"precio": {
+					"valor": 3467.0,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+						"alto": 30,
+						"largo": 40,
+						"unidad": "METRO"
+				},
+				"cajaRegistro": 2,
+				"interruptoresConmutados": 12,
+				"interruptoresNoConmutados": 32,
+				"enchufes": 22,
+				"tomaTv": 2,
+				"tomaTelef": 3,
+				"tomaDatos": 2
+		},
 		"climatizaciones": [
 				{
 					"idElem": "ES-fgggfhgfh-wewew",
