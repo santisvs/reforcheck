@@ -27,6 +27,11 @@ public class ConstantsApp {
 	/*
 	 * URI SERVICES
 	 */
+	public static final String URI_ELEMENTOS = "/repo/";
+	public static final String URI_ELEMENTO_ID = "/repo/{id}";
+	public static final String URI_ELEMENTOS_ESTANCIA = "/repo/search/estancia/{idEstancia}";
+	public static final String URI_ELEMENTOS_FABRICANTE = "/repo/search/fabricante/{referencia}";
+	public static final String URI_ELEMENTOS_SEARCH = "/repo/search/buscar";
 	public static final String URI_LISTAR = "/listar";
 	public static final String URI_VER = "/ver/{id}";
 	public static final String URI_CREAR = "/crear";
@@ -36,6 +41,12 @@ public class ConstantsApp {
 	public static final String URI_CONFIG = "/obtener-config";
 	public static final String URI_USER_SEARCH = "/usuarios/search/buscar";
 	public static final String URI_USER_UPDATE = "/usuarios/{id}";
+	public static final String URI_WITHOUT_REQUEST_PARAM = "/";
+	public static final String URI_WITH_ID_REQUEST_PARAM = "/{id}";
+	public static final String URI_REFERENCIAS_WITHOUT_REQUEST_PARAM = "/referencias/";
+	public static final String URI_WITH_REFERENCIA_REQUEST_PARAM = "/referencia/{referencia}";
+	public static final String URI_WITH_ESTANCIA_REQUEST_PARAM = "/estancia/{idEstancia}";
+	public static final String URI_WITH_PLANTA_REQUEST_PARAM = "/planta/{idPlanta}";
 	
 	/*
 	 * URI REST
@@ -71,6 +82,10 @@ public class ConstantsApp {
 	public static final String URI_ZUUL_ARMARIO = "/api/elementos/armarios/{id}";
 	public static final String URI_ZUUL_GENERIC_ELEMENTOS = "/api/elementos/**";
 	
+	public static final String URI_ZUUL_FABRICANTES = "/api/fabricantes";
+	public static final String URI_ZUUL_FABRICANTE = "/api/fabricantes/{id}";
+	public static final String URI_ZUUL_GENERIC_FABRICANTES = "/api/fabricantes/**";
+	
 	public static final String URI_ZUUL_USUARIOS = "/api/usuarios/usuarios";
 	public static final String URI_ZUUL_USUARIO = "/api/usuarios/usuarios/{id}";
 	public static final String URI_ZUUL_GENERIC_USUARIOS = "/api/usuarios/**";
@@ -94,6 +109,12 @@ public class ConstantsApp {
 	 */
 	public static final String PRODUCT_SERVICE_NAME = "servicio-productos";
 	public static final String USER_SERVICE_NAME = "servicio-usuarios";
+	public static final String ARMARIOS_SERVICE_NAME = "servicio-armarios";
+	public static final String BANERAS_SERVICE_NAME = "servicio-baneras";
+	public static final String BIDETS_SERVICE_NAME = "servicio-bidets";
+	public static final String DUCHAS_SERVICE_NAME = "servicio-duchas";
+	public static final String CLIMATIZACIONES_SERVICE_NAME = "servicio-climatizaciones";
+	public static final String FABRICANTES_SERVICE_NAME = "servicio-fabricantes";
 
 	/*
 	 * LOGS STRINGS
