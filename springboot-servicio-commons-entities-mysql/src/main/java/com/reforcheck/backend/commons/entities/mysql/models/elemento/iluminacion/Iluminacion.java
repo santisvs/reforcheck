@@ -16,6 +16,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.common.unod.UnoD;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Elemento;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.iluminacion.Iluminacion;
 import com.reforcheck.backend.commons.entities.mysql.models.fabricante.Fabricante;
 
 /**
@@ -73,6 +74,32 @@ public class Iluminacion extends Elemento {
 		this.focos = focos;
 		this.downLights = downLights;
 		this.tramos = tramos;
+	}
+	
+	public Iluminacion(Iluminacion iluminacion) {
+		setEmpotrada(iluminacion.getEmpotrada());
+		setFocos(iluminacion.getFocos());
+		setDownLights(iluminacion.getDownLights());
+		setTramos(iluminacion.getTramos());
+		setIdElem(iluminacion.getIdElem());
+		setIdEstancia(iluminacion.getIdEstancia());
+		setInfo(iluminacion.getInfo());
+		setReferenciasFabricantes(iluminacion.getReferenciasFabricantes());
+		setFabricantes(iluminacion.getFabricantes());
+		setPrecio(iluminacion.getPrecio());
+	}
+	
+	public void setIluminacion(Iluminacion iluminacion) {
+		setEmpotrada(iluminacion.getEmpotrada());
+		setFocos(iluminacion.getFocos());
+		setDownLights(iluminacion.getDownLights());
+		setTramos(iluminacion.getTramos());
+		setIdElem(iluminacion.getIdElem());
+		setIdEstancia(iluminacion.getIdEstancia());
+		setInfo(iluminacion.getInfo());
+		setReferenciasFabricantes(iluminacion.getReferenciasFabricantes());
+		setFabricantes(iluminacion.getFabricantes());
+		setPrecio(iluminacion.getPrecio());
 	}
 
 	public Boolean getEmpotrada() {

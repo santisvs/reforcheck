@@ -21,6 +21,7 @@ import com.reforcheck.backend.estancias.clients.BaneraClientRest;
 import com.reforcheck.backend.estancias.clients.BidetClientRest;
 import com.reforcheck.backend.estancias.clients.ClimatizacionClientRest;
 import com.reforcheck.backend.estancias.clients.DuchaClientRest;
+import com.reforcheck.backend.estancias.clients.IluminacionClientRest;
 import com.reforcheck.backend.estancias.repositories.EstanciaRepository;
 
 @Service("serviceFeign")
@@ -38,6 +39,8 @@ public class EstanciaServiceFeign implements EstanciaService {
 	private DuchaClientRest clienteDuchaFeign;
 	@Autowired
 	private ClimatizacionClientRest clienteClimatizacionFeign;
+	@Autowired
+	private IluminacionClientRest clienteIluminacionFeign;
 
 	@Override
 	@Transactional(readOnly = true)
@@ -97,6 +100,7 @@ public class EstanciaServiceFeign implements EstanciaService {
 				clienteBidetFeign.crear(estancia.getBidets());
 				clienteDuchaFeign.crear(estancia.getDuchas());
 				clienteClimatizacionFeign.crear(estancia.getClimatizaciones());
+				clienteIluminacionFeign.crear(estancia.getIluminacion());
 				resultado.add(estanciaDao.save(estancia));
 			}
 		}
@@ -131,6 +135,7 @@ public class EstanciaServiceFeign implements EstanciaService {
 				.map(p -> new Ducha(p)).collect(Collectors.toList()));
 		estancia.setClimatizaciones(clienteClimatizacionFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
 				.map(p -> new Climatizacion(p)).collect(Collectors.toList()));
+		estancia.setIluminacion(clienteIluminacionFeign.listarByIdEstancia(estancia.getIdEstancia()));
 	}
 
 }

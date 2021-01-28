@@ -22,10 +22,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EntityScan(basePackages = { "com.reforcheck.backend.commons.entities.mysql.models.commons",
 		"com.reforcheck.backend.commons.entities.mysql.models.elemento.climatizacion" })
-public class SpringbootServicioClimatizacionApplication {
+public class SpringbootServicioClimatizacionesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootServicioClimatizacionApplication.class, args);
+		SpringApplication.run(SpringbootServicioClimatizacionesApplication.class, args);
 	}
 
 }
