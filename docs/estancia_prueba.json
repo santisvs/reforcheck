@@ -262,6 +262,48 @@
 					"suspendido": false
 				}
 		],
+		"inodoros": [
+				{
+					"idElem": "ES-weweewe-aaaaa",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Inodoro 1 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["801"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "801",
+								"precio": {
+									"valor": 25.0,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Instalador de inodoros",
+								"direccion": "kjksfjhksjfhkjsh",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 134.33,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"medida": {
+						"alto": 0.5,
+						"largo": 0.35,
+						"ancho": 0.5,
+						"unidad": "METRO"
+					},
+					"demuele": false,
+					"material": "CERAMICO",
+					"suspendido": false,
+					"ducheta": true
+				}
+		],
 		"duchas": [
 				{
 					"idElem": "ES-fgdgdfg-kkkk",

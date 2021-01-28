@@ -24,6 +24,7 @@ import com.reforcheck.backend.estancias.clients.ClimatizacionClientRest;
 import com.reforcheck.backend.estancias.clients.DuchaClientRest;
 import com.reforcheck.backend.estancias.clients.IluminacionClientRest;
 import com.reforcheck.backend.estancias.clients.InodoroClientRest;
+import com.reforcheck.backend.estancias.clients.InstalacionClientRest;
 import com.reforcheck.backend.estancias.repositories.EstanciaRepository;
 
 @Service("serviceFeign")
@@ -45,6 +46,8 @@ public class EstanciaServiceFeign implements EstanciaService {
 	private ClimatizacionClientRest clienteClimatizacionFeign;
 	@Autowired
 	private IluminacionClientRest clienteIluminacionFeign;
+	@Autowired
+	private InstalacionClientRest clienteInstalacionFeign;
 
 	@Override
 	@Transactional(readOnly = true)
@@ -106,6 +109,7 @@ public class EstanciaServiceFeign implements EstanciaService {
 				clienteDuchaFeign.crear(estancia.getDuchas());
 				clienteClimatizacionFeign.crear(estancia.getClimatizaciones());
 				clienteIluminacionFeign.crear(estancia.getIluminacion());
+				clienteInstalacionFeign.crear(estancia.getInstalacion());
 				resultado.add(estanciaDao.save(estancia));
 			}
 		}
@@ -143,6 +147,7 @@ public class EstanciaServiceFeign implements EstanciaService {
 		estancia.setClimatizaciones(clienteClimatizacionFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
 				.map(p -> new Climatizacion(p)).collect(Collectors.toList()));
 		estancia.setIluminacion(clienteIluminacionFeign.listarByIdEstancia(estancia.getIdEstancia()));
+		estancia.setInstalacion(clienteInstalacionFeign.listarByIdEstancia(estancia.getIdEstancia()));
 	}
 
 }

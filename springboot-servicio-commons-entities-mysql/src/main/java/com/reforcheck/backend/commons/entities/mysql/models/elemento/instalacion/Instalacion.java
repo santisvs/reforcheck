@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.instalacion;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.commons.DosD;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Elemento;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.instalacion.Instalacion;
 import com.reforcheck.backend.commons.entities.mysql.models.fabricante.Fabricante;
 
 /**
@@ -97,6 +98,40 @@ public class Instalacion extends Elemento {
 		this.tomaTv = tomaTv;
 		this.tomaTelef = tomaTelef;
 		this.tomaDatos = tomaDatos;
+	}
+	
+	public Instalacion(Instalacion instalacion) {
+		setMedida(instalacion.getMedida());
+		setCajaRegistro(instalacion.getCajaRegistro());
+		setInterruptoresConmutados(instalacion.getInterruptoresConmutados());
+		setInterruptoresNoConmutados(instalacion.getInterruptoresNoConmutados());
+		setEnchufes(instalacion.getEnchufes());
+		setTomaTv(instalacion.getTomaTv());
+		setTomaTelef(instalacion.getTomaTelef());
+		setTomaDatos(instalacion.getTomaDatos());
+		setIdElem(instalacion.getIdElem());
+		setIdEstancia(instalacion.getIdEstancia());
+		setInfo(instalacion.getInfo());
+		setReferenciasFabricantes(instalacion.getReferenciasFabricantes());
+		setFabricantes(instalacion.getFabricantes());
+		setPrecio(instalacion.getPrecio());
+	}
+	
+	public void setInstalacion(Instalacion instalacion) {
+		setMedida(instalacion.getMedida());
+		setCajaRegistro(instalacion.getCajaRegistro());
+		setInterruptoresConmutados(instalacion.getInterruptoresConmutados());
+		setInterruptoresNoConmutados(instalacion.getInterruptoresNoConmutados());
+		setEnchufes(instalacion.getEnchufes());
+		setTomaTv(instalacion.getTomaTv());
+		setTomaTelef(instalacion.getTomaTelef());
+		setTomaDatos(instalacion.getTomaDatos());
+		setIdElem(instalacion.getIdElem());
+		setIdEstancia(instalacion.getIdEstancia());
+		setInfo(instalacion.getInfo());
+		setReferenciasFabricantes(instalacion.getReferenciasFabricantes());
+		setFabricantes(instalacion.getFabricantes());
+		setPrecio(instalacion.getPrecio());
 	}
 
 	public DosD getMedida() {
