@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.pintura;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import com.reforcheck.backend.commons.constants.ConstantsTypes;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Elemento;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.pintura.Pintura;
 import com.reforcheck.backend.commons.entities.mysql.models.fabricante.Fabricante;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.Cantidad;
 
@@ -79,6 +80,36 @@ public class Pintura extends Elemento {
 		this.raspado = raspado;
 		this.color = color;
 		this.acabado = acabado;
+	}
+	
+	public Pintura(Pintura pintura) {
+		setFisuracion(pintura.getFisuracion());
+		setPapelPintado(pintura.getPapelPintado());
+		setGotelet(pintura.getGotelet());
+		setRaspado(pintura.getRaspado());
+		setColor(pintura.getColor());
+		setAcabado(pintura.getAcabado());
+		setIdElem(pintura.getIdElem());
+		setIdEstancia(pintura.getIdEstancia());
+		setInfo(pintura.getInfo());
+		setReferenciasFabricantes(pintura.getReferenciasFabricantes());
+		setFabricantes(pintura.getFabricantes());
+		setPrecio(pintura.getPrecio());
+	}
+	
+	public void setPintura(Pintura pintura) {
+		setFisuracion(pintura.getFisuracion());
+		setPapelPintado(pintura.getPapelPintado());
+		setGotelet(pintura.getGotelet());
+		setRaspado(pintura.getRaspado());
+		setColor(pintura.getColor());
+		setAcabado(pintura.getAcabado());
+		setIdElem(pintura.getIdElem());
+		setIdEstancia(pintura.getIdEstancia());
+		setInfo(pintura.getInfo());
+		setReferenciasFabricantes(pintura.getReferenciasFabricantes());
+		setFabricantes(pintura.getFabricantes());
+		setPrecio(pintura.getPrecio());
 	}
 
 	public Cantidad getFisuracion() {

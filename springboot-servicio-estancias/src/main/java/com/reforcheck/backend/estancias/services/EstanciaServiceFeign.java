@@ -29,6 +29,7 @@ import com.reforcheck.backend.estancias.clients.InodoroClientRest;
 import com.reforcheck.backend.estancias.clients.InstalacionClientRest;
 import com.reforcheck.backend.estancias.clients.LavaboClientRest;
 import com.reforcheck.backend.estancias.clients.MobiliarioObraClientRest;
+import com.reforcheck.backend.estancias.clients.PinturaClientRest;
 import com.reforcheck.backend.estancias.clients.VentanaClientRest;
 import com.reforcheck.backend.estancias.repositories.EstanciaRepository;
 
@@ -59,6 +60,8 @@ public class EstanciaServiceFeign implements EstanciaService {
 	private InstalacionClientRest clienteInstalacionFeign;
 	@Autowired
 	private MobiliarioObraClientRest clienteMobiliarioObraFeign;
+	@Autowired
+	private PinturaClientRest clientePinturaFeign;
 
 	@Override
 	@Transactional(readOnly = true)
@@ -124,6 +127,7 @@ public class EstanciaServiceFeign implements EstanciaService {
 				clienteIluminacionFeign.crear(estancia.getIluminacion());
 				clienteInstalacionFeign.crear(estancia.getInstalacion());
 				clienteMobiliarioObraFeign.crear(estancia.getMobiliarioObra());
+				clientePinturaFeign.crear(estancia.getPintura());
 				resultado.add(estanciaDao.save(estancia));
 			}
 		}
@@ -167,6 +171,8 @@ public class EstanciaServiceFeign implements EstanciaService {
 		estancia.setIluminacion(clienteIluminacionFeign.listarByIdEstancia(estancia.getIdEstancia()));
 		estancia.setInstalacion(clienteInstalacionFeign.listarByIdEstancia(estancia.getIdEstancia()));
 		estancia.setMobiliarioObra(clienteMobiliarioObraFeign.listarByIdEstancia(estancia.getIdEstancia()));
+		estancia.setPintura(clientePinturaFeign.listarByIdEstancia(estancia.getIdEstancia()));
+		
 	}
 
 }

@@ -28,8 +28,8 @@ import com.reforcheck.backend.commons.entities.mysql.models.elemento.inodoro.Ino
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.instalacion.Instalacion;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.lavabo.Lavabo;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.mobiliarioobra.MobiliarioObra;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.pintura.Pintura;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.ventana.Ventana;
-import com.reforcheck.backend.commons.entities.mysql.models.entidades.Pintura;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Puerta;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Radiador;
 import com.reforcheck.backend.commons.entities.mysql.models.entidades.Revestimiento;
