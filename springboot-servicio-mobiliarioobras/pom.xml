@@ -8,11 +8,11 @@
 		<version>2.3.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.reforcheck.backend.elementos.instalaciones</groupId>
-	<artifactId>springboot-servicio-instalaciones</artifactId>
+	<groupId>com.reforcheck.backend.elementos.mobiliarioobras</groupId>
+	<artifactId>springboot-servicio-mobiliarioobras</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-servicio-instalaciones</name>
-	<description>Microservice Instalaciones of Reforcheck project for Spring Boot</description>
+	<name>springboot-servicio-mobiliarioobras</name>
+	<description>Microservice Mobiliario Obras of Reforcheck project for Spring Boot</description>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

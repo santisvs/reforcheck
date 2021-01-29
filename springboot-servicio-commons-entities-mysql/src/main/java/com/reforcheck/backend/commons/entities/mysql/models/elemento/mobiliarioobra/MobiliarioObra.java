@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.mobiliarioobra;
 
 import java.util.List;
 
@@ -62,6 +62,30 @@ public class MobiliarioObra extends Elemento {
 		this.cantidad = cantidad;
 		this.unidad = unidad;
 		this.desmontable = desmontable;
+	}
+	
+	public MobiliarioObra(MobiliarioObra mobiliarioObra) {
+		setCantidad(mobiliarioObra.getCantidad());
+		setUnidad(mobiliarioObra.getUnidad());
+		setDesmontable(mobiliarioObra.getDesmontable());
+		setIdElem(mobiliarioObra.getIdElem());
+		setIdEstancia(mobiliarioObra.getIdEstancia());
+		setInfo(mobiliarioObra.getInfo());
+		setReferenciasFabricantes(mobiliarioObra.getReferenciasFabricantes());
+		setFabricantes(mobiliarioObra.getFabricantes());
+		setPrecio(mobiliarioObra.getPrecio());
+	}
+	
+	public void setMobiliarioObra(MobiliarioObra mobiliarioObra) {
+		setCantidad(mobiliarioObra.getCantidad());
+		setUnidad(mobiliarioObra.getUnidad());
+		setDesmontable(mobiliarioObra.getDesmontable());
+		setIdElem(mobiliarioObra.getIdElem());
+		setIdEstancia(mobiliarioObra.getIdEstancia());
+		setInfo(mobiliarioObra.getInfo());
+		setReferenciasFabricantes(mobiliarioObra.getReferenciasFabricantes());
+		setFabricantes(mobiliarioObra.getFabricantes());
+		setPrecio(mobiliarioObra.getPrecio());
 	}
 
 	public Integer getCantidad() {
