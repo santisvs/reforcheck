@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.rodapie;
 
 import java.util.List;
 
@@ -14,6 +14,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.common.unod.UnoD;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Elemento;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.rodapie.Rodapie;
 import com.reforcheck.backend.commons.entities.mysql.models.fabricante.Fabricante;
 
 /**
@@ -69,6 +70,32 @@ public class Rodapie extends Elemento {
 		this.alto = alto;
 		this.largo = largo;
 		this.ancho = ancho;
+	}
+	
+	public Rodapie(Rodapie rodapie) {
+		setTipo(rodapie.getTipo());
+		setAlto(rodapie.getAlto());
+		setLargo(rodapie.getLargo());
+		setAncho(rodapie.getAncho());
+		setIdElem(rodapie.getIdElem());
+		setIdEstancia(rodapie.getIdEstancia());
+		setInfo(rodapie.getInfo());
+		setReferenciasFabricantes(rodapie.getReferenciasFabricantes());
+		setFabricantes(rodapie.getFabricantes());
+		setPrecio(rodapie.getPrecio());
+	}
+	
+	public void setRodapie(Rodapie rodapie) {
+		setTipo(rodapie.getTipo());
+		setAlto(rodapie.getAlto());
+		setLargo(rodapie.getLargo());
+		setAncho(rodapie.getAncho());
+		setIdElem(rodapie.getIdElem());
+		setIdEstancia(rodapie.getIdEstancia());
+		setInfo(rodapie.getInfo());
+		setReferenciasFabricantes(rodapie.getReferenciasFabricantes());
+		setFabricantes(rodapie.getFabricantes());
+		setPrecio(rodapie.getPrecio());
 	}
 
 	public String getTipo() {
