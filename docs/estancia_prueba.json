@@ -9,7 +9,7 @@
 			"largo": 2,
 			"ancho": 2,
 			"unidad": "METRO"
-		}
+		},
 		"info": {
 			"notas": "Esto es una estancia de prueba"
 		},
@@ -19,23 +19,23 @@
 				"iva": 1.3
 		},
 		"pintura": {
-				"idElem": "ES-opppoo-kkkkk",
+				"idElem": "ES-pintura-kkkkk",
 				"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
 				"info": {
-					"notas": "Mobiliario obra para estancia de prueba"
+					"notas": "Pintura para estancia de prueba"
 				},
 				"referenciasFabricantes": 
-					["219"]
+					["221"]
 				,
 				"fabricantes": [
 						{
-							"referencia": "219",
+							"referencia": "221",
 							"precio": {
-								"valor": 150.0,
+								"valor": 50.0,
 								"divisa": "EURO",
 								"iva": 1.3
 							},
-							"nombre": "Fabricante de Mobiliario Obra",
+							"nombre": "Fabricante de Pintura",
 							"direccion": "sadasdadasda",
 							"url": "",
 							"telefono": "678909876"
@@ -43,11 +43,56 @@
 				]
 				,
 				"precio": {
-					"valor": 2150.0,
+					"valor": 350.0,
 					"divisa": "EURO",
 					"iva": 2.0
 				},
-				FALTA!!!
+				"fisuracion": "MEDIO",
+				"papelPintado": false,
+				"gotelet": false,
+				"raspado": true,
+				"color": "#F56AAA",
+				"acabado": "granulado"
+		},
+		"revestimiento": {
+				"idElem": "ES-reves-kkkkk",
+				"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+				"info": {
+					"notas": "Revestimiento para estancia de prueba"
+				},
+				"referenciasFabricantes": 
+					["169"]
+				,
+				"fabricantes": [
+						{
+							"referencia": "169",
+							"precio": {
+								"valor": 30.0,
+								"divisa": "EURO",
+								"iva": 1.3
+							},
+							"nombre": "Fabricante de Revestimiento",
+							"direccion": "sadasdadasda",
+							"url": "",
+							"telefono": "678909876"
+						}
+				]
+				,
+				"precio": {
+					"valor": 1245.0,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+						"alto": 30,
+						"largo": 40,
+						"unidad": "METRO"
+				},
+				"ceramico": false,
+				"friso": false,
+				"panelado": true,
+				"moldura": false,
+				"demuele": true
 		},
 		"mobiliarioObra": {
 				"idElem": "ES-opppoo-kkkkk",
@@ -684,6 +729,5 @@
 					"capialzado": false
 				}
 		]
-		
-	
+	}
 ]
