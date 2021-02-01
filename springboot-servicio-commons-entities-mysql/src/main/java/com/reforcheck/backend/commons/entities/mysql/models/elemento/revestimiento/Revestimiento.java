@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.revestimiento;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.commons.DosD;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Elemento;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.revestimiento.Revestimiento;
 import com.reforcheck.backend.commons.entities.mysql.models.fabricante.Fabricante;
 
 /**
@@ -77,6 +78,36 @@ public class Revestimiento extends Elemento {
 		this.panelado = panelado;
 		this.moldura = moldura;
 		this.demuele = demuele;
+	}
+	
+	public Revestimiento(Revestimiento revestimiento) {
+		setMedida(revestimiento.getMedida());
+		setCeramico(revestimiento.getCeramico());
+		setFriso(revestimiento.getFriso());
+		setPanelado(revestimiento.getPanelado());
+		setMoldura(revestimiento.getMoldura());
+		setDemuele(revestimiento.getDemuele());
+		setIdElem(revestimiento.getIdElem());
+		setIdEstancia(revestimiento.getIdEstancia());
+		setInfo(revestimiento.getInfo());
+		setReferenciasFabricantes(revestimiento.getReferenciasFabricantes());
+		setFabricantes(revestimiento.getFabricantes());
+		setPrecio(revestimiento.getPrecio());
+	}
+	
+	public void setRevestimiento(Revestimiento revestimiento) {
+		setMedida(revestimiento.getMedida());
+		setCeramico(revestimiento.getCeramico());
+		setFriso(revestimiento.getFriso());
+		setPanelado(revestimiento.getPanelado());
+		setMoldura(revestimiento.getMoldura());
+		setDemuele(revestimiento.getDemuele());
+		setIdElem(revestimiento.getIdElem());
+		setIdEstancia(revestimiento.getIdEstancia());
+		setInfo(revestimiento.getInfo());
+		setReferenciasFabricantes(revestimiento.getReferenciasFabricantes());
+		setFabricantes(revestimiento.getFabricantes());
+		setPrecio(revestimiento.getPrecio());
 	}
 
 	public DosD getMedida() {
