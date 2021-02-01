@@ -567,6 +567,47 @@
 					"mano": false
 				}
 		],
+		"radiadores": [
+				{
+					"idElem": "ES-xxxxzzzz-rrrrr",
+					"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+					"info": {
+						"notas": "Radiador 1 para estancia de prueba"
+					},
+					"referenciasFabricantes": 
+						["357"]
+					,
+					"fabricantes": [
+							{
+								"referencia": "357",
+								"precio": {
+									"valor": 54.3,
+									"divisa": "EURO",
+									"iva": 1.3
+								},
+								"nombre": "Instalador de radiadores",
+								"direccion": "kjksfjhksjfhkjsh",
+								"url": "",
+								"telefono": "678909876"
+							}
+					]
+					,
+					"precio": {
+						"valor": 106.99,
+						"divisa": "EURO",
+						"iva": 2.0
+					},
+					"energia": "Eléctrico",
+					"material": "CARGA_MINERAL",
+					"medida": {
+						"alto": 50.0,
+						"largo": 120.0,
+						"ancho": 15.0,
+						"unidad": "CENTIMETRO"
+					},
+					"numElementos": 5
+				}
+		],
 		"ventanas": [
 				{
 					"idElem": "ES-kkkkk-lllll",
