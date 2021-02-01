@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.techo;
 
 import java.util.List;
 
@@ -59,6 +59,30 @@ public class Techo extends Elemento {
 		this.falsoTecho = falsoTecho;
 		this.moldura = moldura;
 		this.demuele = demuele;
+	}
+	
+	public Techo(Techo techo) {
+		setFalsoTecho(techo.getFalsoTecho());
+		setMoldura(techo.getMoldura());
+		setDemuele(techo.getDemuele());
+		setIdElem(techo.getIdElem());
+		setIdEstancia(techo.getIdEstancia());
+		setInfo(techo.getInfo());
+		setReferenciasFabricantes(techo.getReferenciasFabricantes());
+		setFabricantes(techo.getFabricantes());
+		setPrecio(techo.getPrecio());
+	}
+	
+	public void setTecho(Techo techo) {
+		setFalsoTecho(techo.getFalsoTecho());
+		setMoldura(techo.getMoldura());
+		setDemuele(techo.getDemuele());
+		setIdElem(techo.getIdElem());
+		setIdEstancia(techo.getIdEstancia());
+		setInfo(techo.getInfo());
+		setReferenciasFabricantes(techo.getReferenciasFabricantes());
+		setFabricantes(techo.getFabricantes());
+		setPrecio(techo.getPrecio());
 	}
 
 	public Boolean getFalsoTecho() {

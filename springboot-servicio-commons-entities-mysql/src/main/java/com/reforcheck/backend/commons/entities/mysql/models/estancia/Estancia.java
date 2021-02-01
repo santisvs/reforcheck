@@ -33,9 +33,9 @@ import com.reforcheck.backend.commons.entities.mysql.models.elemento.puerta.Puer
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.radiador.Radiador;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.revestimiento.Revestimiento;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.rodapie.Rodapie;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.solado.Solado;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.techo.Techo;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.ventana.Ventana;
-import com.reforcheck.backend.commons.entities.mysql.models.entidades.Solado;
-import com.reforcheck.backend.commons.entities.mysql.models.entidades.Techo;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.SubtipoEstancia;
 import com.reforcheck.backend.commons.entities.mysql.models.tipos.TipoEstancia;
 

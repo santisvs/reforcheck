@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.solado;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.commons.DosD;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Elemento;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.solado.Solado;
 import com.reforcheck.backend.commons.entities.mysql.models.fabricante.Fabricante;
 
 /**
@@ -55,6 +56,28 @@ public class Solado extends Elemento {
 		setElemento(elemento);
 		this.tipo = tipo;
 		this.medida = medida;
+	}
+	
+	public Solado(Solado solado) {
+		setTipo(solado.getTipo());
+		setMedida(solado.getMedida());
+		setIdElem(solado.getIdElem());
+		setIdEstancia(solado.getIdEstancia());
+		setInfo(solado.getInfo());
+		setReferenciasFabricantes(solado.getReferenciasFabricantes());
+		setFabricantes(solado.getFabricantes());
+		setPrecio(solado.getPrecio());
+	}
+	
+	public void setSolado(Solado solado) {
+		setTipo(solado.getTipo());
+		setMedida(solado.getMedida());
+		setIdElem(solado.getIdElem());
+		setIdEstancia(solado.getIdEstancia());
+		setInfo(solado.getInfo());
+		setReferenciasFabricantes(solado.getReferenciasFabricantes());
+		setFabricantes(solado.getFabricantes());
+		setPrecio(solado.getPrecio());
 	}
 
 	public String getTipo() {

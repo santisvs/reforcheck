@@ -123,6 +123,8 @@ public class ConstantsApp {
 	public static final String PINTURAS_SERVICE_NAME = "servicio-pinturas";
 	public static final String REVESTIMIENTOS_SERVICE_NAME = "servicio-revestimientos";
 	public static final String RODAPIES_SERVICE_NAME = "servicio-rodapies";
+	public static final String SOLADOS_SERVICE_NAME = "servicio-solados";
+	public static final String TECHOS_SERVICE_NAME = "servicio-techos";
 	public static final String MOBILIARIO_OBRAS_SERVICE_NAME = "servicio-mobiliarioobras";
 	public static final String INSTALACIONES_SERVICE_NAME = "servicio-instalaciones";
 	public static final String FABRICANTES_SERVICE_NAME = "servicio-fabricantes";
