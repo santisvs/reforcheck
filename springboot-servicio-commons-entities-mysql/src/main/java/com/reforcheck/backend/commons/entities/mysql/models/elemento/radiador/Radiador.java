@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.mysql.models.entidades;
+package com.reforcheck.backend.commons.entities.mysql.models.elemento.radiador;
 
 import java.util.List;
 
@@ -73,6 +73,32 @@ public class Radiador extends Elemento {
 		this.material = material;
 		this.medida = medida;
 		this.numElementos = numElementos;
+	}
+	
+	public Radiador(Radiador radiador) {
+		setEnergia(radiador.getEnergia());
+		setMaterial(radiador.getMaterial());
+		setMedida(radiador.getMedida());
+		setNumElementos(radiador.getNumElementos());
+		setIdElem(radiador.getIdElem());
+		setIdEstancia(radiador.getIdEstancia());
+		setInfo(radiador.getInfo());
+		setReferenciasFabricantes(radiador.getReferenciasFabricantes());
+		setFabricantes(radiador.getFabricantes());
+		setPrecio(radiador.getPrecio());
+	}
+	
+	public void setRadiador(Radiador radiador) {
+		setEnergia(radiador.getEnergia());
+		setMaterial(radiador.getMaterial());
+		setMedida(radiador.getMedida());
+		setNumElementos(radiador.getNumElementos());
+		setIdElem(radiador.getIdElem());
+		setIdEstancia(radiador.getIdEstancia());
+		setInfo(radiador.getInfo());
+		setReferenciasFabricantes(radiador.getReferenciasFabricantes());
+		setFabricantes(radiador.getFabricantes());
+		setPrecio(radiador.getPrecio());
 	}
 
 	public String getEnergia() {

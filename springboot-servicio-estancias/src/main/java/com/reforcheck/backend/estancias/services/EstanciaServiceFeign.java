@@ -18,6 +18,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.elemento.ducha.Ducha
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.inodoro.Inodoro;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.lavabo.Lavabo;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.puerta.Puerta;
+import com.reforcheck.backend.commons.entities.mysql.models.elemento.radiador.Radiador;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.ventana.Ventana;
 import com.reforcheck.backend.commons.entities.mysql.models.estancia.Estancia;
 import com.reforcheck.backend.estancias.clients.ArmarioClientRest;
@@ -32,6 +33,7 @@ import com.reforcheck.backend.estancias.clients.LavaboClientRest;
 import com.reforcheck.backend.estancias.clients.MobiliarioObraClientRest;
 import com.reforcheck.backend.estancias.clients.PinturaClientRest;
 import com.reforcheck.backend.estancias.clients.PuertaClientRest;
+import com.reforcheck.backend.estancias.clients.RadiadorClientRest;
 import com.reforcheck.backend.estancias.clients.VentanaClientRest;
 import com.reforcheck.backend.estancias.repositories.EstanciaRepository;
 
@@ -56,6 +58,8 @@ public class EstanciaServiceFeign implements EstanciaService {
 	private VentanaClientRest clienteVentanaFeign;
 	@Autowired
 	private PuertaClientRest clientePuertaFeign;
+	@Autowired
+	private RadiadorClientRest clienteRadiadorFeign;
 	@Autowired
 	private ClimatizacionClientRest clienteClimatizacionFeign;
 	@Autowired
@@ -129,6 +133,7 @@ public class EstanciaServiceFeign implements EstanciaService {
 				clienteClimatizacionFeign.crear(estancia.getClimatizaciones());
 				clienteVentanaFeign.crear(estancia.getVentanas());
 				clientePuertaFeign.crear(estancia.getPuertas());
+				clienteRadiadorFeign.crear(estancia.getRadiadores());
 				clienteIluminacionFeign.crear(estancia.getIluminacion());
 				clienteInstalacionFeign.crear(estancia.getInstalacion());
 				clienteMobiliarioObraFeign.crear(estancia.getMobiliarioObra());
@@ -175,6 +180,8 @@ public class EstanciaServiceFeign implements EstanciaService {
 				.map(p -> new Ventana(p)).collect(Collectors.toList()));
 		estancia.setPuertas(clientePuertaFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
 				.map(p -> new Puerta(p)).collect(Collectors.toList()));
+		estancia.setRadiadores(clienteRadiadorFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
+				.map(p -> new Radiador(p)).collect(Collectors.toList()));
 		estancia.setIluminacion(clienteIluminacionFeign.listarByIdEstancia(estancia.getIdEstancia()));
 		estancia.setInstalacion(clienteInstalacionFeign.listarByIdEstancia(estancia.getIdEstancia()));
 		estancia.setMobiliarioObra(clienteMobiliarioObraFeign.listarByIdEstancia(estancia.getIdEstancia()));
