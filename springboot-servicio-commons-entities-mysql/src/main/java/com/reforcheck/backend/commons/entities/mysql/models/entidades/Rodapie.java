@@ -41,13 +41,10 @@ public class Rodapie extends Elemento {
 
 	private String tipo;
 	@OneToOne(cascade = CascadeType.ALL, targetEntity = UnoD.class)
-	@PrimaryKeyJoinColumn
 	private UnoD alto;
 	@OneToOne(cascade = CascadeType.ALL, targetEntity = UnoD.class)
-	@PrimaryKeyJoinColumn
 	private UnoD largo;
 	@OneToOne(cascade = CascadeType.ALL, targetEntity = UnoD.class)
-	@PrimaryKeyJoinColumn
 	private UnoD ancho;
 
 	public Rodapie() {
