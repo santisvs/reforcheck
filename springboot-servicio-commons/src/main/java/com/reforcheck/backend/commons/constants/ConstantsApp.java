@@ -116,6 +116,7 @@ public class ConstantsApp {
 	public static final String INODOROS_SERVICE_NAME = "servicio-inodoros";
 	public static final String LAVABOS_SERVICE_NAME = "servicio-lavabos";
 	public static final String VENTANAS_SERVICE_NAME = "servicio-ventanas";
+	public static final String PUERTAS_SERVICE_NAME = "servicio-puertas";
 	public static final String CLIMATIZACIONES_SERVICE_NAME = "servicio-climatizaciones";
 	public static final String ILUMINACIONES_SERVICE_NAME = "servicio-iluminaciones";
 	public static final String PINTURAS_SERVICE_NAME = "servicio-pinturas";
