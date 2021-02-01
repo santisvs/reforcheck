@@ -94,6 +94,49 @@
 				"moldura": false,
 				"demuele": true
 		},
+		"rodapie": {
+				"idElem": "ES-rodapie-kkkkk",
+				"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
+				"info": {
+					"notas": "Rodapie para estancia de prueba"
+				},
+				"referenciasFabricantes": 
+					["171"]
+				,
+				"fabricantes": [
+						{
+							"referencia": "171",
+							"precio": {
+								"valor": 28.5,
+								"divisa": "EURO",
+								"iva": 1.3
+							},
+							"nombre": "Fabricante de Rodapies",
+							"direccion": "sadasdadasda",
+							"url": "",
+							"telefono": "678909876"
+						}
+				]
+				,
+				"precio": {
+					"valor": 78.0,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"tipo": "rodapie modelo 33344",
+				"alto": {
+					"tamano": 23,
+					"unidad": "CENTIMETRO"
+				},
+				"largo": {
+					"tamano": 13,
+					"unidad": "METRO"
+				},
+				"ancho": {
+					"tamano": 10,
+					"unidad": "CENTIMETRO"
+				}
+		},
 		"mobiliarioObra": {
 				"idElem": "ES-opppoo-kkkkk",
 				"idEstancia": "ES-hfbggjhbfh-dfdfdfg",
