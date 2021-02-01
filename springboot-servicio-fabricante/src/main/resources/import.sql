@@ -1,26 +1,15 @@
------- IMPORT PARA DATABASE H2 ------
---INSERT INTO `role` (name) VALUES ('ROLE_OWNER');
---INSERT INTO `role` (name) VALUES ('ROLE_REFOR_WORKER');
---INSERT INTO `role` (name) VALUES ('ROLE_EXT_WORKER');
---INSERT INTO `role` (name) VALUES ('ROLE_ADMIN');
---INSERT INTO `role` (name) VALUES ('ROLE_SUPER_ADMIN');
-
---INSERT INTO `userapp` (username, password, enabled, name, lastname, email) VALUES ('andres','$2a$10$lPbz5xG8CINplzMPUeEpvutoLN98A6D.6F/mGNva44W6eTbsPpagC',1, 'Andres', 'Guzman','profesor@bolsadeideas.com');
---INSERT INTO `userapp` (username, password, enabled, name, lastname, email) VALUES ('admin','$2a$10$/UkEWOBmxwSjPXDhQH1cZu9rDjwgKn8vjHc4JugHHQU.nGCmbtqnS',1, 'John', 'Doe','jhon.doe@bolsadeideas.com');
---INSERT INTO `userapp` (username, password, enabled, name, lastname, email) VALUES ('carla','$2a$10$m8/FGML1cYRA4lqCkjyvj.TEXrizQK8l/kzzNaRALrfyoJS0ozkbi',1, 'Carla', 'Bene','carla07@bolsadeideas.com');
---INSERT INTO `userapp` (username, password, enabled, name, lastname, email) VALUES ('marcos','$2a$10$m8/FGML1cYRA4lqCkjyvj.TEXrizQK8l/kzzNaRALrfyoJS0ozkbi',1, 'Marcos', 'Rali','marcosraly@bolsadeideas.com');
---INSERT INTO `userapp` (username, password, enabled, name, lastname, email) VALUES ('lola','$2a$10$m8/FGML1cYRA4lqCkjyvj.TEXrizQK8l/kzzNaRALrfyoJS0ozkbi',1, 'Dolores', 'Gala','doloresga@bolsadeideas.com');
-
---INSERT INTO `userapp_role` (userapp_id, role_id) VALUES (1, 1);
---INSERT INTO `userapp_role` (userapp_id, role_id) VALUES (2, 1);
---INSERT INTO `userapp_role` (userapp_id, role_id) VALUES (2, 2);
---INSERT INTO `userapp_role` (userapp_id, role_id) VALUES (2, 3);
---INSERT INTO `userapp_role` (userapp_id, role_id) VALUES (2, 4);
---INSERT INTO `userapp_role` (userapp_id, role_id) VALUES (2, 5);
---INSERT INTO `userapp_role` (userapp_id, role_id) VALUES (3, 2);
---INSERT INTO `userapp_role` (userapp_id, role_id) VALUES (4, 3);
---INSERT INTO `userapp_role` (userapp_id, role_id) VALUES (5, 4);
-
------- IMPORT PARA DATABASE POSTGRE ------
-
---INSERT INTO armarios (id_elem, alto, largo, ancho, unidad, notas, referencia, valor, divisa, iva, nombre, direccion, url, telefono,valor, divisa, iva) VALUES ('ES-prueba1-1610973495', 3, 2, 1, 0, '', '', 0.0, 0, 0.0, '', '', '', '',0.0, 0, 0.0);
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (1,'sadasdadasda','Prueba','EURO',1.3,2,'100','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (2,'kjksfjhksjfhkjsh','Instalador de bañeras','EURO',1.3,30,'800','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (3,'kjksfjhksjfhkjsh','Instalador de inodoros','EURO',1.3,25,'801','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (4,'sadasdadasda','Fabricante de lavabos','EURO',1.3,44.5,'250','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (5,'kjksfjhksjfhkjsh','Instalador de duchas','EURO',1.3,27.5,'900','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (6,'sadasdadasda','Fabricante de climatizaciones','EURO',1.3,100,'200','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (7,'kjksfjhksjfhkjsh','Instalador de ventanas','EURO',1.3,302.5,'903','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (8,'kjksfjhksjfhkjsh','Instalador de puertas','EURO',1.3,21.3,'355','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (9,'kjksfjhksjfhkjsh','Instalador de radiadores','EURO',1.3,54.3,'357','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (10,'sadasdadasda','Fabricante de Mobiliario Obra','EURO',1.3,150,'219','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (11,'sadasdadasda','Fabricante de Pintura','EURO',1.3,50,'221','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (12,'sadasdadasda','Fabricante de Revestimiento','EURO',1.3,30,'169','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (13,'sadasdadasda','Fabricante de Rodapies','EURO',1.3,28.5,'171','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (14,'sadasdadasda','Fabricante de Solados','EURO',1.3,28.5,'134','678909876','');
+INSERT INTO `fabricantes` (`id`,`direccion`,`nombre`,`divisa`,`iva`,`valor`,`referencia`,`telefono`,`url`) VALUES (15,'sadasdadasda','Fabricante de Techos','EURO',1.3,28.5,'886','678909876','');
