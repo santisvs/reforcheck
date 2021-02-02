@@ -18,7 +18,6 @@ import com.reforcheck.backend.commons.constants.ConstantsTypes;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Info;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.Precio;
 import com.reforcheck.backend.commons.entities.mysql.models.commons.TresD;
-import com.reforcheck.backend.commons.entities.mysql.models.elemento.banera.Banera;
 import com.reforcheck.backend.commons.entities.mysql.models.estancia.Estancia;
 
 /**
@@ -88,6 +87,17 @@ public class Planta implements Serializable {
 		this.info = info;
 		this.precio = precio;
 		setEstancias(estancias);
+	}
+	
+	public Planta(Planta planta) {
+		setIdPlanta(planta.getIdPlanta());
+		setIdPropiedad(planta.getIdPropiedad());
+		setNombre(planta.getNombre());
+		setNumero(planta.getNumero());
+		setMedida(planta.getMedida());
+		setInfo(planta.getInfo());
+		setPrecio(planta.getPrecio());
+		setEstancias(planta.getEstancias());
 	}
 	
 	public void setPlanta(Planta planta) {
