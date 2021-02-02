@@ -109,8 +109,13 @@ public class EstanciaServiceFeign implements EstanciaService {
 	@Override
 	@Transactional(readOnly = true)
 	public List<Estancia> findAllByIdPlanta(String idPlanta) {
-		// TODO Auto-generated method stub
-		return null;
+		return estanciaDao.findByIdPlanta(idPlanta);
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Estancia> findAllByIdPropiedad(String idPropiedad){
+		return estanciaDao.findByIdPropiedad(idPropiedad);
 	}
 
 	@Override

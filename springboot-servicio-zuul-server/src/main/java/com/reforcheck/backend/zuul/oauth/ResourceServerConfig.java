@@ -133,17 +133,26 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers(ConstantsApp.URI_ZUUL_OAUTH).permitAll()
-				.antMatchers(HttpMethod.GET,ConstantsApp.URI_ZUUL_FABRICANTES, ConstantsApp.URI_ZUUL_ARMARIOS,
-						ConstantsApp.URI_ZUUL_GET_ALL_PRODUCTOS, ConstantsApp.URI_ZUUL_GET_ALL_ITEMS,
-						ConstantsApp.URI_ZUUL_USUARIOS, ConstantsApp.URI_ZUUL_UNITS)
+				.antMatchers(
+						HttpMethod.GET,
+						ConstantsApp.URI_ZUUL_FABRICANTES, 
+						ConstantsApp.URI_ZUUL_ESTANCIAS,
+						ConstantsApp.URI_ZUUL_PLANTAS,
+						ConstantsApp.URI_ZUUL_USUARIOS)
 				.permitAll()
-				.antMatchers(HttpMethod.GET, ConstantsApp.URI_ZUUL_FABRICANTE, ConstantsApp.URI_ZUUL_ARMARIO,
-						ConstantsApp.URI_ZUUL_GET_PRODUCTO, ConstantsApp.URI_ZUUL_GET_ITEM,
-						ConstantsApp.URI_ZUUL_USUARIO, ConstantsApp.URI_ZUUL_UNIT)
+				.antMatchers(
+						HttpMethod.GET, 
+						ConstantsApp.URI_ZUUL_FABRICANTE, 
+						ConstantsApp.URI_ZUUL_ESTANCIA,
+						ConstantsApp.URI_ZUUL_PLANTA,
+						ConstantsApp.URI_ZUUL_USUARIO)
 				.hasAnyRole(ConstantsApp.ROL_SUPER_ADMIN, ConstantsApp.ROL_ADMIN, ConstantsApp.ROL_OWNER)
-				.antMatchers(ConstantsApp.URI_ZUUL_GENERIC_FABRICANTES, ConstantsApp.URI_ZUUL_GENERIC_ELEMENTOS, ConstantsApp.URI_ZUUL_GENERIC_PRODUCTOS,
-						ConstantsApp.URI_ZUUL_GENERIC_ITEMS, ConstantsApp.URI_ZUUL_GENERIC_USUARIOS,
-						ConstantsApp.URI_ZUUL_GENERIC_UNITS)
+				.antMatchers(
+						ConstantsApp.URI_ZUUL_GENERIC_FABRICANTES,
+						ConstantsApp.URI_ZUUL_GENERIC_ESTANCIAS,
+						ConstantsApp.URI_ZUUL_GENERIC_PLANTAS,
+						ConstantsApp.URI_ZUUL_GENERIC_ELEMENTOS, 
+						ConstantsApp.URI_ZUUL_GENERIC_USUARIOS)
 				.hasRole(ConstantsApp.ROL_SUPER_ADMIN).anyRequest().authenticated().and().cors()
 				.configurationSource(corsConfigurationSource());
 	}

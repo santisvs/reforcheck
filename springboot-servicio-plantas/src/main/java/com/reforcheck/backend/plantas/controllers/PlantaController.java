@@ -1,4 +1,4 @@
-package com.reforcheck.backend.estancias.controllers;
+package com.reforcheck.backend.plantas.controllers;
 
 import java.util.List;
 
@@ -21,31 +21,31 @@ import org.springframework.web.bind.annotation.RestController;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.reforcheck.backend.commons.constants.ConstantsApp;
 import com.reforcheck.backend.commons.entities.mysql.models.Producto;
-import com.reforcheck.backend.commons.entities.mysql.models.estancia.Estancia;
-import com.reforcheck.backend.estancias.services.EstanciaService;
+import com.reforcheck.backend.commons.entities.mysql.models.planta.Planta;
+import com.reforcheck.backend.plantas.services.PlantaService;
 
 @RefreshScope
 @RestController
-public class EstanciaController {
+public class PlantaController {
 
-	private static Logger log = LoggerFactory.getLogger(EstanciaController.class);
+	private static Logger log = LoggerFactory.getLogger(PlantaController.class);
 
 	@Autowired
 	private Environment env;
 
 	@Autowired
 	@Qualifier("serviceFeign")
-	private EstanciaService estanciaService;
+	private PlantaService plantaService;
 
 	
 	@GetMapping(ConstantsApp.URI_WITHOUT_REQUEST_PARAM)
-	public List<Estancia> listar() {
-		return estanciaService.findAll();
+	public List<Planta> listar() {
+		return plantaService.findAll();
 	}
 	
 	@GetMapping(ConstantsApp.URI_REFERENCIAS_WITHOUT_REQUEST_PARAM)
-	public List<Estancia> listarByReferencia(@RequestBody List<String> referencias) {
-		return estanciaService.findAllByIdEstancia(referencias);
+	public List<Planta> listarByReferencia(@RequestBody List<String> referencias) {
+		return plantaService.findAllByIdPlanta(referencias);
 	}
 
 	/*
@@ -54,59 +54,53 @@ public class EstanciaController {
 	 * GET a POST cuando se hace una request con información en el body
 	 */
 	@PostMapping(ConstantsApp.URI_REFERENCIAS_WITHOUT_REQUEST_PARAM)
-	public List<Estancia> listarByReferenciaFeign(@RequestBody List<String> referencias) {
-		return estanciaService.findAllByIdEstancia(referencias);
-	}
-	
-	
-	@GetMapping(ConstantsApp.URI_WITH_PLANTA_REQUEST_PARAM)
-	public List<Estancia> listarByIdPlanta(@PathVariable String idPlanta) {
-		return estanciaService.findAllByIdPlanta(idPlanta);
+	public List<Planta> listarByReferenciaFeign(@RequestBody List<String> referencias) {
+		return plantaService.findAllByIdPlanta(referencias);
 	}
 	
 	@GetMapping(ConstantsApp.URI_WITH_PROPIEDAD_REQUEST_PARAM)
-	public List<Estancia> listarByIdPropiedad(@PathVariable String idPropiedad) {
-		return estanciaService.findAllByIdPropiedad(idPropiedad);
+	public List<Planta> listarByIdPropiedad(@PathVariable String idPropiedad) {
+		return plantaService.findAllByIdPropiedad(idPropiedad);
 	}
 	
 	@HystrixCommand(fallbackMethod = "metodoAlternativo")
 	@GetMapping(ConstantsApp.URI_WITH_ID_REQUEST_PARAM)
-	public Estancia detalle(@PathVariable Long id) {
-		return estanciaService.findById(id);
+	public Planta detalle(@PathVariable Long id) {
+		return plantaService.findById(id);
 	}
 
-	public Estancia metodoAlternativo(Long id) {
-		Estancia estancia = new Estancia();
+	public Planta metodoAlternativo(Long id) {
+		Planta planta = new Planta();
 		Producto producto = new Producto();
 
 		producto.setId(id);
 		producto.setNombre("Camara Sony");
 		producto.setPrecio(500.00);
 
-		return estancia;
+		return planta;
 
 	}
 	
 	@GetMapping(ConstantsApp.URI_WITH_REFERENCIA_REQUEST_PARAM)
-	public Estancia buscar(@PathVariable String referencia) {
-		return estanciaService.findByIdEstancia(referencia);
+	public Planta buscar(@PathVariable String referencia) {
+		return plantaService.findByIdPlanta(referencia);
 	}
 
 	@PostMapping(ConstantsApp.URI_WITHOUT_REQUEST_PARAM)
 	@ResponseStatus(HttpStatus.CREATED)
-	public List<Estancia> crear(@RequestBody List<Estancia> estancias) {
-		return estanciaService.saveAll(estancias);
+	public List<Planta> crear(@RequestBody List<Planta> plantas) {
+		return plantaService.saveAll(plantas);
 	}
 
 	@PutMapping(ConstantsApp.URI_WITH_ID_REQUEST_PARAM)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Estancia editar(@RequestBody Estancia estancia, @PathVariable Long id) {
-		return estanciaService.update(estancia, id);
+	public Planta editar(@RequestBody Planta planta, @PathVariable Long id) {
+		return plantaService.update(planta, id);
 	}
 
 	@DeleteMapping(ConstantsApp.URI_WITH_ID_REQUEST_PARAM)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void eliminar(@PathVariable Long id) {
-		estanciaService.delete(id);
+		plantaService.delete(id);
 	}
 }

@@ -47,6 +47,7 @@ public class ConstantsApp {
 	public static final String URI_WITH_REFERENCIA_REQUEST_PARAM = "/referencia/{referencia}";
 	public static final String URI_WITH_ESTANCIA_REQUEST_PARAM = "/estancia/{idEstancia}";
 	public static final String URI_WITH_PLANTA_REQUEST_PARAM = "/planta/{idPlanta}";
+	public static final String URI_WITH_PROPIEDAD_REQUEST_PARAM = "/propiedad/{idPropiedad}";
 	
 	/*
 	 * URI REST
@@ -82,6 +83,14 @@ public class ConstantsApp {
 	public static final String URI_ZUUL_ARMARIO = "/api/elementos/armarios/{id}";
 	public static final String URI_ZUUL_GENERIC_ELEMENTOS = "/api/elementos/**";
 	
+	public static final String URI_ZUUL_PLANTAS = "/api/plantas";
+	public static final String URI_ZUUL_PLANTA = "/api/plantas/{id}";
+	public static final String URI_ZUUL_GENERIC_PLANTAS = "/api/plantas/**";
+	
+	public static final String URI_ZUUL_ESTANCIAS = "/api/estancias";
+	public static final String URI_ZUUL_ESTANCIA = "/api/estancias/{id}";
+	public static final String URI_ZUUL_GENERIC_ESTANCIAS = "/api/estancias/**";
+	
 	public static final String URI_ZUUL_FABRICANTES = "/api/fabricantes";
 	public static final String URI_ZUUL_FABRICANTE = "/api/fabricantes/{id}";
 	public static final String URI_ZUUL_GENERIC_FABRICANTES = "/api/fabricantes/**";
@@ -109,6 +118,7 @@ public class ConstantsApp {
 	 */
 	public static final String PRODUCT_SERVICE_NAME = "servicio-productos";
 	public static final String USER_SERVICE_NAME = "servicio-usuarios";
+	public static final String ESTANCIAS_SERVICE_NAME = "servicio-estancias";
 	public static final String ARMARIOS_SERVICE_NAME = "servicio-armarios";
 	public static final String BANERAS_SERVICE_NAME = "servicio-baneras";
 	public static final String BIDETS_SERVICE_NAME = "servicio-bidets";

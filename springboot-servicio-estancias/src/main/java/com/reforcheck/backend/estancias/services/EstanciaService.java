@@ -11,6 +11,8 @@ public interface EstanciaService {
 	public List<Estancia> findAllByIdEstancia(List<String> referencias);
 	
 	public List<Estancia> findAllByIdPlanta(String idPlanta);
+	
+	public List<Estancia> findAllByIdPropiedad(String idPropiedad);
 
 	public Estancia findById(Long id);
 	

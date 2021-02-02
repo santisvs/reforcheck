@@ -51,6 +51,10 @@ public class Estancia implements Serializable {
 	private Long id;
 	@Column(name = "id_estancia")
 	private String idEstancia;
+	@Column(name = "id_planta")
+	private String idPlanta;
+	@Column(name = "id_propiedad")
+	private String idPropiedad;
 	private String nombre;
 	private TipoEstancia tipo;
 	private SubtipoEstancia subtipo;
@@ -100,6 +104,8 @@ public class Estancia implements Serializable {
 	public Estancia() {
 		super();
 		this.idEstancia = ConstantsTypes.STRING_EMPTY;
+		this.idPlanta = ConstantsTypes.STRING_EMPTY;
+		this.idPropiedad = ConstantsTypes.STRING_EMPTY;
 		this.nombre = ConstantsTypes.STRING_EMPTY;
 		this.tipo = TipoEstancia.SIN_DEFINIR;
 		this.subtipo = SubtipoEstancia.SIN_DEFINIR;
@@ -123,13 +129,43 @@ public class Estancia implements Serializable {
 		this.inodoros = null;
 		this.bidets = null;
 	}
-	
+
+	public Estancia(Estancia estancia) {
+		setIdEstancia(estancia.getIdEstancia());
+		setIdPlanta(estancia.getIdPlanta());
+		setIdPropiedad(estancia.getIdPropiedad());
+		setNombre(estancia.getNombre());
+		setTipo(estancia.getTipo());
+		setSubtipo(estancia.getSubtipo());
+		setMedida(estancia.getMedida());
+		setVentanas(estancia.getVentanas());
+		setPuertas(estancia.getPuertas());
+		setArmarios(estancia.getArmarios());
+		setRadiadores(estancia.getRadiadores());
+		setClimatizaciones(estancia.getClimatizaciones());
+		setMobiliarioObra(estancia.getMobiliarioObra());
+		setTecho(estancia.getTecho());
+		setRevestimiento(estancia.getRevestimiento());
+		setSolado(estancia.getSolado());
+		setRodapie(estancia.getRodapie());
+		setPintura(estancia.getPintura());
+		setInstalacion(estancia.getInstalacion());
+		setIluminacion(estancia.getIluminacion());
+		setBaneras(estancia.getBaneras());
+		setDuchas(estancia.getDuchas());
+		setLavabos(estancia.getLavabos());
+		setInodoros(estancia.getInodoros());
+		setBidets(estancia.getBidets());
+	}
+
 	public void setEstancia(Estancia estancia) {
-		this.idEstancia = estancia.idEstancia;
-		this.nombre = estancia.nombre;
-		this.tipo = estancia.tipo;
-		this.subtipo = estancia.subtipo;
-		this.medida = estancia.medida;
+		setIdEstancia(estancia.getIdEstancia());
+		setIdPlanta(estancia.getIdPlanta());
+		setIdPropiedad(estancia.getIdPropiedad());
+		setNombre(estancia.getNombre());
+		setTipo(estancia.getTipo());
+		setSubtipo(estancia.getSubtipo());
+		setMedida(estancia.getMedida());
 		setVentanas(estancia.getVentanas());
 		setPuertas(estancia.getPuertas());
 		setArmarios(estancia.getArmarios());
@@ -164,6 +200,22 @@ public class Estancia implements Serializable {
 
 	public void setIdEstancia(String idEstancia) {
 		this.idEstancia = idEstancia;
+	}
+
+	public String getIdPlanta() {
+		return idPlanta;
+	}
+
+	public void setIdPlanta(String idPlanta) {
+		this.idPlanta = idPlanta;
+	}
+
+	public String getIdPropiedad() {
+		return idPropiedad;
+	}
+
+	public void setIdPropiedad(String idPropiedad) {
+		this.idPropiedad = idPropiedad;
 	}
 
 	public String getNombre() {
