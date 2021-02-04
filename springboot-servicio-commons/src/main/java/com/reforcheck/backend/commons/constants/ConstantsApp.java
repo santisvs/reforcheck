@@ -43,6 +43,7 @@ public class ConstantsApp {
 	public static final String URI_USER_UPDATE = "/usuarios/{id}";
 	public static final String URI_WITHOUT_REQUEST_PARAM = "/";
 	public static final String URI_WITH_ID_REQUEST_PARAM = "/{id}";
+	public static final String URI_WITH_EMAIL_REQUEST_PARAM = "/buscar/{email}";
 	public static final String URI_REFERENCIAS_WITHOUT_REQUEST_PARAM = "/referencias/";
 	public static final String URI_WITH_REFERENCIA_REQUEST_PARAM = "/referencia/{referencia}";
 	public static final String URI_WITH_ESTANCIA_REQUEST_PARAM = "/estancia/{idEstancia}";

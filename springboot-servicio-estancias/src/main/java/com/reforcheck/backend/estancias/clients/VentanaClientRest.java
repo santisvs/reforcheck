@@ -3,6 +3,7 @@ package com.reforcheck.backend.estancias.clients;
 import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ public interface VentanaClientRest {
 	@GetMapping(ConstantsApp.URI_WITH_REFERENCIA_REQUEST_PARAM)
 	public Ventana buscar(@PathVariable String referencia);
 	
+	@Async
 	@PostMapping(ConstantsApp.URI_WITHOUT_REQUEST_PARAM)
 	public List<Ventana> crear(@RequestBody List<Ventana> ventanas);
 	

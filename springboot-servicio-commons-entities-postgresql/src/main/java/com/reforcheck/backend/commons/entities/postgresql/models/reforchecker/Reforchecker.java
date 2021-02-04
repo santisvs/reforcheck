@@ -1,4 +1,4 @@
-package com.reforcheck.backend.commons.entities.postgresql.models.propietario;
+package com.reforcheck.backend.commons.entities.postgresql.models.reforchecker;
 
 import java.util.List;
 
@@ -16,9 +16,9 @@ import com.reforcheck.backend.commons.entities.postgresql.models.commons.TipoUsu
 import com.reforcheck.backend.commons.entities.postgresql.models.commons.Usuario;
 
 @Entity
-@DiscriminatorValue("propietario")
+@DiscriminatorValue("reforchecker")
 @PrimaryKeyJoinColumn(name = "usuarioId")
-public class Propietario extends Usuario {
+public class Reforchecker extends Usuario {
 
 	private static final long serialVersionUID = 1L;
 
@@ -27,35 +27,38 @@ public class Propietario extends Usuario {
 	private String apellidos;
 	private String dni;
 	private String telefono;
+	private String nomina;
 	@ElementCollection
-	@CollectionTable(name = "referencias_propiedades")
+	@CollectionTable(name = "referencias_trabajos")
 	private List<String> referenciasPropiedades;
 	@Transient
 	private List<Propiedad> propiedades;
 
-	public Propietario() {
+	public Reforchecker() {
 		super();
 		this.tipo = TipoUsuario.SIN_DEFINIR;
 		this.nombre = ConstantsTypes.STRING_EMPTY;
 		this.apellidos = ConstantsTypes.STRING_EMPTY;
 		this.dni = ConstantsTypes.STRING_EMPTY;
 		this.telefono = ConstantsTypes.STRING_EMPTY;
+		this.nomina = ConstantsTypes.STRING_EMPTY;
 		this.referenciasPropiedades = null;
 		this.propiedades = null;
 	}
 
-	public Propietario(Boolean activo, String email, String password, Integer intentosAcceso, List<Rol> roles) {
+	public Reforchecker(Boolean activo, String email, String password, Integer intentosAcceso, List<Rol> roles) {
 		super(activo, email, password, intentosAcceso, roles);
 		this.tipo = TipoUsuario.SIN_DEFINIR;
 		this.nombre = ConstantsTypes.STRING_EMPTY;
 		this.apellidos = ConstantsTypes.STRING_EMPTY;
 		this.dni = ConstantsTypes.STRING_EMPTY;
 		this.telefono = ConstantsTypes.STRING_EMPTY;
+		this.nomina = ConstantsTypes.STRING_EMPTY;
 		this.referenciasPropiedades = null;
 		this.propiedades = null;
 	}
 
-	public Propietario(Long id, Boolean activo, String email, String password, Integer intentosAcceso,
+	public Reforchecker(Long id, Boolean activo, String email, String password, Integer intentosAcceso,
 			List<Rol> roles) {
 		super(id, activo, email, password, intentosAcceso, roles);
 		this.tipo = TipoUsuario.SIN_DEFINIR;
@@ -63,12 +66,13 @@ public class Propietario extends Usuario {
 		this.apellidos = ConstantsTypes.STRING_EMPTY;
 		this.dni = ConstantsTypes.STRING_EMPTY;
 		this.telefono = ConstantsTypes.STRING_EMPTY;
+		this.nomina = ConstantsTypes.STRING_EMPTY;
 		this.referenciasPropiedades = null;
 		this.propiedades = null;
 	}
 
-	public Propietario(Boolean activo, String email, String password, Integer intentosAcceso, List<Rol> roles,
-			TipoUsuario tipo, String nombre, String apellidos, String dni, String telefono,
+	public Reforchecker(Boolean activo, String email, String password, Integer intentosAcceso, List<Rol> roles,
+			TipoUsuario tipo, String nombre, String apellidos, String dni, String telefono, String nomina,
 			List<String> referenciasPropiedades, List<Propiedad> propiedades) {
 		super(activo, email, password, intentosAcceso, roles);
 		this.tipo = tipo;
@@ -76,12 +80,13 @@ public class Propietario extends Usuario {
 		this.apellidos = apellidos;
 		this.dni = dni;
 		this.telefono = telefono;
+		this.nomina = nomina;
 		this.referenciasPropiedades = referenciasPropiedades;
 		this.propiedades = propiedades;
 	}
 
-	public Propietario(Long id, Boolean activo, String email, String password, Integer intentosAcceso, List<Rol> roles,
-			TipoUsuario tipo, String nombre, String apellidos, String dni, String telefono,
+	public Reforchecker(Long id, Boolean activo, String email, String password, Integer intentosAcceso, List<Rol> roles,
+			TipoUsuario tipo, String nombre, String apellidos, String dni, String telefono, String nomina,
 			List<String> referenciasPropiedades, List<Propiedad> propiedades) {
 		super(id, activo, email, password, intentosAcceso, roles);
 		this.tipo = tipo;
@@ -89,23 +94,25 @@ public class Propietario extends Usuario {
 		this.apellidos = apellidos;
 		this.dni = dni;
 		this.telefono = telefono;
+		this.nomina = nomina;
 		this.referenciasPropiedades = referenciasPropiedades;
 		this.propiedades = propiedades;
 	}
 
-	public void setPropietario(Propietario propietario) {
-		setTipo(propietario.getTipo());
-		setNombre(propietario.getNombre());
-		setApellidos(propietario.getApellidos());
-		setDni(propietario.getDni());
-		setTelefono(propietario.getTelefono());
-		setReferenciasPropiedades(propietario.getReferenciasPropiedades());
-		setPropiedades(propietario.getPropiedades());
-		setActivo(propietario.getActivo());
-		setEmail(propietario.getEmail());
-		setPassword(propietario.getPassword());
-		setIntentosAcceso(propietario.getIntentosAcceso());
-		setRoles(propietario.getRoles());
+	public void setReforchecker(Reforchecker reforchecker) {
+		setTipo(reforchecker.getTipo());
+		setNombre(reforchecker.getNombre());
+		setApellidos(reforchecker.getApellidos());
+		setDni(reforchecker.getDni());
+		setTelefono(reforchecker.getTelefono());
+		setNomina(reforchecker.getNomina());
+		setReferenciasPropiedades(reforchecker.getReferenciasPropiedades());
+		setPropiedades(reforchecker.getPropiedades());
+		setActivo(reforchecker.getActivo());
+		setEmail(reforchecker.getEmail());
+		setPassword(reforchecker.getPassword());
+		setIntentosAcceso(reforchecker.getIntentosAcceso());
+		setRoles(reforchecker.getRoles());
 	}
 
 	public TipoUsuario getTipo() {
@@ -146,6 +153,14 @@ public class Propietario extends Usuario {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+
+	public String getNomina() {
+		return nomina;
+	}
+
+	public void setNomina(String nomina) {
+		this.nomina = nomina;
 	}
 
 	public List<String> getReferenciasPropiedades() {

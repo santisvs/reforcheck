@@ -10,8 +10,8 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.stereotype.Component;
 
-import com.reforcheck.backend.commons.entities.postgresql.models.UserApp;
-import com.reforcheck.backend.oauth.services.IUserAppService;
+import com.reforcheck.backend.commons.entities.postgresql.models.commons.Usuario;
+import com.reforcheck.backend.oauth.services.IOAuthService;
 
 /**
  * <b>InfoClaimsToken</b> <br>
@@ -32,7 +32,7 @@ public class InfoClaimsToken implements TokenEnhancer {
 	 * IUsuarioService
 	 */
 	@Autowired
-	private IUserAppService usuarioService;
+	private IOAuthService usuarioService;
 
 	/*
 	 * Método para enriquecer el token con información del usuario
@@ -41,10 +41,11 @@ public class InfoClaimsToken implements TokenEnhancer {
 	public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
 
 		Map<String, Object> info = new HashMap<String, Object>();
-		UserApp usuario = usuarioService.findByUsername(authentication.getName());
-		info.put("nombre", usuario.getName());
-		info.put("apellido", usuario.getLastname());
+		Usuario usuario = usuarioService.findByEmail(authentication.getName());
+		info.put("idUsuario", usuario.getId());
 		info.put("email", usuario.getEmail());
+		info.put("activo", usuario.getActivo());
+		info.put("roles", usuario.getRoles());
 
 		/*
 		 * Incluimos la info al accessToken. Para ello utilizamos la implementación

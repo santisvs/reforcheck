@@ -1,0 +1,114 @@
+[
+	{
+		"idPropiedad": "ES-p1",
+		"idPropietario": "jhon.doe@bolsadeideas.com",
+		"direccion": "C/Juan de garay 21 1izqB Bilbao",
+		"tipo": "Piso",
+		"gps": "43.2542003,-2.9358482",
+		"fechaConstruccion": "1985-01-23T12:34:56",
+		"fechaUltimaReforma": "2005-11-01T12:34:56",
+		"idReforchecker": "manuel.loma@reforcheck.com",
+		"plantas": [
+			{
+				"idPlanta": "ES-p1-p1",
+				"idPropiedad": "ES-p1",
+				"nombre": "Primer piso",
+				"numero": 1,
+				"medida": {
+					"alto": 2,
+					"largo": 13,
+					"ancho": 13,
+					"unidad": "METRO"
+				},
+				"info": "Planta baja del chalet",
+				"precio": {
+					"valor": 30000.0,
+					"divisa": "EURO",
+					"iva": 21.0
+				},
+				"estancias": [
+					{
+						"idEstancia": "ES-p1-p1-e1",
+						"idPlanta": "ES-p1-p1",
+						"idPropiedad": "ES-p1",
+						"nombre": "Salón",
+						"tipo": "SECA",
+						"subtipo": "SALON",
+						"medida": {
+							"alto": 2,
+							"largo": 2,
+							"ancho": 2,
+							"unidad": "METRO"
+						},
+						"info": {
+							"notas": "Esto es la estancia salón de la planta baja"
+						},
+						"precio": {
+							"valor": 3000.0,
+							"divisa": "EURO",
+							"iva": 1.3
+						},
+						"armarios": [
+							{
+								"idElem": "ES-p1-p1-e1-armario1",
+								"idEstancia": "ES-p1-p1-e1",
+								"info": {
+									"notas": "Armario1 para estancia de prueba"
+								},
+								"referenciasFabricantes": [
+									"801"
+								],
+								"fabricantes": [
+									{
+										"referencia": "801",
+										"precio": {
+											"valor": 35.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Ikea Las rozas",
+										"direccion": "Europolis 45 Las Rozas, Madrid",
+										"url": "https://www.ikea.com/es/es/",
+										"telefono": "916566002"
+									}
+								],
+								"precio": {
+									"valor": 20.0,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 0.5,
+									"largo": 1,
+									"ancho": 0.5,
+									"unidad": "METRO"
+								}
+							}
+						],
+						
+						
+					}
+				]
+			},{
+				"idPlanta": "ES-p1-p2",
+				"idPropiedad": "ES-p1",
+				"nombre": "Segundo piso",
+				"numero": 2,
+				"medida": {
+					"alto": 2,
+					"largo": 11,
+					"ancho": 11,
+					"unidad": "METRO"
+				},
+				"info": "Planta alta del chalet",
+				"precio": {
+					"valor": 30000.0,
+					"divisa": "EURO",
+					"iva": 21.0
+				},
+				"estancias": [
+				]
+			}
+		]
+	}
+]

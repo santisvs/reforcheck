@@ -1,6 +1,5 @@
 package com.reforcheck.backend.oauth.services;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,8 +16,8 @@ import org.springframework.stereotype.Service;
 
 import com.reforcheck.backend.commons.constants.ConstantsApp;
 import com.reforcheck.backend.commons.constants.ConstantsTypes;
-import com.reforcheck.backend.commons.entities.postgresql.models.UserApp;
-import com.reforcheck.backend.oauth.clients.UserAppFeignClient;
+import com.reforcheck.backend.commons.entities.postgresql.models.commons.Usuario;
+import com.reforcheck.backend.oauth.clients.UsuarioFeignClient;
 
 import brave.Tracer;
 import feign.FeignException;
@@ -36,12 +35,12 @@ import feign.FeignException;
  *
  */
 @Service
-public class UserAppService implements IUserAppService, UserDetailsService {
+public class OAuthService implements IOAuthService, UserDetailsService {
 
-	private static Logger log = LoggerFactory.getLogger(UserAppService.class);
+	private static Logger log = LoggerFactory.getLogger(OAuthService.class);
 
 	@Autowired
-	private UserAppFeignClient client;
+	private UsuarioFeignClient clientUsuarioFeign;
 
 	@Autowired
 	private Tracer tracer;
@@ -55,19 +54,18 @@ public class UserAppService implements IUserAppService, UserDetailsService {
 	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
 		try {
 
-			UserApp usuario = client.findByUsername(username);
+			Usuario usuario = clientUsuarioFeign.buscar(username);
 
-			List<GrantedAuthority> authorities = usuario.getListRole()
+			List<GrantedAuthority> authorities = usuario.getRoles()
 					.stream()
-					.map(role -> new SimpleGrantedAuthority(role.getName()))
+					.map(rol -> new SimpleGrantedAuthority(rol.getNombre()))
 					.collect(Collectors.toList());
 
-			log.info(String.format(ConstantsApp.LOG_USER_AUTHORIZED, usuario.getUsername(), authorities.toString()));
+			log.info(String.format(ConstantsApp.LOG_USER_AUTHORIZED, usuario.getEmail(), authorities.toString()));
 
-			return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true,
+			return new User(usuario.getEmail(), usuario.getPassword(), usuario.getActivo(), true, true, true,
 					authorities);
 		} catch (FeignException e) {
 			tracer.currentSpan().tag(ConstantsApp.ZIPKIN_ERROR_MSG,
@@ -82,13 +80,16 @@ public class UserAppService implements IUserAppService, UserDetailsService {
 	 * Método para obtener el usuario de BBDD
 	 */
 	@Override
-	public UserApp findByUsername(String username) {
-		return client.findByUsername(username);
+	public Usuario findByEmail(String email) {
+		return clientUsuarioFeign.buscar(email);
 	}
 
 	@Override
-	public UserApp update(UserApp usuario, Long id) {
-		return client.update(usuario, id);
+	public Usuario update(Usuario usuario, Long id) {
+		return clientUsuarioFeign.editar(usuario, id);
 	}
+
+	
+
 
 }

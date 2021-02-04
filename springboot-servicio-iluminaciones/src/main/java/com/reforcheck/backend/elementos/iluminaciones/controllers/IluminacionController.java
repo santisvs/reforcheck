@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.reforcheck.backend.commons.constants.ConstantsApp;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.iluminacion.Iluminacion;
 import com.reforcheck.backend.elementos.iluminaciones.services.IluminacionService;
@@ -55,9 +56,14 @@ public class IluminacionController {
 		return iluminacionService.findAllByIdElem(referencias);
 	}
 
+	@HystrixCommand(fallbackMethod = "metodoReturnNull")
 	@GetMapping(ConstantsApp.URI_WITH_ESTANCIA_REQUEST_PARAM)
 	public Iluminacion listarByIdEstancia(@PathVariable String idEstancia) {
 		return iluminacionService.findByIdEstancia(idEstancia);
+	}
+	
+	public Iluminacion metodoReturnNull(String idEstancia) {
+		return null;
 	}
 
 	@GetMapping(ConstantsApp.URI_WITH_ID_REQUEST_PARAM)

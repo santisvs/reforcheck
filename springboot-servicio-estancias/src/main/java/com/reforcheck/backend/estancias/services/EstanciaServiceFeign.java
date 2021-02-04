@@ -21,6 +21,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.elemento.puerta.Puer
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.radiador.Radiador;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.ventana.Ventana;
 import com.reforcheck.backend.commons.entities.mysql.models.estancia.Estancia;
+import com.reforcheck.backend.commons.entities.mysql.models.tipos.TipoEstancia;
 import com.reforcheck.backend.estancias.clients.ArmarioClientRest;
 import com.reforcheck.backend.estancias.clients.BaneraClientRest;
 import com.reforcheck.backend.estancias.clients.BidetClientRest;
@@ -141,24 +142,59 @@ public class EstanciaServiceFeign implements EstanciaService {
 		List<Estancia> resultado = new ArrayList<Estancia>();
 		for (Estancia estancia : estancias) {
 			if (null == estanciaDao.findByIdEstancia(estancia.getIdEstancia())) {
-				clienteArmarioFeign.crear(estancia.getArmarios());
-				clienteBaneraFeign.crear(estancia.getBaneras());
-				clienteBidetFeign.crear(estancia.getBidets());
-				clienteInodoroFeign.crear(estancia.getInodoros());
-				clienteLavaboFeign.crear(estancia.getLavabos());
-				clienteDuchaFeign.crear(estancia.getDuchas());
-				clienteClimatizacionFeign.crear(estancia.getClimatizaciones());
-				clienteVentanaFeign.crear(estancia.getVentanas());
-				clientePuertaFeign.crear(estancia.getPuertas());
-				clienteRadiadorFeign.crear(estancia.getRadiadores());
-				clienteIluminacionFeign.crear(estancia.getIluminacion());
-				clienteInstalacionFeign.crear(estancia.getInstalacion());
-				clienteMobiliarioObraFeign.crear(estancia.getMobiliarioObra());
-				clientePinturaFeign.crear(estancia.getPintura());
-				clienteRevestimientoFeign.crear(estancia.getRevestimiento());
-				clienteRodapieFeign.crear(estancia.getRodapie());
-				clienteSoladoFeign.crear(estancia.getSolado());
-				clienteTechoFeign.crear(estancia.getTecho());
+				if(TipoEstancia.HUMEDA.equals(estancia.getTipo())) {
+					if(!estancia.getBaneras().isEmpty()) {
+						clienteBaneraFeign.crear(estancia.getBaneras());
+					}
+					if(!estancia.getBidets().isEmpty()) {
+						clienteBidetFeign.crear(estancia.getBidets());
+					}
+					if(!estancia.getInodoros().isEmpty()) {
+						clienteInodoroFeign.crear(estancia.getInodoros());
+					}
+					if(!estancia.getLavabos().isEmpty()) {
+						clienteLavaboFeign.crear(estancia.getLavabos());
+					}
+					if(!estancia.getDuchas().isEmpty()) {
+						clienteDuchaFeign.crear(estancia.getDuchas());
+					}
+				}
+				if(!estancia.getArmarios().isEmpty()) {
+					clienteArmarioFeign.crear(estancia.getArmarios());
+				}
+				if(!estancia.getClimatizaciones().isEmpty()) {
+					clienteClimatizacionFeign.crear(estancia.getClimatizaciones());
+				}
+				if(!estancia.getVentanas().isEmpty()) {
+					clienteVentanaFeign.crear(estancia.getVentanas());
+				}
+				if(!estancia.getPuertas().isEmpty()) {
+					clientePuertaFeign.crear(estancia.getPuertas());
+				}
+				if(!estancia.getRadiadores().isEmpty()) {
+					clienteRadiadorFeign.crear(estancia.getRadiadores());
+				}
+				if(estancia.getIluminacion()==null) {
+					clienteIluminacionFeign.crear(estancia.getIluminacion());
+				}
+				if(estancia.getMobiliarioObra()==null) {
+					clienteMobiliarioObraFeign.crear(estancia.getMobiliarioObra());
+				}
+				if(estancia.getPintura()==null) {
+					clientePinturaFeign.crear(estancia.getPintura());
+				}
+				if(estancia.getRevestimiento()==null) {
+					clienteRevestimientoFeign.crear(estancia.getRevestimiento());
+				}
+				if(estancia.getRodapie()==null) {
+					clienteRodapieFeign.crear(estancia.getRodapie());
+				}
+				if(estancia.getSolado()==null) {
+					clienteSoladoFeign.crear(estancia.getSolado());
+				}
+				if(estancia.getTecho()==null) {
+					clienteTechoFeign.crear(estancia.getTecho());
+				}	
 				resultado.add(estanciaDao.save(estancia));
 			}
 		}
@@ -183,18 +219,20 @@ public class EstanciaServiceFeign implements EstanciaService {
 	 * Método privado de llamada a cada microservicio específico de cada elemento
 	 */
 	private void setElementosByIdEstancia(Estancia estancia) {
+		if(TipoEstancia.HUMEDA.equals(estancia.getTipo())) {
+			estancia.setBaneras(clienteBaneraFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
+					.map(p -> new Banera(p)).collect(Collectors.toList()));
+			estancia.setBidets(clienteBidetFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
+					.map(p -> new Bidet(p)).collect(Collectors.toList()));
+			estancia.setInodoros(clienteInodoroFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
+					.map(p -> new Inodoro(p)).collect(Collectors.toList()));
+			estancia.setLavabos(clienteLavaboFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
+					.map(p -> new Lavabo(p)).collect(Collectors.toList()));
+			estancia.setDuchas(clienteDuchaFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
+					.map(p -> new Ducha(p)).collect(Collectors.toList()));
+		}
 		estancia.setArmarios(clienteArmarioFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
 				.map(p -> new Armario(p)).collect(Collectors.toList()));
-		estancia.setBaneras(clienteBaneraFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
-				.map(p -> new Banera(p)).collect(Collectors.toList()));
-		estancia.setBidets(clienteBidetFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
-				.map(p -> new Bidet(p)).collect(Collectors.toList()));
-		estancia.setInodoros(clienteInodoroFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
-				.map(p -> new Inodoro(p)).collect(Collectors.toList()));
-		estancia.setLavabos(clienteLavaboFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
-				.map(p -> new Lavabo(p)).collect(Collectors.toList()));
-		estancia.setDuchas(clienteDuchaFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
-				.map(p -> new Ducha(p)).collect(Collectors.toList()));
 		estancia.setClimatizaciones(clienteClimatizacionFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()
 				.map(p -> new Climatizacion(p)).collect(Collectors.toList()));
 		estancia.setVentanas(clienteVentanaFeign.listarByIdEstancia(estancia.getIdEstancia()).stream()

@@ -22,7 +22,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	// Inyectar el bean UsuarioService
 	@Autowired
-	private UserDetailsService usuarioService;
+	private UserDetailsService oauthService;
 
 	/*
 	 * Inyectar el bean AuthenticationSucessErrorHandler
@@ -51,7 +51,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	/*
 	 * Sobreescribir el método de WebSecurityConfigurerAdapter para registrar el
-	 * objeto usuarioService en el AuthenticationManager
+	 * objeto oauthService en el AuthenticationManager
 	 * 
 	 * @Autowired para utilizar el bean AuthenticationManagerBuilder del contexto de
 	 * Spring
@@ -61,7 +61,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	@Autowired
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(this.usuarioService).passwordEncoder(passwordEncoder()).and()
+		auth.userDetailsService(this.oauthService).passwordEncoder(passwordEncoder()).and()
 				.authenticationEventPublisher(eventPublisher);
 
 	}

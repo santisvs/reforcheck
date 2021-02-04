@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 import com.reforcheck.backend.commons.constants.ConstantsApp;
 import com.reforcheck.backend.commons.constants.ConstantsTypes;
-import com.reforcheck.backend.commons.entities.postgresql.models.UserApp;
-import com.reforcheck.backend.oauth.services.IUserAppService;
+import com.reforcheck.backend.commons.entities.postgresql.models.commons.Usuario;
+import com.reforcheck.backend.oauth.services.IOAuthService;
 
 import brave.Tracer;
 import feign.FeignException;
@@ -35,7 +35,7 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 	private Environment env;
 
 	@Autowired
-	private IUserAppService usuarioService;
+	private IOAuthService oauthService;
 	
 	@Autowired
 	private Tracer tracer;
@@ -51,11 +51,11 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 
 			log.info(String.format(ConstantsApp.LOG_SUCESS_LOGIN, user.getUsername()));
 
-			UserApp usuario = usuarioService.findByUsername(authentication.getName());
+			Usuario usuario = oauthService.findByEmail(authentication.getName());
 
-			if (usuario.getLoginAttempts() != null && usuario.getLoginAttempts() >= ConstantsTypes.ENT_0) {
-				usuario.setLoginAttempts(ConstantsTypes.ENT_0);
-				usuarioService.update(usuario, usuario.getId());
+			if (usuario.getIntentosAcceso() != null && usuario.getIntentosAcceso() >= ConstantsTypes.ENT_0) {
+				usuario.setIntentosAcceso(ConstantsTypes.ENT_0);
+				oauthService.update(usuario, usuario.getId());
 			}
 
 		}
@@ -70,25 +70,25 @@ public class AuthenticationSucessErrorHandler implements AuthenticationEventPubl
 		StringBuilder errors = new StringBuilder();
 		errors.append(ConstantsApp.LOG_FAILURE_LOGIN);
 		try {
-			UserApp usuario = usuarioService.findByUsername(authentication.getName());
-			if (usuario.getLoginAttempts() == null) {
-				usuario.setLoginAttempts(ConstantsTypes.ENT_0);
+			Usuario usuario = oauthService.findByEmail(authentication.getName());
+			if (usuario.getIntentosAcceso() == null) {
+				usuario.setIntentosAcceso(ConstantsTypes.ENT_0);
 			}
 
-			usuario.setLoginAttempts(usuario.getLoginAttempts() + ConstantsTypes.ENT_1);
-			log.info(String.format(ConstantsApp.LOG_USER_ATTEMPS_LOGIN, usuario.getUsername(),
-					usuario.getLoginAttempts()));
+			usuario.setIntentosAcceso(usuario.getIntentosAcceso() + ConstantsTypes.ENT_1);
+			log.info(String.format(ConstantsApp.LOG_USER_ATTEMPS_LOGIN, usuario.getEmail(),
+					usuario.getIntentosAcceso()));
 			
-			errors.append(ConstantsTypes.TRACE_CONCAT + String.format(ConstantsApp.LOG_USER_ATTEMPS_LOGIN, usuario.getUsername(),
-					usuario.getLoginAttempts()));
+			errors.append(ConstantsTypes.TRACE_CONCAT + String.format(ConstantsApp.LOG_USER_ATTEMPS_LOGIN, usuario.getEmail(),
+					usuario.getIntentosAcceso()));
 
-			if (usuario.getLoginAttempts() >= ConstantsTypes.ENT_3) {
-				log.info(String.format(ConstantsApp.LOG_USER_UNABLED, usuario.getUsername()));
-				errors.append(ConstantsTypes.TRACE_CONCAT + String.format(ConstantsApp.LOG_USER_UNABLED, usuario.getUsername()));
-				usuario.setEnabled(false);
+			if (usuario.getIntentosAcceso() >= ConstantsTypes.ENT_3) {
+				log.info(String.format(ConstantsApp.LOG_USER_UNABLED, usuario.getEmail()));
+				errors.append(ConstantsTypes.TRACE_CONCAT + String.format(ConstantsApp.LOG_USER_UNABLED, usuario.getEmail()));
+				usuario.setActivo(false);
 			}
 
-			usuarioService.update(usuario, usuario.getId());
+			oauthService.update(usuario, usuario.getId());
 			
 			tracer.currentSpan().tag(ConstantsApp.ZIPKIN_ERROR_MSG, errors.toString());
 
