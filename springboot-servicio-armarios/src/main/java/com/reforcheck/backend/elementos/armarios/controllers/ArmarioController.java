@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.reforcheck.backend.commons.constants.ConstantsApp;
 import com.reforcheck.backend.commons.entities.mysql.models.elemento.armario.Armario;
-import com.reforcheck.backend.commons.entities.mysql.models.elemento.instalacion.Instalacion;
 import com.reforcheck.backend.elementos.armarios.services.ArmarioService;
 
 @RefreshScope
@@ -38,13 +37,13 @@ public class ArmarioController {
 	@Qualifier("serviceFeign")
 	private ArmarioService armarioService;
 
-	@HystrixCommand(fallbackMethod = "metodoReturnEmpty")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindAll")
 	@GetMapping(ConstantsApp.URI_WITHOUT_REQUEST_PARAM)
 	public List<Armario> listar() {
 		return armarioService.findAll();
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnEmpty")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindAllByIdElem")
 	@GetMapping(ConstantsApp.URI_REFERENCIAS_WITHOUT_REQUEST_PARAM)
 	public List<Armario> listarByReferencia(@RequestBody List<String> referencias) {
 		return armarioService.findAllByIdElem(referencias);
@@ -55,59 +54,85 @@ public class ArmarioController {
 	 * responder a las peticion de los cliente Feign. Feign modifica la petición de
 	 * GET a POST cuando se hace una request con información en el body
 	 */
-	@HystrixCommand(fallbackMethod = "metodoReturnEmpty")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindAllByIdElem")
 	@PostMapping(ConstantsApp.URI_REFERENCIAS_WITHOUT_REQUEST_PARAM)
 	public List<Armario> listarByReferenciaFeign(@RequestBody List<String> referencias) {
 		return armarioService.findAllByIdElem(referencias);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnEmpty")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindAllByIdEstancia")
 	@GetMapping(ConstantsApp.URI_WITH_ESTANCIA_REQUEST_PARAM)
 	public List<Armario> listarByIdEstancia(@PathVariable String idEstancia) {
 		return armarioService.findAllByIdEstancia(idEstancia);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnNull")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindById")
 	@GetMapping(ConstantsApp.URI_WITH_ID_REQUEST_PARAM)
 	public Armario detalle(@PathVariable Long id) {
 		return armarioService.findById(id);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnNull")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindByIdElem")
 	@GetMapping(ConstantsApp.URI_WITH_REFERENCIA_REQUEST_PARAM)
 	public Armario buscar(@PathVariable String referencia) {
 		return armarioService.findByIdElem(referencia);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnEmpty")
+	@HystrixCommand(fallbackMethod = "metodoReturnSaveAll")
 	@PostMapping(ConstantsApp.URI_WITHOUT_REQUEST_PARAM)
 	@ResponseStatus(HttpStatus.CREATED)
 	public List<Armario> crear(@RequestBody List<Armario> armarios) {
 		return armarioService.saveAll(armarios);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnNull")
+	@HystrixCommand(fallbackMethod = "metodoReturnUpdate")
 	@PutMapping(ConstantsApp.URI_WITH_ID_REQUEST_PARAM)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Armario editar(@RequestBody Armario armario, @PathVariable Long id) {
 		return armarioService.update(armario, id);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnNull")
 	@DeleteMapping(ConstantsApp.URI_WITH_ID_REQUEST_PARAM)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void eliminar(@PathVariable Long id) {
-		armarioService.delete(id);
+	public boolean eliminar(@PathVariable Long id) {
+		boolean res = false;
+		try {
+			armarioService.delete(id);
+			res = true;
+		} catch (Exception e) {
+			log.error("No se ha podido eliminar la instalacion con id="+id);
+		}
+		return res;
 	}
 	
 	/*
 	 * Métodos alternativos Hystrix
 	 */
-	public List<Armario> metodoReturnEmpty(List<String> referencias) {
+	public List<Armario> metodoReturnFindAll() {
 		return new ArrayList<Armario>();
 	}
 	
-	public Instalacion metodoReturnNull(String idEstancia) {
+	public List<Armario> metodoReturnFindAllByIdElem(List<String> referencias) {
+		return new ArrayList<Armario>();
+	}
+	
+	public List<Armario> metodoReturnFindAllByIdEstancia(String idEstancias) {
+		return new ArrayList<Armario>();
+	}
+	
+	public Armario metodoReturnFindById(Long id) {
+		return null;
+	}
+	
+	public Armario metodoReturnFindByIdElem(String idElem) {
+		return null;
+	}
+	
+	public List<Armario> metodoReturnSaveAll(List<Armario> armarios) {
+		return new ArrayList<Armario>();
+	}
+	
+	public Armario metodoReturnUpdate(Armario armario, Long id) {
 		return null;
 	}
 

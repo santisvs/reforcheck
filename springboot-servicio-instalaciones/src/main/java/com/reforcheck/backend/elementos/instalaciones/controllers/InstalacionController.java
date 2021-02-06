@@ -37,13 +37,13 @@ public class InstalacionController {
 	@Qualifier("serviceFeign")
 	private InstalacionService instalacionService;
 
-	@HystrixCommand(fallbackMethod = "metodoReturnEmptyVacio")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindAll")
 	@GetMapping(ConstantsApp.URI_WITHOUT_REQUEST_PARAM)
 	public List<Instalacion> listar() {
 		return instalacionService.findAll();
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnEmpty")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindAllByIdElem")
 	@GetMapping(ConstantsApp.URI_REFERENCIAS_WITHOUT_REQUEST_PARAM)
 	public List<Instalacion> listarByReferencia(@RequestBody List<String> referencias) {
 		return instalacionService.findAllByIdElem(referencias);
@@ -54,38 +54,38 @@ public class InstalacionController {
 	 * responder a las peticion de los cliente Feign. Feign modifica la petición de
 	 * GET a POST cuando se hace una request con información en el body
 	 */
-	@HystrixCommand(fallbackMethod = "metodoReturnEmpty")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindAllByIdElem")
 	@PostMapping(ConstantsApp.URI_REFERENCIAS_WITHOUT_REQUEST_PARAM)
 	public List<Instalacion> listarByReferenciaFeign(@RequestBody List<String> referencias) {
 		return instalacionService.findAllByIdElem(referencias);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnNull")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindByIdEstancia")
 	@GetMapping(ConstantsApp.URI_WITH_ESTANCIA_REQUEST_PARAM)
 	public Instalacion listarByIdEstancia(@PathVariable String idEstancia) {
 		return instalacionService.findByIdEstancia(idEstancia);
 	}
 	
-	@HystrixCommand(fallbackMethod = "metodoReturnNullId")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindById")
 	@GetMapping(ConstantsApp.URI_WITH_ID_REQUEST_PARAM)
 	public Instalacion detalle(@PathVariable Long id) {
 		return instalacionService.findById(id);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnNull")
+	@HystrixCommand(fallbackMethod = "metodoReturnFindByIdEstancia")
 	@GetMapping(ConstantsApp.URI_WITH_REFERENCIA_REQUEST_PARAM)
 	public Instalacion buscar(@PathVariable String referencia) {
 		return instalacionService.findByIdElem(referencia);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnNullInstalacion")
+	@HystrixCommand(fallbackMethod = "metodoReturnSave")
 	@PostMapping(ConstantsApp.URI_WITHOUT_REQUEST_PARAM)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Instalacion crear(@RequestBody Instalacion instalacion) {
 		return instalacionService.save(instalacion);
 	}
 
-	@HystrixCommand(fallbackMethod = "metodoReturnNullInstalacionId")
+	@HystrixCommand(fallbackMethod = "metodoReturnUpdate")
 	@PutMapping(ConstantsApp.URI_WITH_ID_REQUEST_PARAM)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Instalacion editar(@RequestBody Instalacion instalacion, @PathVariable Long id) {
@@ -108,27 +108,27 @@ public class InstalacionController {
 	/*
 	 * Métodos alternativos Hystrix
 	 */
-	public List<Instalacion> metodoReturnEmptyVacio() {
+	public List<Instalacion> metodoReturnFindAll() {
 		return new ArrayList<Instalacion>();
 	}
 	
-	public List<Instalacion> metodoReturnEmpty(List<String> referencias) {
+	public List<Instalacion> metodoReturnFindAllByIdElem(List<String> referencias) {
 		return new ArrayList<Instalacion>();
 	}
 	
-	public Instalacion metodoReturnNullId(Long id) {
+	public Instalacion metodoReturnFindById(Long id) {
 		return null;
 	}
 	
-	public Instalacion metodoReturnNull(String idEstancia) {
+	public Instalacion metodoReturnFindByIdEstancia(String idEstancia) {
 		return null;
 	}
 	
-	public Instalacion metodoReturnNullInstalacion(Instalacion instalacion) {
+	public Instalacion metodoReturnSave(Instalacion instalacion) {
 		return null;
 	}
 	
-	public Instalacion metodoReturnNullInstalacionId(Instalacion instalacion, Long id) {
+	public Instalacion metodoReturnUpdate(Instalacion instalacion, Long id) {
 		return null;
 	}
 
