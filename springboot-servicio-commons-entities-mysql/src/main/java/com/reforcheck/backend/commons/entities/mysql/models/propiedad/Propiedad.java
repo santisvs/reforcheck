@@ -38,7 +38,7 @@ import com.reforcheck.backend.commons.entities.mysql.models.planta.Planta;
  *
  */
 @Entity
-@Table(name = "plantas")
+@Table(name = "propiedades")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Propiedad implements Serializable {
 
