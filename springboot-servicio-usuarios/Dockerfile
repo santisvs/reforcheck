@@ -1,4 +1,6 @@
 FROM openjdk:8
 VOLUME /tmp
-ADD ./target/springboot-servicio-usuarios-0.0.1-SNAPSHOT.jar servicio-usuarios.jar
-ENTRYPOINT ["java","-jar","/servicio-usuarios.jar"]
+ARG JAR_FILE
+ARG DOCKER_SERV_NAME
+ADD ./target/${JAR_FILE} ${DOCKER_SERV_NAME}.jar
+ENTRYPOINT ["java","-jar","/${DOCKER_SERV_NAME}.jar"]

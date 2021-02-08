@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -13,13 +14,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-servicio-propiedades</name>
 	<description>Microservice Propiedades of Reforcheck project for Spring Boot</description>
-	
+
 	<properties>
+		<docker-service.name>servicio-propiedades</docker-service.name>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
 	</properties>
-	
+
 	<dependencies>
 		<!-- Project Reforcheck dependencies -->
 		<dependency>
@@ -125,6 +127,28 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.12</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>build</goal>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<repository>${docker-service.name}</repository>
+					<tag>${project.version}</tag>
+					<buildArgs>
+						<JAR_FILE>${project.artifactId}-${project.version}.jar</JAR_FILE>
+						<DOCKER_SERV_NAME>${docker-service.name}</DOCKER_SERV_NAME>
+					</buildArgs>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

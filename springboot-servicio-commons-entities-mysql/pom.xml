@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>com.reforcheck.backend.commons</groupId>
 			<artifactId>springboot-servicio-commons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${project.version}</version>
 		</dependency>
 		<!-- Spring Boot dependencies -->
 		<dependency>

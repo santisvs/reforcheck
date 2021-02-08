@@ -1,5 +1,7 @@
 FROM openjdk:8
 VOLUME /tmp
+ARG JAR_FILE
+ARG DOCKER_SERV_NAME
 EXPOSE 8090
-ADD ./target/springboot-servicio-zuul-server-0.0.1-SNAPSHOT.jar zuul-server.jar
-ENTRYPOINT ["java","-jar","/zuul-server.jar"]
+ADD ./target/${JAR_FILE} ${DOCKER_SERV_NAME}.jar
+ENTRYPOINT ["java","-jar","/${DOCKER_SERV_NAME}.jar"]
