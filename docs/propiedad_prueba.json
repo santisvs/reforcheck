@@ -1,0 +1,692 @@
+[
+	{
+		"idPropiedad": "ES-p1",
+		"idPropietario": "jhon.doe@bolsadeideas.com",
+		"direccion": "C/Juan de garay 21 1izqB Bilbao",
+		"tipo": "Piso",
+		"gps": "43.2542003,-2.9358482",
+		"fechaConstruccion": "1985-01-23T12:34:56",
+		"fechaUltimaReforma": "2005-11-01T12:34:56",
+		"idReforchecker": "manuel.loma@reforcheck.com",
+		"plantas": [
+			{
+				"idPlanta": "ES-p1-p1",
+				"idPropiedad": "ES-p1",
+				"nombre": "Primer piso",
+				"numero": 1,
+				"medida": {
+					"alto": 2,
+					"largo": 13,
+					"ancho": 13,
+					"unidad": "METRO"
+				},
+				"info": "Planta baja del chalet",
+				"precio": {
+					"valor": 30000.0,
+					"divisa": "EURO",
+					"iva": 21.0
+				},
+				"estancias": [
+					{
+						"idEstancia": "ES-p1-p1-e1",
+						"idPlanta": "ES-p1-p1",
+						"idPropiedad": "ES-p1",
+						"nombre": "Salón",
+						"tipo": "SECA",
+						"subtipo": "SALON",
+						"medida": {
+							"alto": 2,
+							"largo": 2,
+							"ancho": 2,
+							"unidad": "METRO"
+						},
+						"info": {
+							"notas": "Esto es la estancia salón de la planta baja"
+						},
+						"precio": {
+							"valor": 3000.0,
+							"divisa": "EURO",
+							"iva": 1.3
+						},
+						"armarios": [
+							{
+								"idElem": "ES-p1-p1-e1-armario1",
+								"idEstancia": "ES-p1-p1-e1",
+								"info": {
+									"notas": "Armario1 para salon de la planta baja"
+								},
+								"referenciasFabricantes": [
+									"801"
+								],
+								"fabricantes": [
+									{
+										"referencia": "801",
+										"precio": {
+											"valor": 35.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Ikea Las rozas",
+										"direccion": "Europolis 45 Las Rozas, Madrid",
+										"url": "https://www.ikea.com/es/es/",
+										"telefono": "916566002"
+									}
+								],
+								"precio": {
+									"valor": 20.0,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 0.5,
+									"largo": 1,
+									"ancho": 0.5,
+									"unidad": "METRO"
+								}
+							}
+						],
+						"puertas": [
+							{
+								"idElem": "ES-p1-p1-e1-puerta1",
+								"idEstancia": "ES-p1-p1-e1",
+								"info": {
+									"notas": "Puerta 1 para salon de la planta baja"
+								},
+								"referenciasFabricantes": [
+									"355"
+								],
+								"fabricantes": [
+									{
+										"referencia": "355",
+										"precio": {
+											"valor": 50.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Todo puertas",
+										"direccion": "España",
+										"url": "https://todopuertas.net/",
+										"telefono": "628880094"
+									}
+								],
+								"precio": {
+									"valor": 169.99,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 2.0,
+									"largo": 1.0,
+									"ancho": 0.25,
+									"unidad": "METRO"
+								},
+								"estandar": false,
+								"mano": false
+							}
+						]
+						
+					},
+					{
+						"idEstancia": "ES-p1-p1-e2",
+						"idPlanta": "ES-p1-p1",
+						"idPropiedad": "ES-p1",
+						"nombre": "Baño",
+						"tipo": "HUMEDA",
+						"subtipo": "BAÑO",
+						"medida": {
+							"alto": 1.95,
+							"largo": 2,
+							"ancho": 1.5,
+							"unidad": "METRO"
+						},
+						"info": {
+							"notas": "Esto es la estancia baño de la planta baja"
+						},
+						"precio": {
+							"valor": 1680.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"armarios": [
+							{
+								"idElem": "ES-p1-p1-e2-armario1",
+								"idEstancia": "ES-p1-p1-e2",
+								"info": {
+									"notas": "Armario1 para baño de la planta baja"
+								},
+								"referenciasFabricantes": [
+									"801"
+								],
+								"fabricantes": [
+									{
+										"referencia": "801",
+										"precio": {
+											"valor": 35.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Ikea Las rozas",
+										"direccion": "Europolis 45 Las Rozas, Madrid",
+										"url": "https://www.ikea.com/es/es/",
+										"telefono": "916566002"
+									}
+								],
+								"precio": {
+									"valor": 20.0,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 0.5,
+									"largo": 0.5,
+									"ancho": 0.35,
+									"unidad": "METRO"
+								}
+							}
+						],
+						"puertas": [
+							{
+								"idElem": "ES-p1-p1-e2-puerta1",
+								"idEstancia": "ES-p1-p1-e2",
+								"info": {
+									"notas": "Puerta 1 para baño de la planta baja"
+								},
+								"referenciasFabricantes": [
+									"355"
+								],
+								"fabricantes": [
+									{
+										"referencia": "355",
+										"precio": {
+											"valor": 50.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Todo puertas",
+										"direccion": "España",
+										"url": "https://todopuertas.net/",
+										"telefono": "628880094"
+									}
+								],
+								"precio": {
+									"valor": 169.99,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 2.0,
+									"largo": 1.0,
+									"ancho": 0.25,
+									"unidad": "METRO"
+								},
+								"estandar": false,
+								"mano": false
+							}
+						],
+						"inodoros":[
+							{
+								"idElem": "ES-p1-p1-e2-inodoro1",
+								"idEstancia": "ES-p1-p1-e2",
+								"info": {
+									"notas": "Inodoro 1 para baño de la planta baja"
+								},
+								"referenciasFabricantes": [
+									"800"
+								],
+								"fabricantes": [
+									{
+										"referencia": "800",
+										"precio": {
+											"valor": 60.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Roca sanitarios S.L",
+										"direccion": "Juan Jose 23, Madrid",
+										"url": "https://www.roca.es/",
+										"telefono": "916754344"
+									}
+								],
+								"precio": {
+									"valor": 134.33,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 0.5,
+									"largo": 0.35,
+									"ancho": 0.5,
+									"unidad": "METRO"
+								},
+								"demuele": false,
+								"material": "CERAMICO",
+								"suspendido": false,
+								"ducheta": true
+							}
+						],
+						"lavabos": [
+							{
+								"idElem": "ES-p1-p1-e2-lavabo1",
+								"idEstancia": "ES-p1-p1-e2",
+								"info": {
+									"notas": "Lavabo para el baño de la planta baja"
+								},
+								"referenciasFabricantes": [
+									"800"
+								],
+								"fabricantes": [
+									{
+										"referencia": "800",
+										"precio": {
+											"valor": 60.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Roca sanitarios S.L",
+										"direccion": "Juan Jose 23, Madrid",
+										"url": "https://www.roca.es/",
+										"telefono": "916754344"
+									}
+								],
+								"precio": {
+									"valor": 3467.0,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"senos": 2,
+								"demuele": false,
+								"mueble": true,
+								"material": "CERAMICO",
+								"medida": {
+									"alto": 0.5,
+									"largo": 0.35,
+									"ancho": 0.5,
+									"unidad": "METRO"
+								},
+								"griferiaEmpotrada": true
+							}
+						]
+						
+					}
+				]
+			},{
+				"idPlanta": "ES-p1-p2",
+				"idPropiedad": "ES-p1",
+				"nombre": "Segundo piso",
+				"numero": 2,
+				"medida": {
+					"alto": 2,
+					"largo": 11,
+					"ancho": 11,
+					"unidad": "METRO"
+				},
+				"info": "Planta alta del chalet",
+				"precio": {
+					"valor": 30000.0,
+					"divisa": "EURO",
+					"iva": 21.0
+				},
+				"estancias": [
+					{
+						"idEstancia": "ES-p1-p2-e1",
+						"idPlanta": "ES-p1-p2",
+						"idPropiedad": "ES-p1",
+						"nombre": "Baño",
+						"tipo": "HUMEDA",
+						"subtipo": "BAÑO",
+						"medida": {
+							"alto": 1.95,
+							"largo": 2,
+							"ancho": 1.5,
+							"unidad": "METRO"
+						},
+						"info": {
+							"notas": "Esto es la estancia baño de la planta alta"
+						},
+						"precio": {
+							"valor": 1680.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"armarios": [
+							{
+								"idElem": "ES-p1-p2-e1-armario1",
+								"idEstancia": "ES-p1-p2-e1",
+								"info": {
+									"notas": "Armario1 para baño de la planta alta"
+								},
+								"referenciasFabricantes": [
+									"801"
+								],
+								"fabricantes": [
+									{
+										"referencia": "801",
+										"precio": {
+											"valor": 35.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Ikea Las rozas",
+										"direccion": "Europolis 45 Las Rozas, Madrid",
+										"url": "https://www.ikea.com/es/es/",
+										"telefono": "916566002"
+									}
+								],
+								"precio": {
+									"valor": 20.0,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 0.5,
+									"largo": 0.5,
+									"ancho": 0.35,
+									"unidad": "METRO"
+								}
+							}
+						],
+						"puertas": [
+							{
+								"idElem": "ES-p1-p2-e1-puerta1",
+								"idEstancia": "ES-p1-p2-e1",
+								"info": {
+									"notas": "Puerta 1 para baño de la planta alta"
+								},
+								"referenciasFabricantes": [
+									"355"
+								],
+								"fabricantes": [
+									{
+										"referencia": "355",
+										"precio": {
+											"valor": 50.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Todo puertas",
+										"direccion": "España",
+										"url": "https://todopuertas.net/",
+										"telefono": "628880094"
+									}
+								],
+								"precio": {
+									"valor": 169.99,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 2.0,
+									"largo": 1.0,
+									"ancho": 0.25,
+									"unidad": "METRO"
+								},
+								"estandar": false,
+								"mano": false
+							}
+						],
+						"inodoros":[
+							{
+								"idElem": "ES-p1-p2-e1-inodoro1",
+								"idEstancia": "ES-p1-p2-e1",
+								"info": {
+									"notas": "Inodoro 1 para baño de la planta alta"
+								},
+								"referenciasFabricantes": [
+									"800"
+								],
+								"fabricantes": [
+									{
+										"referencia": "800",
+										"precio": {
+											"valor": 60.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Roca sanitarios S.L",
+										"direccion": "Juan Jose 23, Madrid",
+										"url": "https://www.roca.es/",
+										"telefono": "916754344"
+									}
+								],
+								"precio": {
+									"valor": 134.33,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 0.5,
+									"largo": 0.35,
+									"ancho": 0.5,
+									"unidad": "METRO"
+								},
+								"demuele": false,
+								"material": "CERAMICO",
+								"suspendido": false,
+								"ducheta": true
+							}
+						],
+						"lavabos": [
+							{
+								"idElem": "ES-p1-p2-e1-lavabo1",
+								"idEstancia": "ES-p1-p2-e1",
+								"info": {
+									"notas": "Lavabo para el baño de la planta alta"
+								},
+								"referenciasFabricantes": [
+									"800"
+								],
+								"fabricantes": [
+									{
+										"referencia": "800",
+										"precio": {
+											"valor": 60.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Roca sanitarios S.L",
+										"direccion": "Juan Jose 23, Madrid",
+										"url": "https://www.roca.es/",
+										"telefono": "916754344"
+									}
+								],
+								"precio": {
+									"valor": 3467.0,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"senos": 2,
+								"demuele": false,
+								"mueble": true,
+								"material": "CERAMICO",
+								"medida": {
+									"alto": 0.5,
+									"largo": 0.35,
+									"ancho": 0.5,
+									"unidad": "METRO"
+								},
+								"griferiaEmpotrada": true
+							}
+						],
+						"duchas":[
+							{
+								"idElem": "ES-p1-p2-e1-ducha1",
+								"idEstancia": "ES-p1-p2-e1",
+								"info": {
+									"notas": "Ducha 1 para el baño de la planta alta"
+								},
+								"referenciasFabricantes": [
+									"800"
+								],
+								"fabricantes": [
+									{
+										"referencia": "800",
+										"precio": {
+											"valor": 60.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Roca sanitarios S.L",
+										"direccion": "Juan Jose 23, Madrid",
+										"url": "https://www.roca.es/",
+										"telefono": "916754344"
+									}
+								],
+								"precio": {
+									"valor": 199.34,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 1,
+									"largo": 1,
+									"unidad": "METRO"
+								},
+								"demuele": false,
+								"material": "CERAMICO",
+								"griferiaEmpotrada": true,
+								"mampara": true,
+								"recta": true,
+								"tramos": []
+							}
+						]
+						
+					},
+					{
+						"idEstancia": "ES-p1-p2-e2",
+						"idPlanta": "ES-p1-p2",
+						"idPropiedad": "ES-p1",
+						"nombre": "Cuarto",
+						"tipo": "SECA",
+						"subtipo": "HABITACION",
+						"medida": {
+							"alto": 2,
+							"largo": 3,
+							"ancho": 3,
+							"unidad": "METRO"
+						},
+						"info": {
+							"notas": "Esto es la estancia habitación de la planta alta"
+						},
+						"precio": {
+							"valor": 2300.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"armarios": [
+							{
+								"idElem": "ES-p1-p2-e2-armario1",
+								"idEstancia": "ES-p1-p2-e2",
+								"info": {
+									"notas": "Armario1 para la habitación de la planta alta"
+								},
+								"referenciasFabricantes": [
+									"801"
+								],
+								"fabricantes": [
+									{
+										"referencia": "801",
+										"precio": {
+											"valor": 35.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Ikea Las rozas",
+										"direccion": "Europolis 45 Las Rozas, Madrid",
+										"url": "https://www.ikea.com/es/es/",
+										"telefono": "916566002"
+									}
+								],
+								"precio": {
+									"valor": 20.0,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 0.5,
+									"largo": 1,
+									"ancho": 0.5,
+									"unidad": "METRO"
+								}
+							}
+						],
+						"puertas": [
+							{
+								"idElem": "ES-p1-p2-e2-puerta1",
+								"idEstancia": "ES-p1-p2-e2",
+								"info": {
+									"notas": "Puerta 1 para la habitación de la planta alta"
+								},
+								"referenciasFabricantes": [
+									"355"
+								],
+								"fabricantes": [
+									{
+										"referencia": "355",
+										"precio": {
+											"valor": 50.0,
+											"divisa": "EURO",
+											"iva": 21.0
+										},
+										"nombre": "Todo puertas",
+										"direccion": "España",
+										"url": "https://todopuertas.net/",
+										"telefono": "628880094"
+									}
+								],
+								"precio": {
+									"valor": 169.99,
+									"divisa": "EURO",
+									"iva": 2.0
+								},
+								"medida": {
+									"alto": 2.0,
+									"largo": 1.0,
+									"ancho": 0.25,
+									"unidad": "METRO"
+								},
+								"estandar": false,
+								"mano": false
+							}
+						],
+						"pintura":{
+							"idElem": "ES-p1-p2-e2-pintura",
+							"idEstancia": "ES-p1-p2-e2",
+							"info": {
+								"notas": "Pintura para la habitación de la planta alta"
+							},
+							"referenciasFabricantes": [
+								"903"
+							],
+							"fabricantes": [
+								{
+									"referencia": "903",
+									"precio": {
+										"valor": 40.0,
+										"divisa": "EURO",
+										"iva": 21.0
+									},
+									"nombre": "La Pinturería S.L.",
+									"direccion": "Av. Rey Juan Carlos I, 8, 28915 Leganés, Madrid",
+									"url": "https://centroprocolor.es/",
+									"telefono": "916862823"
+								}
+							],
+							"precio": {
+								"valor": 350.0,
+								"divisa": "EURO",
+								"iva": 2.0
+							},
+							"fisuracion": "MEDIO",
+							"papelPintado": false,
+							"gotelet": false,
+							"raspado": true,
+							"color": "#F56AAA",
+							"acabado": "granulado"
+						}
+						
+					}
+				]
+			}
+		]
+	}
+]

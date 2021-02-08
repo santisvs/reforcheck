@@ -1,0 +1,865 @@
+[
+	{
+		"idEstancia": "ES-estancia-prueba1",
+		"nombre": "Estancia de prueba 1",
+		"tipo": "HUMEDA",
+		"subtipo": "BAÑO",
+		"medida": {
+			"alto": 2,
+			"largo": 2,
+			"ancho": 2,
+			"unidad": "METRO"
+		},
+		"info": {
+			"notas": "Esto es una estancia de prueba"
+		},
+		"precio": {
+			"valor": 3000.0,
+			"divisa": "EURO",
+			"iva": 1.3
+		},
+		"armarios": [
+			{
+				"idElem": "ES-estancia-prueba1-armario1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Armario1 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"801"
+				],
+				"fabricantes": [
+					{
+						"referencia": "801",
+						"precio": {
+							"valor": 35.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Ikea Las rozas",
+						"direccion": "Europolis 45 Las Rozas, Madrid",
+						"url": "https://www.ikea.com/es/es/",
+						"telefono": "916566002"
+					}
+				],
+				"precio": {
+					"valor": 20.0,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 0.5,
+					"largo": 1,
+					"ancho": 0.5,
+					"unidad": "METRO"
+				}
+			},
+			{
+				"idElem": "ES-estancia-prueba1-armario2",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Armario2 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"801"
+				],
+				"fabricantes": [
+					{
+						"referencia": "801",
+						"precio": {
+							"valor": 35.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Ikea Las rozas",
+						"direccion": "Europolis 45 Las Rozas, Madrid",
+						"url": "https://www.ikea.com/es/es/",
+						"telefono": "916566002"
+					}
+				],
+				"precio": {
+					"valor": 22.0,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 0.5,
+					"largo": 2,
+					"ancho": 0.5,
+					"unidad": "METRO"
+				}
+			}
+		],
+		"baneras": [
+			{
+				"idElem": "ES-estancia-prueba1-banera1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Bañera 1 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"800"
+				],
+				"fabricantes": [
+					{
+						"referencia": "800",
+						"precio": {
+							"valor": 60.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Roca sanitarios S.L",
+						"direccion": "Juan Jose 23, Madrid",
+						"url": "https://www.roca.es/",
+						"telefono": "916754344"
+					}
+				],
+				"precio": {
+					"valor": 200.0,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 0.5,
+					"largo": 2,
+					"ancho": 1,
+					"unidad": "METRO"
+				},
+				"demuele": false,
+				"material": "CERAMICO",
+				"griferiaEmpotrada": true,
+				"mampara": true,
+				"recta": true,
+				"tramos": []
+			}
+		],
+		"bidets": [
+			{
+				"idElem": "ES-estancia-prueba1-bidet1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Bidet 1 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"800"
+				],
+				"fabricantes": [
+					{
+						"referencia": "800",
+						"precio": {
+							"valor": 60.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Roca sanitarios S.L",
+						"direccion": "Juan Jose 23, Madrid",
+						"url": "https://www.roca.es/",
+						"telefono": "916754344"
+					}
+				],
+				"precio": {
+					"valor": 99.45,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 0.5,
+					"largo": 0.35,
+					"ancho": 0.5,
+					"unidad": "METRO"
+				},
+				"demuele": false,
+				"material": "CERAMICO",
+				"suspendido": false
+			}
+		],
+		"climatizaciones": [
+			{
+				"idElem": "ES-estancia-prueba1-climatizacion1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Climatizacion1 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"802"
+				],
+				"fabricantes": [
+					{
+						"referencia": "802",
+						"precio": {
+							"valor": 60.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Climatizaciones Frica SL.",
+						"direccion": "Calle del Pico Almenara, 7, 28970 Humanes de Madrid, Madrid",
+						"url": "https://frica.es/",
+						"telefono": "910800508"
+					}
+				],
+				"precio": {
+					"valor": 2000.0,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"bombaCalor": true,
+				"redConductos": true,
+				"ventilador": false
+			}
+		],
+		"duchas": [
+			{
+				"idElem": "ES-estancia-prueba1-ducha1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Ducha 1 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"800"
+				],
+				"fabricantes": [
+					{
+						"referencia": "800",
+						"precio": {
+							"valor": 60.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Roca sanitarios S.L",
+						"direccion": "Juan Jose 23, Madrid",
+						"url": "https://www.roca.es/",
+						"telefono": "916754344"
+					}
+				],
+				"precio": {
+					"valor": 199.34,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 1,
+					"largo": 1,
+					"unidad": "METRO"
+				},
+				"demuele": false,
+				"material": "CERAMICO",
+				"griferiaEmpotrada": true,
+				"mampara": true,
+				"recta": true,
+				"tramos": []
+			}
+		],
+		"iluminacion": {
+			"idElem": "ES-estancia-prueba1-iluminacion",
+			"idEstancia": "ES-estancia-prueba1",
+			"info": {
+				"notas": "Iluminacion para estancia de prueba"
+			},
+			"referenciasFabricantes": [
+				"250"
+			],
+			"fabricantes": [
+				{
+					"referencia": "250",
+					"precio": {
+						"valor": 35.5,
+						"divisa": "EURO",
+						"iva": 21.0
+					},
+					"nombre": "Leroy Merlin Iluminacion",
+					"direccion": "Europilis 1 Las Rozas, Madrid",
+					"url": "https://www.leroymerlin.es/iluminacion",
+					"telefono": "678909876"
+				}
+			],
+			"precio": {
+				"valor": 2000.0,
+				"divisa": "EURO",
+				"iva": 2.0
+			},
+			"empotrada": true,
+			"focos": 20,
+			"downLights": 10,
+			"tramos": [
+				{
+					"tamano": 5,
+					"unidad": "METRO"
+				},
+				{
+					"tamano": 28,
+					"unidad": "CENTIMETRO"
+				},
+				{
+					"tamano": 189,
+					"unidad": "CENTIMETRO"
+				}
+			]
+		},
+		"inodoros": [
+			{
+				"idElem": "ES-estancia-prueba1-inodoro1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Inodoro 1 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"800"
+				],
+				"fabricantes": [
+					{
+						"referencia": "800",
+						"precio": {
+							"valor": 60.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Roca sanitarios S.L",
+						"direccion": "Juan Jose 23, Madrid",
+						"url": "https://www.roca.es/",
+						"telefono": "916754344"
+					}
+				],
+				"precio": {
+					"valor": 134.33,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 0.5,
+					"largo": 0.35,
+					"ancho": 0.5,
+					"unidad": "METRO"
+				},
+				"demuele": false,
+				"material": "CERAMICO",
+				"suspendido": false,
+				"ducheta": true
+			}
+		],
+		"instalacion": {
+			"idElem": "ES-estancia-prueba1-instalacion",
+			"idEstancia": "ES-estancia-prueba1",
+			"info": {
+				"notas": "Instalacion para estancia de prueba"
+			},
+			"referenciasFabricantes": [
+				"900"
+			],
+			"fabricantes": [
+				{
+					"referencia": "900",
+					"precio": {
+						"valor": 45.5,
+						"divisa": "EURO",
+						"iva": 21.0
+					},
+					"nombre": "Grupo electrón",
+					"direccion": "C/Cuenca 17 Local3 Leganés",
+					"url": "https://www.solucioneselectron.com/instalaciones-electricas-madrid/",
+					"telefono": "918987677"
+				}
+			],
+			"precio": {
+				"valor": 3467.0,
+				"divisa": "EURO",
+				"iva": 2.0
+			},
+			"medida": {
+				"alto": 30,
+				"largo": 40,
+				"unidad": "METRO"
+			},
+			"cajaRegistro": 2,
+			"interruptoresConmutados": 12,
+			"interruptoresNoConmutados": 32,
+			"enchufes": 22,
+			"tomaTv": 2,
+			"tomaTelef": 3,
+			"tomaDatos": 2
+		},
+		"lavabos": [
+			{
+				"idElem": "ES-estancia-prueba1-lavabo1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Lavabo para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"800"
+				],
+				"fabricantes": [
+					{
+						"referencia": "800",
+						"precio": {
+							"valor": 60.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Roca sanitarios S.L",
+						"direccion": "Juan Jose 23, Madrid",
+						"url": "https://www.roca.es/",
+						"telefono": "916754344"
+					}
+				],
+				"precio": {
+					"valor": 3467.0,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"senos": 2,
+				"demuele": false,
+				"mueble": true,
+				"material": "CERAMICO",
+				"medida": {
+					"alto": 0.5,
+					"largo": 0.35,
+					"ancho": 0.5,
+					"unidad": "METRO"
+				},
+				"griferiaEmpotrada": true
+			}
+		],
+		"mobiliarioObra": {
+			"idElem": "ES-estancia-prueba1-mobiliarioobra",
+			"idEstancia": "ES-estancia-prueba1",
+			"info": {
+				"notas": "Mobiliario obra para estancia de prueba"
+			},
+			"referenciasFabricantes": [
+				"200"
+			],
+			"fabricantes": [
+				{
+					"referencia": "200",
+					"precio": {
+						"valor": 28.0,
+						"divisa": "EURO",
+						"iva": 21.0
+					},
+					"nombre": "Talleres Arteixo",
+					"direccion": "Polígono Industrial de Sabón. 15142 Arteixo. A Coruña",
+					"url": "http://www.talleresarteixo.com/",
+					"telefono": "981633006"
+				}
+			],
+			"precio": {
+				"valor": 2150.0,
+				"divisa": "EURO",
+				"iva": 2.0
+			},
+			"cantidad": 4,
+			"unidad": "UNIDAD",
+			"desmontable": true
+		},
+		"pintura": {
+			"idElem": "ES-estancia-prueba1-pintura",
+			"idEstancia": "ES-estancia-prueba1",
+			"info": {
+				"notas": "Pintura para estancia de prueba"
+			},
+			"referenciasFabricantes": [
+				"903"
+			],
+			"fabricantes": [
+				{
+					"referencia": "903",
+					"precio": {
+						"valor": 40.0,
+						"divisa": "EURO",
+						"iva": 21.0
+					},
+					"nombre": "La Pinturería S.L.",
+					"direccion": "Av. Rey Juan Carlos I, 8, 28915 Leganés, Madrid",
+					"url": "https://centroprocolor.es/",
+					"telefono": "916862823"
+				}
+			],
+			"precio": {
+				"valor": 350.0,
+				"divisa": "EURO",
+				"iva": 2.0
+			},
+			"fisuracion": "MEDIO",
+			"papelPintado": false,
+			"gotelet": false,
+			"raspado": true,
+			"color": "#F56AAA",
+			"acabado": "granulado"
+		},
+		"puertas": [
+			{
+				"idElem": "ES-estancia-prueba1-puerta1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Puerta 1 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"355"
+				],
+				"fabricantes": [
+					{
+						"referencia": "355",
+						"precio": {
+							"valor": 50.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Todo puertas",
+						"direccion": "España",
+						"url": "https://todopuertas.net/",
+						"telefono": "628880094"
+					}
+				],
+				"precio": {
+					"valor": 169.99,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 2.0,
+					"largo": 1.0,
+					"ancho": 0.25,
+					"unidad": "METRO"
+				},
+				"estandar": false,
+				"mano": false
+			},
+			{
+				"idElem": "ES-estancia-prueba1-puerta2",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Puerta 2 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"355"
+				],
+				"fabricantes": [
+					{
+						"referencia": "355",
+						"precio": {
+							"valor": 50.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Todo puertas",
+						"direccion": "España",
+						"url": "https://todopuertas.net/",
+						"telefono": "628880094"
+					}
+				],
+				"precio": {
+					"valor": 169.99,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 2.0,
+					"largo": 1.0,
+					"ancho": 0.25,
+					"unidad": "METRO"
+				},
+				"estandar": false,
+				"mano": false
+			},
+			{
+				"idElem": "ES-estancia-prueba1-puerta3",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Puerta 3 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"355"
+				],
+				"fabricantes": [
+					{
+						"referencia": "355",
+						"precio": {
+							"valor": 50.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Todo puertas",
+						"direccion": "España",
+						"url": "https://todopuertas.net/",
+						"telefono": "628880094"
+					}
+				],
+				"precio": {
+					"valor": 169.99,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 2.0,
+					"largo": 1.0,
+					"ancho": 0.25,
+					"unidad": "METRO"
+				},
+				"estandar": false,
+				"mano": false
+			}
+		],
+		"radiadores": [
+			{
+				"idElem": "ES-estancia-prueba1-radiador1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Radiador 1 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"221"
+				],
+				"fabricantes": [
+					{
+						"referencia": "221",
+						"precio": {
+							"valor": 42.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Bricodepot",
+						"direccion": "Europolis 4 Las Rozas",
+						"url": "https://www.bricodepot.es/",
+						"telefono": "914456677"
+					}
+				],
+				"precio": {
+					"valor": 106.99,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"energia": "Eléctrico",
+				"material": "CARGA_MINERAL",
+				"medida": {
+					"alto": 50.0,
+					"largo": 120.0,
+					"ancho": 15.0,
+					"unidad": "CENTIMETRO"
+				},
+				"numElementos": 5
+			}
+		],
+		"revestimiento": {
+			"idElem": "ES-estancia-prueba1-revestimiento",
+			"idEstancia": "ES-estancia-prueba1",
+			"info": {
+				"notas": "Revestimiento para estancia de prueba"
+			},
+			"referenciasFabricantes": [
+				"221"
+			],
+			"fabricantes": [
+				{
+					"referencia": "221",
+					"precio": {
+						"valor": 42.0,
+						"divisa": "EURO",
+						"iva": 21.0
+					},
+					"nombre": "Bricodepot",
+					"direccion": "Europolis 4 Las Rozas",
+					"url": "https://www.bricodepot.es/",
+					"telefono": "914456677"
+				}
+			],
+			"precio": {
+				"valor": 1245.0,
+				"divisa": "EURO",
+				"iva": 2.0
+			},
+			"medida": {
+				"alto": 30,
+				"largo": 40,
+				"unidad": "METRO"
+			},
+			"ceramico": false,
+			"friso": false,
+			"panelado": true,
+			"moldura": false,
+			"demuele": true
+		},
+		"rodapie": {
+			"idElem": "ES-estancia-prueba1-rodapie",
+			"idEstancia": "ES-estancia-prueba1",
+			"info": {
+				"notas": "Rodapie para estancia de prueba"
+			},
+			"referenciasFabricantes": [
+				"221"
+			],
+			"fabricantes": [
+				{
+					"referencia": "221",
+					"precio": {
+						"valor": 42.0,
+						"divisa": "EURO",
+						"iva": 21.0
+					},
+					"nombre": "Bricodepot",
+					"direccion": "Europolis 4 Las Rozas",
+					"url": "https://www.bricodepot.es/",
+					"telefono": "914456677"
+				}
+			],
+			"precio": {
+				"valor": 78.0,
+				"divisa": "EURO",
+				"iva": 2.0
+			},
+			"tipo": "rodapie modelo 33344",
+			"alto": {
+				"tamano": 23,
+				"unidad": "CENTIMETRO"
+			},
+			"largo": {
+				"tamano": 13,
+				"unidad": "METRO"
+			},
+			"ancho": {
+				"tamano": 10,
+				"unidad": "CENTIMETRO"
+			}
+		},
+		"solado": {
+			"idElem": "ES-estancia-prueba1-solado",
+			"idEstancia": "ES-estancia-prueba1",
+			"info": {
+				"notas": "Solado para estancia de prueba"
+			},
+			"referenciasFabricantes": [
+				"221"
+			],
+			"fabricantes": [
+				{
+					"referencia": "221",
+					"precio": {
+						"valor": 42.0,
+						"divisa": "EURO",
+						"iva": 21.0
+					},
+					"nombre": "Bricodepot",
+					"direccion": "Europolis 4 Las Rozas",
+					"url": "https://www.bricodepot.es/",
+					"telefono": "914456677"
+				}
+			],
+			"precio": {
+				"valor": 134.0,
+				"divisa": "EURO",
+				"iva": 2.0
+			},
+			"tipo": "solado modelo 1234",
+			"medida": {
+				"alto": 5,
+				"largo": 5,
+				"unidad": "METRO"
+			}
+		},
+		"techo": {
+			"idElem": "ES-estancia-prueba1-techo",
+			"idEstancia": "ES-estancia-prueba1",
+			"info": {
+				"notas": "Techo para estancia de prueba"
+			},
+			"referenciasFabricantes": [
+				"221"
+			],
+			"fabricantes": [
+				{
+					"referencia": "221",
+					"precio": {
+						"valor": 42.0,
+						"divisa": "EURO",
+						"iva": 21.0
+					},
+					"nombre": "Bricodepot",
+					"direccion": "Europolis 4 Las Rozas",
+					"url": "https://www.bricodepot.es/",
+					"telefono": "914456677"
+				}
+			],
+			"precio": {
+				"valor": 1054.0,
+				"divisa": "EURO",
+				"iva": 2.0
+			},
+			"falsoTecho": false,
+			"moldura": true,
+			"demuele": false
+		},
+		"ventanas": [
+			{
+				"idElem": "ES-estancia-prueba1-ventana1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Ventana 1 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"169"
+				],
+				"fabricantes": [
+					{
+						"referencia": "169",
+						"precio": {
+							"valor": 57.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Brico ventana",
+						"direccion": "C/Loro 34, Madrid",
+						"url": "http://www.brico-ventana.es/",
+						"telefono": "916778765"
+					}
+				],
+				"precio": {
+					"valor": 2300.00,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 1.5,
+					"largo": 1.2,
+					"unidad": "METRO"
+				},
+				"persiana": true,
+				"capialzado": true
+			},
+			{
+				"idElem": "ES-estancia-prueba1-ventana1",
+				"idEstancia": "ES-estancia-prueba1",
+				"info": {
+					"notas": "Ventana 2 para estancia de prueba"
+				},
+				"referenciasFabricantes": [
+					"169"
+				],
+				"fabricantes": [
+					{
+						"referencia": "169",
+						"precio": {
+							"valor": 57.0,
+							"divisa": "EURO",
+							"iva": 21.0
+						},
+						"nombre": "Brico ventana",
+						"direccion": "C/Loro 34, Madrid",
+						"url": "http://www.brico-ventana.es/",
+						"telefono": "916778765"
+					}
+				],
+				"precio": {
+					"valor": 2300.00,
+					"divisa": "EURO",
+					"iva": 2.0
+				},
+				"medida": {
+					"alto": 1.3,
+					"largo": 1,
+					"unidad": "METRO"
+				},
+				"persiana": true,
+				"capialzado": false
+			}
+		]
+	}
+]

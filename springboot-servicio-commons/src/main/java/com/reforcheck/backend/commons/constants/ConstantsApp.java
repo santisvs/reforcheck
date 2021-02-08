@@ -27,6 +27,11 @@ public class ConstantsApp {
 	/*
 	 * URI SERVICES
 	 */
+	public static final String URI_ELEMENTOS = "/repo/";
+	public static final String URI_ELEMENTO_ID = "/repo/{id}";
+	public static final String URI_ELEMENTOS_ESTANCIA = "/repo/search/estancia/{idEstancia}";
+	public static final String URI_ELEMENTOS_FABRICANTE = "/repo/search/fabricante/{referencia}";
+	public static final String URI_ELEMENTOS_SEARCH = "/repo/search/buscar";
 	public static final String URI_LISTAR = "/listar";
 	public static final String URI_VER = "/ver/{id}";
 	public static final String URI_CREAR = "/crear";
@@ -36,6 +41,15 @@ public class ConstantsApp {
 	public static final String URI_CONFIG = "/obtener-config";
 	public static final String URI_USER_SEARCH = "/usuarios/search/buscar";
 	public static final String URI_USER_UPDATE = "/usuarios/{id}";
+	public static final String URI_WITHOUT_REQUEST_PARAM = "/";
+	public static final String URI_WITH_ID_REQUEST_PARAM = "/{id}";
+	public static final String URI_WITH_EMAIL_REQUEST_PARAM = "/buscar/{email}";
+	public static final String URI_REFERENCIAS_WITHOUT_REQUEST_PARAM = "/referencias/";
+	public static final String URI_WITH_REFERENCIA_REQUEST_PARAM = "/referencia/{referencia}";
+	public static final String URI_WITH_ESTANCIA_REQUEST_PARAM = "/estancia/{idEstancia}";
+	public static final String URI_WITH_PLANTA_REQUEST_PARAM = "/planta/{idPlanta}";
+	public static final String URI_WITH_PROPIEDAD_REQUEST_PARAM = "/propiedad/{idPropiedad}";
+	public static final String URI_WITH_PROPIETARIO_REQUEST_PARAM = "/propietario/{idPropietario}";
 	
 	/*
 	 * URI REST
@@ -71,6 +85,22 @@ public class ConstantsApp {
 	public static final String URI_ZUUL_ARMARIO = "/api/elementos/armarios/{id}";
 	public static final String URI_ZUUL_GENERIC_ELEMENTOS = "/api/elementos/**";
 	
+	public static final String URI_ZUUL_PROPIEDADES = "/api/propiedades";
+	public static final String URI_ZUUL_PROPIEDAD = "/api/propiedades/{id}";
+	public static final String URI_ZUUL_GENERIC_PROPIEDADES = "/api/propiedades/**";
+	
+	public static final String URI_ZUUL_PLANTAS = "/api/plantas";
+	public static final String URI_ZUUL_PLANTA = "/api/plantas/{id}";
+	public static final String URI_ZUUL_GENERIC_PLANTAS = "/api/plantas/**";
+	
+	public static final String URI_ZUUL_ESTANCIAS = "/api/estancias";
+	public static final String URI_ZUUL_ESTANCIA = "/api/estancias/{id}";
+	public static final String URI_ZUUL_GENERIC_ESTANCIAS = "/api/estancias/**";
+	
+	public static final String URI_ZUUL_FABRICANTES = "/api/fabricantes";
+	public static final String URI_ZUUL_FABRICANTE = "/api/fabricantes/{id}";
+	public static final String URI_ZUUL_GENERIC_FABRICANTES = "/api/fabricantes/**";
+	
 	public static final String URI_ZUUL_USUARIOS = "/api/usuarios/usuarios";
 	public static final String URI_ZUUL_USUARIO = "/api/usuarios/usuarios/{id}";
 	public static final String URI_ZUUL_GENERIC_USUARIOS = "/api/usuarios/**";
@@ -94,6 +124,27 @@ public class ConstantsApp {
 	 */
 	public static final String PRODUCT_SERVICE_NAME = "servicio-productos";
 	public static final String USER_SERVICE_NAME = "servicio-usuarios";
+	public static final String ESTANCIAS_SERVICE_NAME = "servicio-estancias";
+	public static final String PLANTAS_SERVICE_NAME = "servicio-plantas";
+	public static final String ARMARIOS_SERVICE_NAME = "servicio-armarios";
+	public static final String BANERAS_SERVICE_NAME = "servicio-baneras";
+	public static final String BIDETS_SERVICE_NAME = "servicio-bidets";
+	public static final String DUCHAS_SERVICE_NAME = "servicio-duchas";
+	public static final String INODOROS_SERVICE_NAME = "servicio-inodoros";
+	public static final String LAVABOS_SERVICE_NAME = "servicio-lavabos";
+	public static final String VENTANAS_SERVICE_NAME = "servicio-ventanas";
+	public static final String PUERTAS_SERVICE_NAME = "servicio-puertas";
+	public static final String RADIADORES_SERVICE_NAME = "servicio-radiadores";
+	public static final String CLIMATIZACIONES_SERVICE_NAME = "servicio-climatizaciones";
+	public static final String ILUMINACIONES_SERVICE_NAME = "servicio-iluminaciones";
+	public static final String PINTURAS_SERVICE_NAME = "servicio-pinturas";
+	public static final String REVESTIMIENTOS_SERVICE_NAME = "servicio-revestimientos";
+	public static final String RODAPIES_SERVICE_NAME = "servicio-rodapies";
+	public static final String SOLADOS_SERVICE_NAME = "servicio-solados";
+	public static final String TECHOS_SERVICE_NAME = "servicio-techos";
+	public static final String MOBILIARIO_OBRAS_SERVICE_NAME = "servicio-mobiliarioobras";
+	public static final String INSTALACIONES_SERVICE_NAME = "servicio-instalaciones";
+	public static final String FABRICANTES_SERVICE_NAME = "servicio-fabricantes";
 
 	/*
 	 * LOGS STRINGS

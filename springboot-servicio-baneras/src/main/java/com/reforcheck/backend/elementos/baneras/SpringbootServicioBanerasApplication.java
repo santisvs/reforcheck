@@ -3,8 +3,9 @@ package com.reforcheck.backend.elementos.baneras;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-import com.reforcheck.backend.commons.constants.ConstantsApp;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * <b>SpringbootServicioBanerasApplication</b> <br>
@@ -15,8 +16,14 @@ import com.reforcheck.backend.commons.constants.ConstantsApp;
  * @author CTO Reforcheck - Santiago Vallejo <s.vallejo@reforcheck.com>
  * 
  */
+
+@EnableCircuitBreaker
+@EnableEurekaClient
+@EnableFeignClients
 @SpringBootApplication
-@EntityScan({ ConstantsApp.PACKAGE_ENTITIES_MYSQL })
+@EntityScan(basePackages = { "com.reforcheck.backend.commons.entities.mysql.models.commons",
+		"com.reforcheck.backend.commons.entities.mysql.models.common.unod",
+		"com.reforcheck.backend.commons.entities.mysql.models.elemento.banera" })
 public class SpringbootServicioBanerasApplication {
 
 	public static void main(String[] args) {
