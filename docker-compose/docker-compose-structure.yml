@@ -1,8 +1,8 @@
 version: '3.7'
 services:
-  config-server:
-    image: config-server:0.0.1-SNAPSHOT
-    container_name: config-server
+  servicio-config-server:
+    image: servicio-config-server:0.0.1-SNAPSHOT
+    container_name: servicio-config-server
     ports:
       - "8888:8888"
     restart: always
@@ -56,4 +56,5 @@ volumes:
   postgresql-data:  
 networks:
   reforchecknetwork:
-    name: reforchecknetwork
+    external:
+      name: reforchecknetwork

@@ -34,24 +34,48 @@ services:
     environment:
       POSTGRES_DB: db_reforcheck_postgres
       POSTGRES_PASSWORD: postgres
-  servicio-armarios:
-    image: servicio-armarios:0.0.1-SNAPSHOT
+  servicio-productos:
+    image: servicio-productos:0.0.1-SNAPSHOT
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - config-server
+      - servicio-eureka-server
+      - servicio-mysql8-database
+  servicio-items:
+    image: servicio-items:0.0.1-SNAPSHOT
+    ports:
+      - "8002:8002"
+      - "8005:8005"
+      - "8007:8007"
     restart: always
     networks:
       - reforchecknetwork
     depends_on:
       - servicio-config-server
       - servicio-eureka-server
-      - servicio-mysql8-database
+      - servicio-productos
   servicio-usuarios:
     image: servicio-usuarios:0.0.1-SNAPSHOT
     restart: always
     networks:
       - reforchecknetwork
     depends_on:
-      - servicio-config-server
+      - config-server
       - servicio-eureka-server
       - servicio-postgres13-database
+  servicio-oauth:
+    image: servicio-oauth:0.0.1-SNAPSHOT
+    ports:
+      - "9100:9100"
+    restart: always
+    networks:
+      - reforchecknetwork
+    depends_on:
+      - config-server
+      - servicio-eureka-server
+      - servicio-usuarios
   servicio-zuul-server:
     image: servicio-zuul-server:0.0.1-SNAPSHOT
     ports:
@@ -60,10 +84,12 @@ services:
     networks:
       - reforchecknetwork
     depends_on:
-      - servicio-config-server
+      - config-server
       - servicio-eureka-server
-      - servicio-armarios
+      - servicio-productos
+      - servicio-items
       - servicio-usuarios
+      - servicio-oauth
   rabbitmq:
     image: rabbitmq:3.8-management-alpine
     ports:
@@ -90,6 +116,6 @@ services:
       MYSQL_PASS: zipkin
       MYSQL_HOST: servicio-mysql8-database
 networks:
-  reforchecknetwork:
+  default:
     external:
       name: reforchecknetwork

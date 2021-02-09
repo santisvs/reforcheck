@@ -1,7 +1,6 @@
 FROM openjdk:8
 VOLUME /tmp
 ARG JAR_FILE
-ARG DOCKER_SERV_NAME
 EXPOSE 8090
-ADD ./target/${JAR_FILE} ${DOCKER_SERV_NAME}.jar
-ENTRYPOINT ["java","-jar","/${DOCKER_SERV_NAME}.jar"]
+ADD ./target/${JAR_FILE} servicio-zuul-server.jar
+ENTRYPOINT ["java","-jar","/servicio-zuul-server.jar"]

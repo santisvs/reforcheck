@@ -1,7 +1,6 @@
 FROM openjdk:8
 VOLUME /tmp
 ARG JAR_FILE
-ARG DOCKER_SERV_NAME
 EXPOSE 8888
-ADD ./target/${JAR_FILE} ${DOCKER_SERV_NAME}.jar
-ENTRYPOINT ["java","-jar","/${DOCKER_SERV_NAME}.jar"]
+ADD ./target/${JAR_FILE} servicio-config-server.jar
+ENTRYPOINT ["java","-jar","/servicio-config-server.jar"]
